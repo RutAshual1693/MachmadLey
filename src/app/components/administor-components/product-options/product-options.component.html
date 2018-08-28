@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <td><b>name</b> </td>
+      <td><b>option</b></td>
+    </tr>
+    <tr *ngFor="let option of productsService.listProductOptions">
+      <td>{{option.name}}</td>
+      <td><span *ngFor="let value of option.values">{{value}},</span></td>
+      <td style="height:auto">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+               rerer
+            <span class="caret"></span>
+          </button>
+          <ul style="direction:ltr;" class="dropdown-menu">
+            <li><a href="#">erer</a></li>
+            <li><a  (click)="delete(option)">מחיקה</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

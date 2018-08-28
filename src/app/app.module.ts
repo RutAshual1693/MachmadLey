@@ -27,6 +27,7 @@ import { CategoriesComponent } from './components/administor-components/categori
 import { CategoriesService } from './services/categories.service';
 import { AddCategoryComponent } from './components/administor-components/add-category/add-category.component';
 import { EditCategoryComponent } from './components/administor-components/edit-category/edit-category.component';
+import { ProductOptionsComponent } from './components/administor-components/product-options/product-options.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { EditCategoryComponent } from './components/administor-components/edit-c
     CategoriesComponent,
     AddCategoryComponent,
     EditCategoryComponent,
+    ProductOptionsComponent,
    
 
   ],

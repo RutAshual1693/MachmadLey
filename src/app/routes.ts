@@ -12,6 +12,7 @@ import { EditProductsComponent } from "./components/edit-products/edit-products.
 import { CategoriesComponent } from "./components/administor-components/categories/categories.component";
 import { AddCategoryComponent } from "./components/administor-components/add-category/add-category.component";
 import { EditCategoryComponent } from "./components/administor-components/edit-category/edit-category.component";
+import { ProductOptionsComponent } from "./components/administor-components/product-options/product-options.component";
 export const routes: Routes = [
   {
 
@@ -70,8 +71,13 @@ export const routes: Routes = [
             path: "editCategory",
             component: EditCategoryComponent
           }]
-      }
+      },
+      {
+    path: "productOptions",
+    component: ProductOptionsComponent,
+  },
     ]
   },
+ 
 
 ]

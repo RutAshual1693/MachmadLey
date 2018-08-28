@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.listen(5000, function () {
   console.log('Example app listening on port 5000!');
 });
-var listProducts,listCategories;
+var listProducts,listCategories,listProductOptions;
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
 var url = "mongodb://localhost:27017/machmadleyDB";
@@ -118,7 +118,21 @@ app.post('/addCategory', function (req, res) {
   myPromise.then(fromResolve => getCategories(req, res), err => console.log(err));
 });
 
-
+app.get('/listProductOptions', function (_req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    MongoClient.connect(url, function (err, db) {
+      if (err) throw err;
+      var dbo = db.db("machmadleyDB");
+      dbo.collection("productOptions").find().toArray(function (err, res) {
+        if (err) reject(err);
+        console.log("1 category inserted");
+        db.close();
+        resolve(res);
+      });
+    });
+  });
+  myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
+});
 
 
 
@@ -153,3 +167,23 @@ app.post('/addCategory', function (req, res) {
 
 
 
+app.post('/deleteOption', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    MongoClient.connect(url, function (err, db) {
+      if (err) throw err;
+      var dbo = db.db("machmadleyDB");
+      dbo.collection("productOptions").deleteOne({ name: req.body.name }, function (err, obj) {
+        if (err) reject(err);
+        console.log("1 document deleted");
+        dbo.collection("productOptions").find().toArray(function (err, result) {
+          if (err) reject(err);
+          listProductOptions = result;
+          console.log(result);
+          db.close();
+          resolve(result);
+        });
+      });
+    });
+  });
+  myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
+});

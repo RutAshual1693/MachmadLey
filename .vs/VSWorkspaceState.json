@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\administor-components",
+    "\\src\\app\\components\\administor-components\\administor",
+    "\\src\\app\\components\\administor-components\\product-options",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\src\\app\\components\\administor-components\\product-options\\product-options.component.html",
   "PreviewInSolutionExplorer": false
 }
