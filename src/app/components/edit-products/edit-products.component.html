@@ -1,0 +1,25 @@
+<div *ngIf="showAdd">
+  <a routerLink="add" (click)="clicked()">הוספת מוצר חדש</a>
+  <table>
+    <tr>
+      <th>תמונה</th>
+      <th>שם מוצר</th>
+      <th>מודל</th>
+      <th>מחיר</th>
+      <th>זמינות</th>
+    </tr>
+    <tr *ngFor="let product of listProducts">
+      <td>
+        <img width="100" src="assets/img/pic1.jpg" />
+      </td>
+      <td>{{product.name}}</td>
+      <td>{{product.model}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.availability}}</td>
+    </tr>
+  </table>
+</div>
+<textarea  placeholder="תיאור" id="input-description3" class="form-control summernote_new_editor"></textarea>
+<router-outlet *ngIf="!showAdd">
+</router-outlet>
+

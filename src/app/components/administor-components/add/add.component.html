@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="name" placeholder="שם מוצר" /><br />
+    <input type="text" class="form-control" formControlName="model" placeholder="מודל" /><br />
+    <input type="number" class="form-control" formControlName="price" placeholder="מחיר" /><br />
+    <input type="number" class="form-control" formControlName="count" placeholder="כמות במלאי" /><br />
+    <label>כמות מינימאלית להזמנה</label><input type="number" class="form-control" formControlName="minCountInOrder" /><br /><br><br/>
+    <label>שם יחודי לקישור</label><input type="text" formControlName="uniqueNameToLink" class="form-control" /><br />
+    <label>קטגוריה</label>
+    <select formControlName="categories">
+      <option *ngFor="let category of listCategories">{{category.name}}</option>
+    </select><br />
+    <label>תאור</label><input type="text" formControlName="prodDescription" class="form-control" />
+    <label>צבע</label><select>
+      <option>צהוב</option>
+      <option>ורוד</option>
+      <option>תכלת</option>
+      <option>חום</option>
+      <option>ירוק</option>
+      <option>כתום</option>
+      <option>בז</option>
+      <option>לבן</option>
+      <option>שחור</option>
+    </select><br />
+    <label>תמונות</label><input type="text" /><br />
+    <label>חברה</label><input type="text" formControlName="company" class="form-control" /><br />
+    <label>מוצרים קשורים</label><input type="text" /><br />
+    <label>סוג חיה</label>
+    <select formControlName="typeAnimal">
+      <option>כלבים</option>
+      <option>חתולים</option>
+    </select><br />
+    <input type="submit" class="btn" value="Submit" (click)="saveProducts()" />
+  </div>
+</form>
+   
