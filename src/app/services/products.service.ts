@@ -8,6 +8,15 @@ export class ProductsService {
   public listProductOptions: Array<object>;
   constructor(public http: HttpClient) {
     this.getProductOptions();
+    this.products();
+  }
+  
+  products() {
+    this.getListProducts().subscribe(
+      (data: Array<object>) => {
+        this.listProducts = data;
+      }
+    )
   }
   getListProducts(): Observable<Array<object>> {
     return this.http.get<Array<object>>('/listProducts');

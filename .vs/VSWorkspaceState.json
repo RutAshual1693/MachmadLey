@@ -6,9 +6,14 @@
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
     "\\src\\app\\components\\administor-components\\administor",
+    "\\src\\app\\components\\administor-components\\categories",
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\client-components\\list-product",
+    "\\src\\app\\components\\products",
     "\\src\\app\\components\\administor-components\\product-options",
     "\\src\\app\\services"
   ],
   "SelectedNode": "\\src\\app\\app.component.html",
+  "SelectedNode": "\\src\\app\\components\\administor-components\\administor\\administor.component.ts",
   "PreviewInSolutionExplorer": false
 }

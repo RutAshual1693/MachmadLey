@@ -28,6 +28,8 @@ import { CategoriesService } from './services/categories.service';
 import { AddCategoryComponent } from './components/administor-components/add-category/add-category.component';
 import { EditCategoryComponent } from './components/administor-components/edit-category/edit-category.component';
 import { ProductOptionsComponent } from './components/administor-components/product-options/product-options.component';
+import { ClientComponent } from './components/client-components/client/client.component';
+import { ListProductComponent } from './components/client-components/list-product/list-product.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { ProductOptionsComponent } from './components/administor-components/prod
     AddCategoryComponent,
     EditCategoryComponent,
     ProductOptionsComponent,
+    ClientComponent,
+    ListProductComponent,
    
 
   ],

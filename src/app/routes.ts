@@ -13,6 +13,7 @@ import { CategoriesComponent } from "./components/administor-components/categori
 import { AddCategoryComponent } from "./components/administor-components/add-category/add-category.component";
 import { EditCategoryComponent } from "./components/administor-components/edit-category/edit-category.component";
 import { ProductOptionsComponent } from "./components/administor-components/product-options/product-options.component";
+import { ClientComponent } from "./components/client-components/client/client.component";
 export const routes: Routes = [
   {
 
@@ -25,6 +26,10 @@ export const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
+  },
+  {
+    path: "client",
+    component: ClientComponent
   },
   {
     path: "administor",
