@@ -5,11 +5,14 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\administor",
-    "\\src\\app\\components\\administor-components\\categories",
-    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\administor-components\\edit-product-option",
+    "\\src\\app\\components\\administor-components\\product-options",
+    "\\src\\app\\components\\client-components\\client",
+    "\\src\\app\\components\\client-components\\edit-products",
+    "\\src\\app\\components\\client-components\\links",
     "\\src\\app\\components\\client-components\\list-product",
-    "\\src\\app\\components\\products"
+    "\\src\\app\\components\\client-components\\products"
   ],
+  "SelectedNode": "\\src\\app\\components\\administor-components\\edit-product-option\\edit-product-option.component.html",
   "PreviewInSolutionExplorer": false
 }

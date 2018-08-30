@@ -15,7 +15,7 @@ export class EditCategoryComponent implements OnInit {
   form;
   ngOnInit() {
     this.form = new FormGroup({
-      name: new FormControl(/*this.categoriesService.editCategory.name*/),
+      name: new FormControl(this.categoriesService.editCategory["name"]),
     });
   }
   onSubmit(frm) {

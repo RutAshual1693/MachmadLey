@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
-
+import { ProductsService } from '../../../services/products.service';
 @Component({
   selector: 'app-edit-products',
   templateUrl: './edit-products.component.html',
@@ -15,8 +14,6 @@ export class EditProductsComponent implements OnInit {
         this.listProducts = data;
       });
     }
- 
-
   ngOnInit() {
   }
   clicked() {

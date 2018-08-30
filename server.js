@@ -134,39 +134,7 @@ app.get('/listProductOptions', function (_req, res) {
   myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
 });
 
-
-
-
-///
-//function resolveAfter2Seconds(req) {
-//  return new Promise(resolve => {
-//    setTimeout(() => {
-//      MongoClient.connect(url, function (err, db) {
-//        if (err) throw err;
-//        var dbo = db.db("machmadleyDB");
-//        dbo.collection("categories").deleteOne({ name: req.body.name }, function (err, obj) {
-//          if (err) reject(err);
-//          console.log("1 document deleted");
-//          dbo.collection("categories").find().toArray(function (err, result) {
-//            if (err) reject(err);
-//            listCategories = result;
-//            console.log(result);
-//            db.close();
-//            resolve(listCategories);
-//          });
-//        });
-//      });
-//    }, 0);
-//  });
-//}
-//async function f1(req, res) {
-//  var x = await resolveAfter2Seconds(req);
-//  res.send(JSON.stringify(x)); // 10
-//}
-
-
-
-
+//-מחיקת אופציה
 app.post('/deleteOption', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
     MongoClient.connect(url, function (err, db) {
@@ -187,3 +155,25 @@ app.post('/deleteOption', function (req, res) {
   });
   myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
 });
+//--מחיקת ערך אחד מאפשרות מוצר
+//app.post('/deleteOption', function (req, res) {
+//  var myPromise = new Promise((resolve, reject) => {
+//    MongoClient.connect(url, function (err, db) {
+//      if (err) throw err;
+//      var dbo = db.db("machmadleyDB");
+//      dbo.collection("productOptions").find({ "name": req.body.o.option }).deleteOne(, function (err, obj) {
+//        if (err) reject(err);
+//        console.log("1 document deleted");
+//        dbo.collection("productOptions").find().toArray(function (err, result) {
+//          if (err) reject(err);
+//          listProductOptions = result;
+//          console.log(result);
+//          db.close();
+//          resolve(result);
+//        });
+//      });
+//    });
+//  });
+//  myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
+
+//})

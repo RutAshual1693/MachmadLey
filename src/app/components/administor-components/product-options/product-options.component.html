@@ -8,13 +8,13 @@
       <td>{{option.name}}</td>
       <td><span *ngFor="let value of option.values">{{value}},</span></td>
       <td style="height:auto">
-        <div class="dropdown">
+        <div style="direction:ltr;" class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-               rerer
+               פעולה
             <span class="caret"></span>
           </button>
           <ul style="direction:ltr;" class="dropdown-menu">
-            <li><a href="#">erer</a></li>
+            <li><a (click)="editOption(option)" routerLink="editProductOption">עריכה</a></li>
             <li><a  (click)="delete(option)">מחיקה</a></li>
           </ul>
         </div>
@@ -22,3 +22,4 @@
     </tr>
   </table>
 </div>
+<router-outlet></router-outlet>

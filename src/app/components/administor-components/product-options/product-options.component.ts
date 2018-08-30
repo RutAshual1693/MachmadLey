@@ -16,5 +16,8 @@ export class ProductOptionsComponent implements OnInit {
   }
   ngOnInit() {
   }
-
+  editOption(option) {
+    this.productsService.editProductOption = option;
+  }
+  
 }

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProductsService {
   public listProducts:Array<object>;
   public listProductOptions: Array<object>;
+  public editProductOption: object;
   constructor(public http: HttpClient) {
     this.getProductOptions();
     this.products();
@@ -36,5 +37,11 @@ export class ProductsService {
       (data: object[]) => { this.listProductOptions = data; }
       );
 
+  }
+  deleteValue(value) {
+    var o = { "option": this.editProductOption, "value": value };
+    //this.http.post<object>('/deleteOption', o).subscribe(
+    //  (data: object) => { this.editProductOption = data; }
+    //);
   }
 }

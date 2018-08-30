@@ -12,9 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { enableProdMode } from '@angular/core/src/application_ref';
 import { indexDebugNode } from '@angular/core/src/debug/debug_node';
-import { HomeComponent } from './components/home/home.component';
-import { ProductsComponent } from './components/products/products.component';
-import { LinksComponent } from './components/links/links.component';
+import { HomeComponent } from './components/client-components/home/home.component';
+import { ProductsComponent } from './components/client-components/products/products.component';
+import { LinksComponent } from './components/client-components/links/links.component';
 import { ProductsService } from './services/products.service';
 import { AddComponent } from './components/administor-components/add/add.component';
 import { AdministorComponent } from './components/administor-components/administor/administor.component';
@@ -22,7 +22,7 @@ import { MainComponent } from './components/administor-components/main/main.comp
 import { StoreSettingsComponent } from './components/administor-components/store-settings/store-settings.component';
 import { CustomersAndOrdersComponent } from './components/administor-components/customers-and-orders/customers-and-orders.component';
 import { StoreManagementComponent } from './components/administor-components/store-management/store-management.component';
-import { EditProductsComponent } from './components/edit-products/edit-products.component';
+import { EditProductsComponent } from './components/client-components/edit-products/edit-products.component';
 import { CategoriesComponent } from './components/administor-components/categories/categories.component';
 import { CategoriesService } from './services/categories.service';
 import { AddCategoryComponent } from './components/administor-components/add-category/add-category.component';
@@ -30,6 +30,7 @@ import { EditCategoryComponent } from './components/administor-components/edit-c
 import { ProductOptionsComponent } from './components/administor-components/product-options/product-options.component';
 import { ClientComponent } from './components/client-components/client/client.component';
 import { ListProductComponent } from './components/client-components/list-product/list-product.component';
+import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ListProductComponent } from './components/client-components/list-produc
     ProductOptionsComponent,
     ClientComponent,
     ListProductComponent,
+    EditProductOptionComponent,
    
 
   ],
