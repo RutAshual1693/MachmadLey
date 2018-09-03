@@ -28,8 +28,7 @@ export class AddComponent implements OnInit {
   }
   ngOnInit() {
     this.dropdownList = this.categoriesService.listCategories;
-    this.selectedItems = [
-    
+    this.selectedItems = [   
     ];
     this.dropdownSettings = {
       singleSelection: false,

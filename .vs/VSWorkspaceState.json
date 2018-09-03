@@ -5,8 +5,9 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\edit-product-option",
-    "\\src\\app\\components\\administor-components\\product-options"
+    "\\src\\app\\components\\administor-components\\add",
+    "\\src\\app\\components\\client-components"
   ],
+  "SelectedNode": "\\src\\app\\components\\administor-components\\add\\add.component.html",
   "PreviewInSolutionExplorer": false
 }
