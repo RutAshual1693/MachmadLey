@@ -31,7 +31,7 @@ import { ProductOptionsComponent } from './components/administor-components/prod
 import { ClientComponent } from './components/client-components/client/client.component';
 import { ListProductComponent } from './components/client-components/list-product/list-product.component';
 import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +53,7 @@ import { EditProductOptionComponent } from './components/administor-components/e
     ListProductComponent,
     EditProductOptionComponent,
    
-
+    
   ],
   imports: [
     HttpClientModule,
@@ -61,6 +61,7 @@ import { EditProductOptionComponent } from './components/administor-components/e
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [ProductsService, CategoriesService],
   bootstrap: [AppComponent]
