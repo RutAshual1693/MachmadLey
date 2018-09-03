@@ -1,15 +1,18 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="form-group">
-    <input type="text" class="form-control" formControlName="name" placeholder="שם מוצר" /><br />
+    <input type="text"  placeholder="שם מוצר" /><br />
     <input type="text" class="form-control" formControlName="model" placeholder="מודל" /><br />
     <input type="number" class="form-control" formControlName="price" placeholder="מחיר" /><br />
     <input type="number" class="form-control" formControlName="count" placeholder="כמות במלאי" /><br />
-    <label>כמות מינימאלית להזמנה</label><input type="number" class="form-control" formControlName="minCountInOrder" /><br /><br><br/>
+    <label>כמות מינימאלית להזמנה</label><input type="number" class="form-control" formControlName="minCountInOrder" /><br /><br><br />
     <label>שם יחודי לקישור</label><input type="text" formControlName="uniqueNameToLink" class="form-control" /><br />
     <label>קטגוריה</label>
-    <select formControlName="categories">
-      <option *ngFor="let category of listCategories">{{category.name}}</option>
-    </select><br />
+    <ng-multiselect-dropdown  placeholder="קטגוריות" class="form-control" formControlName="categories"
+                             [data]="this.categoriesService.listCategories"                            
+                             [settings]="dropdownSettings"
+                             (onSelect)="onItemSelect($event)"
+                             (onSelectAll)="onSelectAll($event)">
+    </ng-multiselect-dropdown>
     <label>תאור</label><input type="text" formControlName="prodDescription" class="form-control" />
     <label>צבע</label><select>
       <option>צהוב</option>
