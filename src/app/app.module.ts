@@ -32,6 +32,11 @@ import { ClientComponent } from './components/client-components/client/client.co
 import { ListProductComponent } from './components/client-components/list-product/list-product.component';
 import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+
+import { EditorModule } from '@tinymce/tinymce-angular';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +66,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    EditorModule
   ],
   providers: [ProductsService, CategoriesService],
   bootstrap: [AppComponent]

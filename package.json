@@ -20,6 +20,7 @@
     "@angular/platform-browser": "6.1.6",
     "@angular/platform-browser-dynamic": "6.1.6",
     "@angular/router": "6.1.6",
+    "@tinymce/tinymce-angular": "^2.0.1",
     "core-js": "^2.5.4",
     "mongodb": "^3.1.4",
     "ng-multiselect-dropdown": "^0.2.1",
