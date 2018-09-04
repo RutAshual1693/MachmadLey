@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="form-group">
-    <input type="text"  placeholder="שם מוצר" /><br />
+    <input type="text" formControlName="name"  placeholder="שם מוצר" /><br />
     <input type="text" class="form-control" formControlName="model" placeholder="מודל" /><br />
     <input type="number" class="form-control" formControlName="price" placeholder="מחיר" /><br />
     <input type="number" class="form-control" formControlName="count" placeholder="כמות במלאי" /><br />
@@ -9,9 +9,7 @@
     <label>קטגוריה</label>
     <ng-multiselect-dropdown  placeholder="קטגוריות" class="form-control" formControlName="categories"
                              [data]="this.categoriesService.listCategories"                            
-                             [settings]="dropdownSettings"
-                             (onSelect)="onItemSelect($event)"
-                             (onSelectAll)="onSelectAll($event)">
+                             [settings]="dropdownSettings">
     </ng-multiselect-dropdown>
     <label>תאור</label><input type="text" formControlName="prodDescription" class="form-control" />
     <label>צבע</label><select>

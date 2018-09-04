@@ -6,8 +6,9 @@
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
     "\\src\\app\\components\\administor-components\\add",
-    "\\src\\app\\components\\client-components"
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\administor-components\\add\\add.component.html",
+  "SelectedNode": "\\src\\app\\components\\administor-components\\add\\add.component.ts",
   "PreviewInSolutionExplorer": false
 }

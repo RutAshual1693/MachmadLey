@@ -9,8 +9,6 @@ import { ProductsService } from '../../../services/products.service';
 })
 export class AddComponent implements OnInit {
   public listCategories: Array<object>;
-  dropdownList = [];
-  selectedItems = [];
   dropdownSettings = {};
   constructor(public categoriesService: CategoriesService, public productsService: ProductsService)
   {
@@ -20,16 +18,7 @@ export class AddComponent implements OnInit {
       });
   }
   form;
-  onItemSelect(item: any) {
-    console.log(item);
-  }
-  onSelectAll(items: any) {
-    console.log(items);
-  }
   ngOnInit() {
-    this.dropdownList = this.categoriesService.listCategories;
-    this.selectedItems = [   
-    ];
     this.dropdownSettings = {
       singleSelection: false,
       idField: '_id',
