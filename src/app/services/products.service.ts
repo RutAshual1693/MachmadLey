@@ -38,10 +38,16 @@ export class ProductsService {
       );
 
   }
-  deleteValue(value) {
-    var o = { "option": this.editProductOption, "value": value };
-    //this.http.post<object>('/deleteOption', o).subscribe(
-    //  (data: object) => { this.editProductOption = data; }
-    //);
+  deleteValue() {
+    var o = { "_id": this.editProductOption["_id"], "values": this.editProductOption["values"] };
+    this.http.post<object[]>('/deleteValue', o).subscribe(
+      (data: object[]) => { this.listProducts = data; }
+    );
+  }
+  deleteProduct(_id) {
+    var a = { _id: _id };
+    this.http.post<object[]>('/deleteProduct',a).subscribe(
+      (data: object[]) => { this.listProducts = data; }
+    );
   }
 }

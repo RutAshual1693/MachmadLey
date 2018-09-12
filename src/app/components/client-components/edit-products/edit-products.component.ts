@@ -7,16 +7,18 @@ import { ProductsService } from '../../../services/products.service';
 })
 export class EditProductsComponent implements OnInit {
   public showAdd: boolean = true;
-  public listProducts: Array<object>;
   constructor(public productsService: ProductsService) {
-    productsService.getListProducts().subscribe(
-      (data: Array<object>) => {
-        this.listProducts = data;
-      });
+  
     }
   ngOnInit() {
   }
   clicked() {
     this.showAdd = false;
+  }
+  edit(product) {
+
+  }
+  delete(product) {
+    this.productsService.deleteProduct(product._id);
   }
 }

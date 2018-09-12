@@ -1,13 +1,14 @@
 <label>שם אפשרות:</label><b>{{productsService.editProductOption.name}}</b>
 <label>ערכים:</label>
 <br />
+<!--<input type="button" (click)="addValue()" routerLink="addValue" />-->
 <table class="table">
   <tr>
     <td><b>ערך</b></td>
     <td><b>הסרה</b></td>
   </tr>
-  <tr *ngFor="let value of productsService.editProductOption.values">
+  <tr *ngFor="let value of productsService.editProductOption.values; let i=index">
     <td>{{value}}</td>
-    <td><a (click)="deleteValue(value)"><span style="color:red;"  class="glyphicon glyphicon-remove-circle"></span></a></td>
+    <td><a (click)="deleteValue(i)"><span style="color:red;"  class="glyphicon glyphicon-remove-circle"></span></a></td>
   </tr>
 </table>

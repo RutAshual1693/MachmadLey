@@ -1,14 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\server",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\add",
-    "\\src\\app\\components\\client-components",
-    "\\src\\app\\services"
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\server.js",
   "PreviewInSolutionExplorer": false
 }

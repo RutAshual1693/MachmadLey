@@ -1,13 +1,20 @@
-<p>
-  categories works!
-</p>
 
 <button class="btn" routerLink="addCategory">הוספת קטגוריה</button>
 <table class="table">
   <tr *ngFor="let category of this.categoriesService.listCategories">
     <td>{{category.name}}</td>
-    <td><a (click)="delete(category)">מחק</a></td>
-    <td><a (click)="editCategoryClicked(category)" routerLink="editCategory">ערוך</a></td>
+    <td>
+      <div style="direction:ltr;" class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+          פעולה
+          <span class="caret"></span>
+        </button>
+        <ul style="direction:ltr;" class="dropdown-menu">
+          <li><a (click)="editCategoryClicked(category)" routerLink="editCategory">עריכה</a></li>
+          <li><a (click)="delete(category)">מחיקה</a></li>
+        </ul>
+      </div>
+</td>
   </tr>
 </table>
 <router-outlet>

@@ -14,7 +14,8 @@ export class EditProductOptionComponent implements OnInit {
 
   ngOnInit() {
   }
-  deleteValue(value) {
-    this.productsService.deleteValue(value);
+  deleteValue(i) {
+    this.productsService.editProductOption["values"].splice(i, 1);
+    this.productsService.deleteValue();
   }
 }

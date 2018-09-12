@@ -19,14 +19,13 @@ MongoClient.connect(url, function (err, db) {
   if (err) throw err;
   dbo = db.db("machmadleyDB");
 });
-  //-----שליחת רשימת המוצרים ללקוח
+//  //-----שליחת רשימת המוצרים ללקוח
 app.get('/listProducts', function (req, res) {
   getProducts(req,res);
 });
 //-------הוספת מוצר
 app.post('/addProduct', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
- 
       dbo.collection("products").insertOne(req.body, function (err, res) {
         if (err) reject(err);
         console.log("1 category inserted");     
@@ -88,27 +87,21 @@ app.post('/deleteCategories', function (req, res) {
 //------הוספת קטגוריה------------------
 app.post('/addCategory', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
-   
       dbo.collection("categories").insertOne(req.body, function (err, res) {
         if (err) reject(err);
         console.log("1 category inserted");    
-     
         resolve(res);
       });
     });
-
   myPromise.then(fromResolve => getCategories(req, res), err => console.log(err));
 });
 app.get('/listProductOptions', function (_req, res) {
   var myPromise = new Promise((resolve, reject) => {
-  
       dbo.collection("productOptions").find().toArray(function (err, res) {
         if (err) reject(err);
         console.log("1 category inserted");
-      
         resolve(res);
       });
- 
   });
   myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
 });
@@ -122,33 +115,45 @@ app.post('/deleteOption', function (req, res) {
           if (err) reject(err);
           listProductOptions = result;
           console.log(result);
-         
           resolve(result);
-        });
-     
+        });  
     });
   });
   myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
 });
 //--מחיקת ערך אחד מאפשרות מוצר
-//app.post('/deleteOption', function (req, res) {
-//  var myPromise = new Promise((resolve, reject) => {
-//    MongoClient.connect(url, function (err, db) {
-//      if (err) throw err;
-//      var dbo = db.db("machmadleyDB");
-//      dbo.collection("productOptions").find({ "name": req.body.o.option }).deleteOne(, function (err, obj) {
-//        if (err) reject(err);
-//        console.log("1 document deleted");
-//        dbo.collection("productOptions").find().toArray(function (err, result) {
-//          if (err) reject(err);
-//          listProductOptions = result;
-//          console.log(result);
-//          db.close();
-//          resolve(result);
-//        });
-//      });
-//    });
-//  });
-//  myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
+app.post('/deleteValue', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {  
+    var myquery = { _id: new mongo.ObjectID(req.body._id) };
+    var newvalues = { $set: {values:req.body.values} };
+    dbo.collection("productOptions").updateOne(myquery, newvalues, function (err, res) {
+    });
+  });
+    myPromise.then(fromResolve => getProducts(req,res), err => console.log(err));
+})
 
-//})
+
+app.post('/deleteProduct', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    console.log("lllllll" + req.body._id);
+    dbo.collection("products").deleteOne({ _id: new mongo.ObjectID(req.body._id)}, function (err, obj) {
+      if (err) reject(err);
+      console.log("1 document deleted");
+      resolve(listProducts);
+    });
+    });
+myPromise.then(fromResolve => getProducts(req,res), err => console.log(err));  
+}
+)
+///----------
+app.post('/editCategory', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("categories").updateOne({ _id: new mongo.ObjectID(req.body._id) }, { $set: { name: req.body.name } }, function (err, obj) {
+      if (err) reject(err);
+      console.log("1 category updated");
+      resolve(listProducts);
+    });
+  });
+  myPromise.then(fromResolve => getCategories(req, res), err => console.log(err));
+}
+)

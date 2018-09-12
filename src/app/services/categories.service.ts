@@ -29,4 +29,10 @@ export class CategoriesService {
       (data: object[]) => this.listCategories = data
     );
   }
+  edit(frm) {
+    var o = { _id: this.editCategory["_id"], name: frm.name };
+    this.http.post<object[]>("/editCategory", o).subscribe(
+      (data: object[]) => this.listCategories = data
+    );
+  }
 }

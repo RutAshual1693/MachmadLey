@@ -15,12 +15,11 @@ export class EditCategoryComponent implements OnInit {
   form;
   ngOnInit() {
     this.form = new FormGroup({
-      name: new FormControl(this.categoriesService.editCategory["name"]),
+      name: new FormControl(),
     });
   }
   onSubmit(frm) {
-    console.log(frm);   
-   // this.categoriesService.editCategory(frm);
+    this.categoriesService.edit(frm);
   }
 
 }
