@@ -9,6 +9,6 @@
   </tr>
   <tr *ngFor="let value of productsService.editProductOption.values; let i=index">
     <td>{{value}}</td>
-    <td><a (click)="deleteValue(i)"><span style="color:red;"  class="glyphicon glyphicon-remove-circle"></span></a></td>
+    <td><a  (click)="deleteValue(i)"><span style="color:red;font-size:27px;cursor:pointer"  class="glyphicon glyphicon-remove"></span></a></td>
   </tr>
 </table>

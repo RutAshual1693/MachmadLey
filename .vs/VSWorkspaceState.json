@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\server",
     "\\src",
-    "\\src\\assets"
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\administor-components\\administor",
+    "\\src\\app\\components\\administor-components\\product-options",
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\client-components\\nav",
+    "\\src\\assets",
+    "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\src\\assets\\img\\cat.png",
   "PreviewInSolutionExplorer": false
 }

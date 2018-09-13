@@ -35,7 +35,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 import { EditorModule } from '@tinymce/tinymce-angular';
-import { TestComponent } from './test/test.component';
+import { NavComponent } from './components/client-components/nav/nav.component';
+
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { TestComponent } from './test/test.component';
     ClientComponent,
     ListProductComponent,
     EditProductOptionComponent,
-    TestComponent,
+    NavComponent,
+
    
     
   ],
