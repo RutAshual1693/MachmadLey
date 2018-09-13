@@ -4,13 +4,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
+    "\\src\\app\\components\\administor-components",
+    "\\src\\app\\components\\administor-components\\add-customer",
     "\\src\\app\\components\\administor-components\\administor",
-    "\\src\\app\\components\\administor-components\\product-options",
-    "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\nav",
-    "\\src\\assets",
-    "\\src\\assets\\img"
+    "\\src\\app\\components\\administor-components\\customers",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\assets\\img\\cat.png",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

@@ -18,6 +18,8 @@ export class AddCustomerComponent implements OnInit {
       lastName: new FormControl(""),
       registrationDate: new FormControl(""),
       mail: new FormControl(""),
+      password: new FormControl(""),
+      confirmPassword: new FormControl(""),
     });
   }
   onSubmit(frm) {
