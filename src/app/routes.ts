@@ -8,13 +8,16 @@ import { MainComponent } from "./components/administor-components/main/main.comp
 import { CustomersAndOrdersComponent } from "./components/administor-components/customers-and-orders/customers-and-orders.component";
 import { StoreSettingsComponent } from "./components/administor-components/store-settings/store-settings.component";
 import { StoreManagementComponent } from "./components/administor-components/store-management/store-management.component";
-import { EditProductsComponent } from "./components/client-components/edit-products/edit-products.component";
+import { EditProductsComponent } from "./components/administor-components/edit-products/edit-products.component";
 import { CategoriesComponent } from "./components/administor-components/categories/categories.component";
 import { AddCategoryComponent } from "./components/administor-components/add-category/add-category.component";
 import { EditCategoryComponent } from "./components/administor-components/edit-category/edit-category.component";
 import { ProductOptionsComponent } from "./components/administor-components/product-options/product-options.component";
 import { ClientComponent } from "./components/client-components/client/client.component";
 import { EditProductOptionComponent } from "./components/administor-components/edit-product-option/edit-product-option.component";
+import { CustomersComponent } from "./components/administor-components/customers/customers.component";
+import { AddCustomerComponent } from "./components/administor-components/add-customer/add-customer.component";
+import { EditCustomerComponent } from "./components/administor-components/edit-customer/edit-customer.component";
 
 export const routes: Routes = [
 
@@ -22,7 +25,7 @@ export const routes: Routes = [
     path: "links",
     component: LinksComponent,
   },
- {
+  {
     path: "home",
     component: HomeComponent,
   },
@@ -41,10 +44,7 @@ export const routes: Routes = [
           {
             path: "add",
             component: AddComponent,
-          } , {
-            path: "add",
-            redirectTo: 'add',
-          }
+          }, 
         ]
       },
       {
@@ -52,9 +52,19 @@ export const routes: Routes = [
         component: MainComponent,
       },
       {
-        path: "customersAndOrders",
-        component: CustomersAndOrdersComponent,
-      },
+            path: "customers",
+            component: CustomersComponent,
+            children: [
+              {
+                path: "addCustomer",
+                component: AddCustomerComponent,
+              },
+              {
+                path: "editCastomer",
+                component: EditCustomerComponent,
+              },
+            ]
+          },
       {
         path: "storeSettings",
         component: StoreSettingsComponent,
@@ -85,9 +95,9 @@ export const routes: Routes = [
         }
 
         ]
-  },
+      },
     ]
   },
- 
+
 
 ]

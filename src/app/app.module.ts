@@ -22,7 +22,7 @@ import { MainComponent } from './components/administor-components/main/main.comp
 import { StoreSettingsComponent } from './components/administor-components/store-settings/store-settings.component';
 import { CustomersAndOrdersComponent } from './components/administor-components/customers-and-orders/customers-and-orders.component';
 import { StoreManagementComponent } from './components/administor-components/store-management/store-management.component';
-import { EditProductsComponent } from './components/client-components/edit-products/edit-products.component';
+import { EditProductsComponent } from './components/administor-components/edit-products/edit-products.component';
 import { CategoriesComponent } from './components/administor-components/categories/categories.component';
 import { CategoriesService } from './services/categories.service';
 import { AddCategoryComponent } from './components/administor-components/add-category/add-category.component';
@@ -36,6 +36,9 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { NavComponent } from './components/client-components/nav/nav.component';
+import { CustomersComponent } from './components/administor-components/customers/customers.component';
+import { AddCustomerComponent } from './components/administor-components/add-customer/add-customer.component';
+import { EditCustomerComponent } from './components/administor-components/edit-customer/edit-customer.component';
 
 
 
@@ -60,6 +63,9 @@ import { NavComponent } from './components/client-components/nav/nav.component';
     ListProductComponent,
     EditProductOptionComponent,
     NavComponent,
+    CustomersComponent,
+    AddCustomerComponent,
+    EditCustomerComponent,
 
    
     

@@ -47,6 +47,20 @@ function getProducts(req, res) {
   });
   myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
 }
+
+
+app.post('/deleteProduct', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    console.log("lllllll" + req.body._id);
+    dbo.collection("products").deleteOne({ _id: new mongo.ObjectID(req.body._id) }, function (err, obj) {
+      if (err) reject(err);
+      console.log("1 document deleted");
+      resolve(listProducts);
+    });
+  });
+  myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
+}
+)
    //********************************************************************************
    //********קטגוריות***************************************************************
   //*********************************************************************************
@@ -105,6 +119,21 @@ app.get('/listProductOptions', function (_req, res) {
   });
   myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
 });
+
+app.post('/editCategory', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("categories").updateOne({ _id: new mongo.ObjectID(req.body._id) }, { $set: { name: req.body.name } }, function (err, obj) {
+      if (err) reject(err);
+      console.log("1 category updated");
+      resolve(listProducts);
+    });
+  });
+  myPromise.then(fromResolve => getCategories(req, res), err => console.log(err));
+}
+)
+//***********************************************************************
+////********אפשרויות מוצר*************************************************
+//***********************************************************************
 //-מחיקת אופציה
 app.post('/deleteOption', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
@@ -131,29 +160,46 @@ app.post('/deleteValue', function (req, res) {
   });
     myPromise.then(fromResolve => getProducts(req,res), err => console.log(err));
 })
-
-
-app.post('/deleteProduct', function (req, res) {
+//*******************************************************************************
+//**************לקוחות**********************************************************
+//******************************************************************************
+var listCustomers;
+function getCustomers(req, res) {
   var myPromise = new Promise((resolve, reject) => {
-    console.log("lllllll" + req.body._id);
-    dbo.collection("products").deleteOne({ _id: new mongo.ObjectID(req.body._id)}, function (err, obj) {
+    //--שליפת רשימת הלקוחות מהשרת
+    dbo.collection("customers").find().toArray(function (err, result) {
       if (err) reject(err);
-      console.log("1 document deleted");
-      resolve(listProducts);
-    });
-    });
-myPromise.then(fromResolve => getProducts(req,res), err => console.log(err));  
-}
-)
-///----------
-app.post('/editCategory', function (req, res) {
-  var myPromise = new Promise((resolve, reject) => {
-    dbo.collection("categories").updateOne({ _id: new mongo.ObjectID(req.body._id) }, { $set: { name: req.body.name } }, function (err, obj) {
-      if (err) reject(err);
-      console.log("1 category updated");
-      resolve(listProducts);
+      listCustomers = result;
+      console.log(result);
+      resolve(result);
     });
   });
-  myPromise.then(fromResolve => getCategories(req, res), err => console.log(err));
+  myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
+}
+//----שליחת רשימת הלקוחות ללקוח
+app.get('/listCustomers', function (req, res) {
+  getCustomers(req, res);
+});
+//----
+app.post('/addCustomer', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("customers").insertOne(req.body, function (err, result) {
+      if (err) reject(err);
+      console.log("1 Customer inserted");
+      resolve(result);
+    });
+  });
+  myPromise.then(fromResolve => getCustomers(req, res), err => console.log(err));
+});
+////---
+app.post('/deleteCustomer', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("customers").deleteOne({ _id: new mongo.ObjectID(req.body._id) }, function (err, obj) {
+      if (err) reject(err);
+      console.log("1 customer deleted");
+      resolve(listCustomers);
+    });
+  });
+  myPromise.then(fromResolve => getCustomers(req, res), err => console.log(err));
 }
 )

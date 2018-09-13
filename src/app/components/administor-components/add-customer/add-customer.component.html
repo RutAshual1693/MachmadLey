@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="form-group">
+    <label>שם פרטי:</label>
+    <input class="form-control" formControlName="firstName" type="text" />
+    <label>שם משפחה</label>
+    <input class="form-control" formControlName="lastName" type="text" />
+    <label>דוא"ל</label>
+    <input class="form-control" formControlName="mail" type="email" />
+    <input type="submit" class="btn" value="Submit" />
+  </div>
+</form>
