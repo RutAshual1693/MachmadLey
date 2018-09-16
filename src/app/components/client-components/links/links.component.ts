@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TypesService } from './../../../services/types.service';
+import { CategoriesService } from '../../../services/categories.service';
 
 @Component({
   selector: 'app-links',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinksComponent implements OnInit {
 
-  constructor() { }
+  constructor(public typesService: TypesService, public categoriesService: CategoriesService)
+  {
 
+  }
+  
   ngOnInit() {
+    
   }
 
 }

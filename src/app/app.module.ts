@@ -39,6 +39,12 @@ import { NavComponent } from './components/client-components/nav/nav.component';
 import { CustomersComponent } from './components/administor-components/customers/customers.component';
 import { AddCustomerComponent } from './components/administor-components/add-customer/add-customer.component';
 import { EditCustomerComponent } from './components/administor-components/edit-customer/edit-customer.component';
+import { GetCategoriesByTypePipe } from './pipes/get-categories-by-type.pipe';
+import { ProductsBaseComponent } from './components/administor-components/products-base/products-base.component';
+import { CategoriesBaseComponent } from './components/administor-components/categories-base/categories-base.component';
+import { CustomersBaseComponent } from './components/administor-components/customers-base/customers-base.component';
+import { ProductOptionsBaseComponent } from './components/administor-components/product-options-base/product-options-base.component';
+import { AddProductOptionComponent } from './components/administor-components/add-product-option/add-product-option.component';
 
 
 
@@ -66,6 +72,12 @@ import { EditCustomerComponent } from './components/administor-components/edit-c
     CustomersComponent,
     AddCustomerComponent,
     EditCustomerComponent,
+    GetCategoriesByTypePipe,
+    ProductsBaseComponent,
+    CategoriesBaseComponent,
+    CustomersBaseComponent,
+    ProductOptionsBaseComponent,
+    AddProductOptionComponent,
 
    
     

@@ -2,6 +2,12 @@
   <div class="form-group">
     <label>שם:</label>
     <input class="form-control" formControlName="name" type="text" />
-    <input type="submit" class="btn" value="Submit"   />
-</div>
+    <label>קטגורית אב</label>
+    <ng-multiselect-dropdown placeholder="סוג חיה" class="form-control" formControlName="types"
+                             [data]="this.typesService.listTypes"
+                             [settings]="dropdownSettings">
+    </ng-multiselect-dropdown>
+
+    <input type="submit" class="btn" value="Submit" />
+  </div>
 </form>

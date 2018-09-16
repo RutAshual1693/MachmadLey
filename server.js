@@ -203,3 +203,23 @@ app.post('/deleteCustomer', function (req, res) {
   myPromise.then(fromResolve => getCustomers(req, res), err => console.log(err));
 }
 )
+//*******************************************************************************
+//**************לקוחות**********************************************************
+//******************************************************************************
+var listTypes;
+function getTypes(req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    //--שליפת רשימת הלקוחות מהשרת
+    dbo.collection("typeAnimal").find().toArray(function (err, result) {
+      if (err) reject(err);
+      listTypes = result;
+      console.log(result);
+      resolve(result);
+    });
+  });
+  myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
+}
+//----שליחת רשימת הלקוחות ללקוח
+app.get('/listTypes', function (req, res) {
+  getTypes(req, res);
+});

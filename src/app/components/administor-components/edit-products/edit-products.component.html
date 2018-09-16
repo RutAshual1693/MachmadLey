@@ -1,4 +1,4 @@
-<div *ngIf="showAdd">
+<div>
  <a routerLink="add" (click)="clicked()">הוספת מוצר חדש</a>
   <table class="table">
     <tr>
@@ -32,6 +32,4 @@
     </tr>
   </table>
 </div>
-<router-outlet *ngIf="!showAdd">
-</router-outlet>
-
+<app-products-base></app-products-base>

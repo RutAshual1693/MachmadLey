@@ -1,20 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
 import { CategoriesService } from '../../../services/categories.service';
+import { TypesService } from '../../../services/types.service';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
   styleUrls: ['./add-category.component.css']
 })
 export class AddCategoryComponent implements OnInit {
-
-  constructor(public categoriesService: CategoriesService) { }
+  dropdownSettings = {};
+  constructor(public categoriesService: CategoriesService, public typesService: TypesService) { }
   form;
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl(""),
+      types: new FormControl("")
     });
+    this.dropdownSettings = {
+  singleSelection: false,
+  idField: '_id',
+  textField: 'name',
+  selectAllText: 'Select All',
+  unSelectAllText: 'UnSelect All',
+  itemsShowLimit: 4,
+  allowSearchFilter: true
+}
   }
+ 
   onSubmit(frm) {
     console.log(frm);
     this.categoriesService.addCategory(frm);

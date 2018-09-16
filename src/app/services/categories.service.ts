@@ -6,7 +6,7 @@ import { arrayExpression } from 'babel-types';
 @Injectable()
 export class CategoriesService {
   public editCategory: object = { name: "sdd" };
-  public listCategories: Array<object>;
+  public listCategories: object[]=[];
   constructor(public http: HttpClient) {
     this.categories();
   }

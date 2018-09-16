@@ -5,11 +5,15 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\add-customer",
-    "\\src\\app\\components\\administor-components\\administor",
-    "\\src\\app\\components\\administor-components\\customers",
-    "\\src\\app\\services"
+    "\\src\\app\\components\\administor-components\\add",
+    "\\src\\app\\components\\administor-components\\add-category",
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\client-components\\links",
+    "\\src\\app\\imges\\icones",
+    "\\src\\app\\pipes",
+    "\\src\\app\\services",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\app\\pipes\\get-categories-by-type.pipe.ts",
   "PreviewInSolutionExplorer": false
 }

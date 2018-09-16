@@ -18,6 +18,10 @@ import { EditProductOptionComponent } from "./components/administor-components/e
 import { CustomersComponent } from "./components/administor-components/customers/customers.component";
 import { AddCustomerComponent } from "./components/administor-components/add-customer/add-customer.component";
 import { EditCustomerComponent } from "./components/administor-components/edit-customer/edit-customer.component";
+import { ProductsBaseComponent } from "./components/administor-components/products-base/products-base.component";
+import { CategoriesBaseComponent } from "./components/administor-components/categories-base/categories-base.component";
+import { CustomersBaseComponent } from "./components/administor-components/customers-base/customers-base.component";
+import { ProductOptionsBaseComponent } from "./components/administor-components/product-options-base/product-options-base.component";
 
 export const routes: Routes = [
 
@@ -38,12 +42,16 @@ export const routes: Routes = [
     component: AdministorComponent,
     children: [
       {
-        path: "products",
-        component: EditProductsComponent,
+        path: "productsBase",
+        component: ProductsBaseComponent,
         children: [
           {
             path: "add",
             component: AddComponent,
+          },
+          {
+            path: "",
+            component: EditProductsComponent,
           }, 
         ]
       },
@@ -52,8 +60,8 @@ export const routes: Routes = [
         component: MainComponent,
       },
       {
-            path: "customers",
-            component: CustomersComponent,
+        path: "customersBase",
+        component: CustomersBaseComponent,
             children: [
               {
                 path: "addCustomer",
@@ -62,6 +70,10 @@ export const routes: Routes = [
               {
                 path: "editCastomer",
                 component: EditCustomerComponent,
+              },
+              {
+                path: "",
+                component: CustomersComponent,
               },
             ]
           },
@@ -74,8 +86,8 @@ export const routes: Routes = [
         component: StoreManagementComponent,
       },
       {
-        path: "categories",
-        component: CategoriesComponent,
+        path: "categoriesBase",
+        component: CategoriesBaseComponent,
         children: [
           {
             path: "addCategory",
@@ -84,15 +96,24 @@ export const routes: Routes = [
           {
             path: "editCategory",
             component: EditCategoryComponent
-          }]
+          },
+          {
+            path: "",
+            component: CategoriesComponent
+          }
+        ]
       },
       {
-        path: "productOptions",
-        component: ProductOptionsComponent,
+        path: "productOptionsBase",
+        component: ProductOptionsBaseComponent,
         children: [{
           path: "editProductOption",
           component: EditProductOptionComponent
-        }
+        },
+          {
+            path: "",
+            component:ProductOptionsComponent
+          }
 
         ]
       },
