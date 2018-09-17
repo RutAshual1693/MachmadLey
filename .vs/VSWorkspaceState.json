@@ -4,16 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components",
     "\\src\\app\\components\\administor-components\\add",
     "\\src\\app\\components\\administor-components\\add-category",
-    "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\links",
-    "\\src\\app\\imges\\icones",
     "\\src\\app\\pipes",
-    "\\src\\app\\services",
-    "\\src\\assets"
+    "\\src\\assets",
+    "\\src\\assets\\img",
+    "\\src\\assets\\img\\icons"
   ],
-  "SelectedNode": "\\src\\app\\pipes\\get-categories-by-type.pipe.ts",
+  "SelectedNode": "\\src\\app\\components\\client-components\\links\\links.component.html",
   "PreviewInSolutionExplorer": false
 }
