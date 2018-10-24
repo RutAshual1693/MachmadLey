@@ -45,6 +45,10 @@ import { CategoriesBaseComponent } from './components/administor-components/cate
 import { CustomersBaseComponent } from './components/administor-components/customers-base/customers-base.component';
 import { ProductOptionsBaseComponent } from './components/administor-components/product-options-base/product-options-base.component';
 import { AddProductOptionComponent } from './components/administor-components/add-product-option/add-product-option.component';
+import { DisplayProductsComponent } from './components/client-components/display-products/display-products.component';
+import { PaginationService } from './services/pagination.service';
+import { TypesService } from './services/types.service';
+import { CustomersService } from './services/customers.service';
 
 
 
@@ -78,8 +82,7 @@ import { AddProductOptionComponent } from './components/administor-components/ad
     CustomersBaseComponent,
     ProductOptionsBaseComponent,
     AddProductOptionComponent,
-
-   
+    DisplayProductsComponent,
     
   ],
   imports: [
@@ -91,7 +94,7 @@ import { AddProductOptionComponent } from './components/administor-components/ad
     NgMultiSelectDropDownModule.forRoot(),
     EditorModule
   ],
-  providers: [ProductsService, CategoriesService],
+  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

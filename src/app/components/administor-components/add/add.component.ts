@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '../../../services/categories.service';
 import { FormGroup, FormControl } from '@angular/forms'
 import { ProductsService } from '../../../services/products.service';
+import { TypesService } from '../../../services/types.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -10,7 +11,7 @@ import { ProductsService } from '../../../services/products.service';
 export class AddComponent implements OnInit {
   public listCategories: Array<object>;
   dropdownSettings = {};
-  constructor(public categoriesService: CategoriesService, public productsService: ProductsService)
+  constructor(public categoriesService: CategoriesService, public productsService: ProductsService, public typesService: TypesService)
   {
     categoriesService.getListCategories().subscribe(
       (data: Array<object>) => {
@@ -38,11 +39,13 @@ export class AddComponent implements OnInit {
       categories: new FormControl(""),
       prodDescription: new FormControl(""), 
       company: new FormControl(""), 
-      typeAnimal : new FormControl("") 
+      typeAnimal : new FormControl("") ,
+      options: new FormControl(""),
     });
 }
   onSubmit(frm) {
     console.log(frm);
+    frm.typeAnimal = this.typesService.listTypes.filter(x => frm.categories.find(y => this.categoriesService.listCategories.find(i=>i["_id"]==y["_id"])["types"] == x["_id"]) != null);
     this.productsService.addProduct(frm);
   }
   saveProducts() {

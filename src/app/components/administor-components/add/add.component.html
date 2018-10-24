@@ -1,40 +1,79 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="form-group">
-    <input type="text" formControlName="name" placeholder="שם מוצר" /><br />
-    <label>תאור</label>
-    <editor apiKey="test" formControlName="prodDescription" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor>
-    <input type="text" class="form-control" formControlName="model" placeholder="מודל" /><br />
-    <input type="number" class="form-control" formControlName="price" placeholder="מחיר" /><br />
-    <input type="number" class="form-control" formControlName="count" placeholder="כמות במלאי" /><br />
-    <label>כמות מינימאלית להזמנה</label><input type="number" class="form-control" formControlName="minCountInOrder" /><br /><br><br />
-    <label>שם יחודי לקישור</label><input type="text" formControlName="uniqueNameToLink" class="form-control" /><br />
-    <label>קטגוריה</label>
-    <ng-multiselect-dropdown placeholder="קטגוריות" class="form-control" formControlName="categories"
-                             [data]="this.categoriesService.listCategories"
-                             [settings]="dropdownSettings">
-    </ng-multiselect-dropdown>
+    <table class="table" style="border:hidden;">
+      <tr>
+        <td><label>שם מוצר</label></td>
+        <td> <input type="text" formControlName="name" /></td>
+      </tr>
+      <tr>
+        <td><label>תאור</label></td>
+        <td><editor apiKey="test" formControlName="prodDescription" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor></td>
+      </tr>
+      <tr>
+        <td><label>מודל</label></td>
+        <td> <input type="text" class="form-control" formControlName="model" /></td>
+      </tr>
+      <tr>
+        <td><label>מחיר</label></td>
+        <td><input type="number" class="form-control" formControlName="price" /></td>
+      </tr>
+      <tr>
+        <td><label>כמות במלאי</label></td>
+        <td><input type="number" class="form-control" formControlName="count" /></td>
+      </tr>
+      <tr>
+        <td> <label>כמות מינימאלית להזמנה</label></td>
+        <td> <input type="number" class="form-control" formControlName="minCountInOrder" /></td>
+      </tr>
+      <tr>
+        <td><label>שם יחודי לקישור</label></td>
+        <td><input type="text" formControlName="uniqueNameToLink" class="form-control" /></td>
+      </tr>
+      <tr>
+        <td><label>קטגוריה</label></td>
+        <td>
+          <ng-multiselect-dropdown placeholder="בחר קטגוריות " class="form-control" formControlName="categories"
+                                   [data]="this.categoriesService.listCategories"
+                                   [settings]="dropdownSettings">
+          </ng-multiselect-dropdown>
+        </td>
+      </tr>
+      <tr>
+        <td><label>אפשרויות מוצר</label></td>
+        <td>
+          <ng-multiselect-dropdown placeholder="אפשרויות מוצר " class="form-control" formControlName="options"
+                                   [data]="this.productsService.listProductOptions"
+                                   [settings]="dropdownSettings">
+          </ng-multiselect-dropdown>
+        </td>
+      </tr>
+      <tr *ngIf="false">
+        <td> <label>סוג חיה</label></td>
+        <td>
+          <ng-multiselect-dropdown placeholder="סוג חיה" class="form-control" formControlName="typeAnimal"
+                                   [data]="this.typesService.listTypes"
+                                   [settings]="dropdownSettings">
+          </ng-multiselect-dropdown>
+        </td>
+      </tr>
+      <tr>
+        <td><label>חברה</label></td>
+        <td> <input type="text" formControlName="company" class="form-control" /></td>
+      </tr>
 
-    <label>צבע</label><select>
-      <option>צהוב</option>
-      <option>ורוד</option>
-      <option>תכלת</option>
-      <option>חום</option>
-      <option>ירוק</option>
-      <option>כתום</option>
-      <option>בז</option>
-      <option>לבן</option>
-      <option>שחור</option>
-    </select><br />
-    <label>תמונות</label><input type="text" /><br />
-    <label>חברה</label><input type="text" formControlName="company" class="form-control" /><br />
-    <label>מוצרים קשורים</label><input type="text" /><br />
-    <label>סוג חיה</label>
-    <select formControlName="typeAnimal">
-      <option>כלבים</option>
-      <option>חתולים</option>
-    </select><br />
+      <tr>
+        <td><label>תמונות</label></td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><label>מוצרים קשורים</label></td>
+        <td></td>
+      </tr>
+
+    </table>
+    <input type="submit" style="background-color:darkblue; color:white;" class="btn btn-info" value="Submit" />
   </div>
-  <input type="submit" class="btn" value="Submit"  />
 </form>
-   
+
+
 

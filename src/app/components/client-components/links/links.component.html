@@ -1,5 +1,28 @@
-
-<div class="container-fluid">
+<img src='assets/img/image (1).png' />
+<nav class="navbar navbar-inverse">
+  <div style="float:right" class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">מחמדלי</a>
+    </div>
+    <ul style="direction:ltr;" class="nav navbar-nav">
+      <li class="active"><a href="#">דף הבית</a></li>
+      <li class="active"><a href="#">אודות</a></li>
+      <li class="active"><a href="#">צור קשר</a></li>
+      <li *ngFor="let type of typesService.listTypes">
+        <div class="dropdown col-lg-2">
+          <div class="navbar-brand" style="color:white;">{{type.name}}</div>
+          <div class="dropdown-content">
+            <div *ngFor="let category of this.categoriesService.listCategories|getCategoriesByType:type._id">
+              <a (click)="chooseCategory(type._id,category)" routerLink="displayProducts">{{category.name}}</a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<!--<div class="container-fluid">
   <div class="row">
     <form class="navbar-form navbar-left col-lg-2" action="/action_page.php">
       <div class="input-group">
@@ -59,7 +82,7 @@
         <div><span style="font-family:Tahoma"><b>דף הבית</b></span></div>
         <i class="fa fa-caret-down"></i>
       </button>
-     
+
     </div>
 
     <div class="dropdown col-lg-2">
@@ -68,6 +91,4 @@
       </button>
     </div>
   </div>
-</div>
-
-
+</div>-->

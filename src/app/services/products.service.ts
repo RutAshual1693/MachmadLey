@@ -7,6 +7,7 @@ export class ProductsService {
   public listProducts:Array<object>;
   public listProductOptions: Array<object>;
   public editProductOption: object;
+  public listProductByCategory: Array<object>;
   constructor(public http: HttpClient) {
     this.getProductOptions();
     this.products();

@@ -22,12 +22,19 @@ import { ProductsBaseComponent } from "./components/administor-components/produc
 import { CategoriesBaseComponent } from "./components/administor-components/categories-base/categories-base.component";
 import { CustomersBaseComponent } from "./components/administor-components/customers-base/customers-base.component";
 import { ProductOptionsBaseComponent } from "./components/administor-components/product-options-base/product-options-base.component";
+import { Component } from "@angular/core/src/metadata/directives";
+import { DisplayProductsComponent } from "./components/client-components/display-products/display-products.component";
 
 export const routes: Routes = [
 
   {
-    path: "links",
-    component: LinksComponent,
+    path: "client",
+    component: ClientComponent,
+    children: [
+      {
+        path: "displayProducts",
+        component: DisplayProductsComponent
+      }]
   },
   {
     path: "home",

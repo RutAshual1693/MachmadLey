@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="product-layout col-md-4 col-sm-6" *ngFor="let product of paginationService.pagedItems">
+    <img width="180" class="img-responcive" alt="{{product.name}}" title="{{product.name}}" src="assets/pictures/b.jpg" />
+    <span class="icon-view">
+    <strong><i class="fa fa-eye"></i></strong>
+    </span>
+    <span style="font-family:Tahoma;">{{product.name}}</span>
+    <br />
+    <div class="img-rounded" alt="Cinque Terre"><b>{{product.price}}</b></div><br />
+    <button type="button"  (click)="addBag()">
+      <img src="assets\img\icons\cart.png" />
+      <span>הוספה לסל</span>
+    </button>
+  </div>
+</div>
+
+<!---------------------------
+pagination--------------------------------------------------------------------
+---------------------------->
+ <ul  *ngIf="paginationService.pager.pages && paginationService.pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:paginationService.pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:paginationService.pager.currentPage === 1}">
+                    <a (click)="setPage(paginationService.pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of paginationService.pager.pages" [ngClass]="{active:paginationService.pager.currentPage === page}">
+                    <a (click)="paginationService.setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:paginationService.pager.currentPage === paginationService.pager.totalPages}">
+                    <a (click)="paginationService.setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:paginationService.pager.currentPage === paginationService.pager.totalPages}">
+                    <a (click)="paginationService.setPage(paginationService.pager.totalPages)">Last</a>
+                </li>
+            </ul>  
+    <hr />
+

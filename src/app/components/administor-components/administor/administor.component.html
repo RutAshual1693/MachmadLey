@@ -2,171 +2,171 @@
   .rtl {
     direction: rtl;
   }
+
 </style>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-9">
-      <router-outlet></router-outlet>
-    </div>
-    <div class="col-lg-3">
-      <div class="sidebar-menu fixed">
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a href="#main" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home"></span>ראשי</a>
-              </h4>
-              <div id="main" class="panel-collapse collapse in">
-                <div class="panel-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="col-lg-3">
+        <div class="sidebar-menu fixed">
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a href="#main" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home"></span>ראשי</a>
+                </h4>
+                <div id="main" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a href="#storeManagement" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-wrench"></span>ניהול חנות</a>
-                </h4>
+            <div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a href="#storeManagement" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-wrench"></span>ניהול חנות</a>
+                  </h4>
+                </div>
               </div>
-            </div>
 
-            <div id="storeManagement" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a routerLink="productsBase">מוצרים</a>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a routerLink="categoriesBase">קטגוריות</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a routerLink="productOptionsBase">אפשרויות מוצר</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a href="#">תכונות</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a href="#">שיטות משלוח</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a href="#">שרותי הובלה</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a href="#">דפי תוכן</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a href="#">מבצעים</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a href="#">באנרים</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="categories">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                      <a href="#">סגנון עיצובי לחנות</a>
-                    </td>
-                  </tr>
-                </table>
+              <div id="storeManagement" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <table class="table">
+                    <tr>
+                      <td class="root-level has-sub">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a routerLink="productsBase">מוצרים</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a routerLink="categoriesBase">קטגוריות</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a routerLink="productOptionsBase">אפשרויות מוצר</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="#">תכונות</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="#">שיטות משלוח</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="#">שרותי הובלה</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="#">דפי תוכן</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="#">מבצעים</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="#">באנרים</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="categories">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <a href="#">סגנון עיצובי לחנות</a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               </div>
-            </div>
 
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a href="#customersAndOrders" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-user"></span>לקוחות והזמנות</a>
-                </h4>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a href="#customersAndOrders" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-user"></span>לקוחות והזמנות</a>
+                  </h4>
+                </div>
               </div>
-            </div>
 
-            <div id="customersAndOrders" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-flash text-success"></span>
-                      <a routerLink="customersBase" href="#">לקוחות</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-flash text-success"></span>
-                      <a href="#">הזמנות</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-flash text-success"></span>
-                      <a href="#">אפשרויות מוצר</a>
-                    </td>
-                  </tr>
-                </table>
+              <div id="customersAndOrders" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <table class="table">
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-flash text-success"></span>
+                        <a routerLink="customersBase" href="#">לקוחות</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-flash text-success"></span>
+                        <a href="#">הזמנות</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-flash text-success"></span>
+                        <a href="#">אפשרויות מוצר</a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a href="#storeSetting" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-cog"></span>הגדרות חנות</a>
-                </h4>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a href="#storeSetting" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-cog"></span>הגדרות חנות</a>
+                  </h4>
+                </div>
               </div>
-            </div>
 
-            <div id="storeSetting" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-flash text-success"></span>
-                      <a href="#">מוצרים</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-flash text-success"></span>
-                      <a href="#">קטגוריות</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="glyphicon glyphicon-flash text-success"></span>
-                      <a href="#">אפשרויות מוצר</a>
-                    </td>
-                  </tr>
-                </table>
+              <div id="storeSetting" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <table class="table">
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-flash text-success"></span>
+                        <a href="#">מוצרים</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-flash text-success"></span>
+                        <a href="#">קטגוריות</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="glyphicon glyphicon-flash text-success"></span>
+                        <a href="#">אפשרויות מוצר</a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
