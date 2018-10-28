@@ -4,13 +4,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\add",
     "\\src\\app\\components\\client-components",
     "\\src\\app\\components\\client-components\\display-products",
+    "\\src\\app\\components\\client-components\\links",
     "\\src\\app\\components\\client-components\\products",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\tsconfig.json",
+  "SelectedNode": "\\src\\app\\components\\client-components\\links\\links.component.html",
   "PreviewInSolutionExplorer": false
 }
