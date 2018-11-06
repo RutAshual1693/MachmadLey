@@ -1,18 +1,25 @@
 
 <div class="container">
-  <div class="col-md-4 col-sm-6" *ngFor="let product of paginationService.pagedItems">
-    <img width="180"
-         alt="{{product.name}}" title="{{product.name}}" src="assets/pictures/b.jpg" /><br />
+  <span *ngFor="let product of paginationService.pagedItems" style="background-color:rgb(252, 252, 252); margin:10px;" class="col-md-3 col-sm-6">
+    <a>
+      <img width="180"
+           alt="{{product.name}}" title="{{product.name}}" style="cursor:pointer;" (click)="productDetails(product)" routerLink="productDetails" src="assets/pictures/b.jpg" />
+      <span class="icon-view">
+        <strong>
+          <i class="fa fa-eye"></i>
+        </strong>
+      </span><br />
+    </a>
     <span style="font-family:Tahoma;">{{product.name}}</span>
     <br />
-    <div><b>{{product.price}}</b></div><br />
-    <button type="button" (click)="addBag()">
+    <b>{{product.price}}</b><br />
+    <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(product)">
       <img src="assets\img\icons\cart.png" />
       <span>הוספה לסל</span>
     </button>
-  </div>
+  </span>
 </div>
-
+<app-sopping-cart></app-sopping-cart>
 <!---------------------------
 pagination--------------------------------------------------------------------
 ---------------------------->
@@ -36,3 +43,4 @@ pagination--------------------------------------------------------------------
   </ul>
   <hr />
 </div>
+<app-base-client-p></app-base-client-p>

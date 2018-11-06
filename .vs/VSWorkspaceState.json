@@ -4,12 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
+    "\\src\\app\\components\\administor-components",
     "\\src\\app\\components\\client-components",
     "\\src\\app\\components\\client-components\\display-products",
     "\\src\\app\\components\\client-components\\links",
-    "\\src\\app\\components\\client-components\\products",
-    "\\src\\app\\services"
+    "\\src\\app\\components\\client-components\\product-details",
+    "\\src\\app\\components\\client-components\\sopping-cart"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\links\\links.component.html",
+  "SelectedNode": "\\src\\app\\components\\client-components\\product-details\\product-details.component.html",
   "PreviewInSolutionExplorer": false
 }

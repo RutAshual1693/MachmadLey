@@ -49,9 +49,13 @@ import { DisplayProductsComponent } from './components/client-components/display
 import { PaginationService } from './services/pagination.service';
 import { TypesService } from './services/types.service';
 import { CustomersService } from './services/customers.service';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+import { SoppingCartComponent } from './components/client-components/sopping-cart/sopping-cart.component';
+import { ProductDetailsComponent } from './components/client-components/product-details/product-details.component';
+import { BaseClientPComponent } from './components/client-components/base-client-p/base-client-p.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +87,10 @@ import { CustomersService } from './services/customers.service';
     ProductOptionsBaseComponent,
     AddProductOptionComponent,
     DisplayProductsComponent,
+    SoppingCartComponent,
+    ProductDetailsComponent,
+    BaseClientPComponent,
+
     
   ],
   imports: [
@@ -92,9 +100,11 @@ import { CustomersService } from './services/customers.service';
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     NgMultiSelectDropDownModule.forRoot(),
-    EditorModule
+    EditorModule,
+    FontAwesomeModule,
+    Angular2FontawesomeModule 
   ],
-  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService],
+  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService, ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

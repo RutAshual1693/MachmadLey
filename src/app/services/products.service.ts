@@ -4,10 +4,13 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ProductsService {
+ public homePage: boolean = true;
   public listProducts:Array<object>;
   public listProductOptions: Array<object>;
   public editProductOption: object;
   public listProductByCategory: Array<object>;
+  public showProductDetails: object = [];
+  public showProductOptions: Array< object> = [];
   constructor(public http: HttpClient) {
     this.getProductOptions();
     this.products();

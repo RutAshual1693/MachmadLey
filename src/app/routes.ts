@@ -24,16 +24,27 @@ import { CustomersBaseComponent } from "./components/administor-components/custo
 import { ProductOptionsBaseComponent } from "./components/administor-components/product-options-base/product-options-base.component";
 import { Component } from "@angular/core/src/metadata/directives";
 import { DisplayProductsComponent } from "./components/client-components/display-products/display-products.component";
+import { BaseClientPComponent } from "./components/client-components/base-client-p/base-client-p.component";
+import { ProductDetailsComponent } from "./components/client-components/product-details/product-details.component";
 
 export const routes: Routes = [
-
   {
     path: "client",
     component: ClientComponent,
     children: [
       {
-        path: "displayProducts",
-        component: DisplayProductsComponent
+        path: "baseClientP",
+        component: BaseClientPComponent,
+        children: [{
+          path: "",
+          component: DisplayProductsComponent
+        },
+          {
+            path: "productDetails",
+            component: ProductDetailsComponent
+          }
+          
+        ]
       }]
   },
   {

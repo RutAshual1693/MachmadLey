@@ -18,6 +18,7 @@ export class LinksComponent implements OnInit {
   {
   }
   chooseCategory(typeId, category) {
+    this.productsService.homePage = false;
     this.productsService.listProductByCategory = this.productsService.listProducts
       .filter(x => x["categories"]
         .find(y => (y["_id"]) == category._id) != null && x["typeAnimal"]
