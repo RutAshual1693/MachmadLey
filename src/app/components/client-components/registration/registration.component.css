@@ -1,0 +1,16 @@
+.form-control:focus {
+  border-color: #6c6c6d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6c6c6d;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6c6c6d;
+}
+
+.btn {
+  float: initial;
+  background-color: rgba(8, 25, 73,0.8);
+  border-color: rgba(8, 25, 73,0.8);
+  /* height: 100%; */
+  color: #6c6c6d;
+  /* width: 40%; */
+  border-radius: 0px;
+  width:200px;
+}

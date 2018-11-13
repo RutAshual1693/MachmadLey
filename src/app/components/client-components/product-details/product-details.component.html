@@ -67,11 +67,11 @@
         </select><br />
       </li>
     </ul>
-    <!--<div class="row">
-      <button class="btn">+</button>
-      <input type="text" style="width: 50px;">
-      <button class="btn" (click)="shoppingCartService.removeProductFromCart(product,i)">-</button>
-      <button class="btn">הוספה לסל</button>
-    </div>-->
+    <div class="row">
+      <b>כמות:</b>
+      <input type="number" style="width: 50px;" [(ngModel)]="quantity">
+      <br />
+      <button class="btn" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity)">הוספה לסל</button>
+    </div>
   </div>
 </div>

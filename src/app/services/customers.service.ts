@@ -33,6 +33,14 @@ export class CustomersService {
       (data: object[]) => this.listCustomers = data
     );
   }
+  checkCustomer(frm) {
+    if (this.listCustomers.find(x => x["firstName"] == frm.firstName && x["password"] == frm.password) != null) {
+      console.log(true);
+      return true;
+    }
+    console.log(false);
+    return false;
+  }
   edit(frm) {
     this.http.post<object[]>("/editCustomers", this.editCustomer).subscribe(
       (data: object[]) => this.listCustomers = data

@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components",
     "\\src\\app\\components\\client-components",
     "\\src\\app\\components\\client-components\\display-products",
     "\\src\\app\\components\\client-components\\links",
-    "\\src\\app\\components\\client-components\\product-details",
-    "\\src\\app\\components\\client-components\\sopping-cart"
+    "\\src\\app\\components\\client-components\\login",
+    "\\src\\app\\components\\client-components\\registration",
+    "\\src\\app\\components\\client-components\\sign-up"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\product-details\\product-details.component.html",
+  "SelectedNode": "\\server.js",
   "PreviewInSolutionExplorer": false
 }

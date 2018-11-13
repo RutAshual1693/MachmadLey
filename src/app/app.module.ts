@@ -56,6 +56,9 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
 import { SoppingCartComponent } from './components/client-components/sopping-cart/sopping-cart.component';
 import { ProductDetailsComponent } from './components/client-components/product-details/product-details.component';
 import { BaseClientPComponent } from './components/client-components/base-client-p/base-client-p.component';
+import { RegistrationComponent } from './components/client-components/registration/registration.component';
+import { SignUpComponent } from './components/client-components/sign-up/sign-up.component';
+import { LoginComponent } from './components/client-components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +93,9 @@ import { BaseClientPComponent } from './components/client-components/base-client
     SoppingCartComponent,
     ProductDetailsComponent,
     BaseClientPComponent,
+    RegistrationComponent,
+    SignUpComponent,
+    LoginComponent,
 
     
   ],
