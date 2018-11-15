@@ -37,7 +37,7 @@ export class ShoppingCartService {
   removeProductFromCart(product, index, quantity) {
     this.finalQuantity += quantity;
     product.quantity += quantity;
-    this.finalPrice -= product.price * quantity;
+    this.finalPrice += product.price * quantity;
   
     if (product.quantity == 0)
       this.shoppingCartList.splice(index, 1);
