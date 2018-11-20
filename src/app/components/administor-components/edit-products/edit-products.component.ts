@@ -11,6 +11,7 @@ export class EditProductsComponent implements OnInit {
   
     }
   ngOnInit() {
+
   }
   clicked() {
     this.showAdd = false;

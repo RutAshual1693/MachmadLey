@@ -1,79 +1,84 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-  <div class="form-group">
-    <table class="table" style="border:hidden;">
-      <tr>
-        <td><label>שם מוצר</label></td>
-        <td> <input type="text" formControlName="name" /></td>
-      </tr>
-      <tr>
-        <td><label>תאור</label></td>
-        <td><editor apiKey="test" formControlName="prodDescription" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor></td>
-      </tr>
-      <tr>
-        <td><label>מודל</label></td>
-        <td> <input type="text" class="form-control" formControlName="model" /></td>
-      </tr>
-      <tr>
-        <td><label>מחיר</label></td>
-        <td><input type="number" class="form-control" formControlName="price" /></td>
-      </tr>
-      <tr>
-        <td><label>כמות במלאי</label></td>
-        <td><input type="number" class="form-control" formControlName="quantity" /></td>
-      </tr>
-      <tr>
-        <td> <label>כמות מינימאלית להזמנה</label></td>
-        <td> <input type="number" class="form-control" formControlName="minQuantityInOrder" /></td>
-      </tr>
-      <tr>
-        <td><label>שם יחודי לקישור</label></td>
-        <td><input type="text" formControlName="uniqueNameToLink" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><label>קטגוריה</label></td>
-        <td>
-          <ng-multiselect-dropdown placeholder="בחר קטגוריות " class="form-control" formControlName="categories"
-                                   [data]="this.categoriesService.listCategories"
-                                   [settings]="dropdownSettings">
-          </ng-multiselect-dropdown>
-        </td>
-      </tr>
-      <tr>
-        <td><label>אפשרויות מוצר</label></td>
-        <td>
-          <ng-multiselect-dropdown placeholder="אפשרויות מוצר " class="form-control" formControlName="options"
-                                   [data]="this.productsService.listProductOptions"
-                                   [settings]="dropdownSettings">
-          </ng-multiselect-dropdown>
-        </td>
-      </tr>
-      <tr *ngIf="false">
-        <td> <label>סוג חיה</label></td>
-        <td>
-          <ng-multiselect-dropdown placeholder="סוג חיה" class="form-control" formControlName="typeAnimal"
-                                   [data]="this.typesService.listTypes"
-                                   [settings]="dropdownSettings">
-          </ng-multiselect-dropdown>
-        </td>
-      </tr>
-      <tr>
-        <td><label>חברה</label></td>
-        <td> <input type="text" formControlName="company" class="form-control" /></td>
-      </tr>
+<main class="page-content">
+  <div class="container-fluid">
+    <div class="w3-panel w3-card">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <div class="form-group">
+          <table class="table" style="border:hidden;">
+            <tr>
+              <td><label>שם מוצר</label></td>
+              <td> <input type="text" formControlName="name" /></td>
+            </tr>
+            <tr>
+              <td><label>תאור</label></td>
+              <td><editor apiKey="test" formControlName="prodDescription" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor></td>
+            </tr>
+            <tr>
+              <td><label>מודל</label></td>
+              <td> <input type="text" class="form-control" formControlName="model" /></td>
+            </tr>
+            <tr>
+              <td><label>מחיר</label></td>
+              <td><input type="number" class="form-control" formControlName="price" /></td>
+            </tr>
+            <tr>
+              <td><label>כמות במלאי</label></td>
+              <td><input type="number" class="form-control" formControlName="quantity" /></td>
+            </tr>
+            <tr>
+              <td> <label>כמות מינימאלית להזמנה</label></td>
+              <td> <input type="number" class="form-control" formControlName="minQuantityInOrder" /></td>
+            </tr>
+            <tr>
+              <td><label>שם יחודי לקישור</label></td>
+              <td><input type="text" formControlName="uniqueNameToLink" class="form-control" /></td>
+            </tr>
+            <tr>
+              <td><label>קטגוריה</label></td>
+              <td>
+                <ng-multiselect-dropdown placeholder="בחר קטגוריות " class="form-control" formControlName="categories"
+                                         [data]="this.categoriesService.listCategories"
+                                         [settings]="dropdownSettings">
+                </ng-multiselect-dropdown>
+              </td>
+            </tr>
+            <tr>
+              <td><label>אפשרויות מוצר</label></td>
+              <td>
+                <ng-multiselect-dropdown placeholder="אפשרויות מוצר " class="form-control" formControlName="options"
+                                         [data]="this.productsService.listProductOptions"
+                                         [settings]="dropdownSettings">
+                </ng-multiselect-dropdown>
+              </td>
+            </tr>
+            <tr *ngIf="false">
+              <td> <label>סוג חיה</label></td>
+              <td>
+                <ng-multiselect-dropdown placeholder="סוג חיה" class="form-control" formControlName="typeAnimal"
+                                         [data]="this.typesService.listTypes"
+                                         [settings]="dropdownSettings">
+                </ng-multiselect-dropdown>
+              </td>
+            </tr>
+            <tr>
+              <td><label>חברה</label></td>
+              <td> <input type="text" formControlName="company" class="form-control" /></td>
+            </tr>
 
-      <tr>
-        <td><label>תמונות</label></td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td><label>מוצרים קשורים</label></td>
-        <td></td>
-      </tr>
+            <tr>
+              <td><label>תמונות</label></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td><label>מוצרים קשורים</label></td>
+              <td></td>
+            </tr>
 
-    </table>
-    <input type="submit" style="background-color:darkblue; color:white;" class="btn btn-info" value="Submit" />
+          </table>
+          <input type="submit" style="background-color:darkblue; color:white;" class="btn btn-info" value="Submit" />
+        </div>
+      </form>
+    </div>
   </div>
-</form>
-
+  
 
 

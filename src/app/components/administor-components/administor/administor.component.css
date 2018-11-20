@@ -24,3 +24,13 @@ body {
   .panel-body .table {
     margin-bottom: 0px;
   }
+a:hover {
+  background-color: rgba(39, 12, 177,0.3);
+}
+a {
+  font-size: 17px;
+  font-family: Tahoma;
+}
+.active1 {
+  background-color: rgba(39, 12, 177,0.3);
+}
