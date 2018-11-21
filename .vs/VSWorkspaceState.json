@@ -4,13 +4,17 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\administor",
     "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\display-products",
     "\\src\\app\\components\\client-components\\links",
-    "\\src\\app\\components\\client-components\\login"
+    "\\src\\assets",
+    "\\src\\assets\\js",
+    "\\src\\assets\\js\\bootstrap",
+    "\\src\\assets\\js\\flot",
+    "\\src\\assets\\js\\jquery",
+    "\\src\\assets\\js\\metisMenu",
+    "\\src\\assets\\js\\morris",
+    "\\src\\assets\\js\\raphael"
   ],
-  "SelectedNode": "\\src\\index.html",
+  "SelectedNode": "\\src\\app\\components\\client-components\\links\\links.component.ts",
   "PreviewInSolutionExplorer": false
 }

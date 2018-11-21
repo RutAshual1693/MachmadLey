@@ -29,6 +29,7 @@ import { AddCategoryComponent } from './components/administor-components/add-cat
 import { EditCategoryComponent } from './components/administor-components/edit-category/edit-category.component';
 import { ProductOptionsComponent } from './components/administor-components/product-options/product-options.component';
 import { ClientComponent } from './components/client-components/client/client.component';
+import { CarouselAdvertisingComponent } from './components/client-components/carousel-advertising/carousel-advertising.component';
 import { ListProductComponent } from './components/client-components/list-product/list-product.component';
 import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
@@ -96,7 +97,7 @@ import { LoginComponent } from './components/client-components/login/login.compo
     RegistrationComponent,
     SignUpComponent,
     LoginComponent,
-
+    CarouselAdvertisingComponent
     
   ],
   imports: [
