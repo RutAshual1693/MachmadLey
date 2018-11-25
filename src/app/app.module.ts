@@ -60,6 +60,8 @@ import { BaseClientPComponent } from './components/client-components/base-client
 import { RegistrationComponent } from './components/client-components/registration/registration.component';
 import { SignUpComponent } from './components/client-components/sign-up/sign-up.component';
 import { LoginComponent } from './components/client-components/login/login.component';
+import { EditProductComponent } from './components/administor-components/edit-product/edit-product.component';
+import { DesignSettingComponent } from './components/administor-components/design-setting/design-setting.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +99,9 @@ import { LoginComponent } from './components/client-components/login/login.compo
     RegistrationComponent,
     SignUpComponent,
     LoginComponent,
-    CarouselAdvertisingComponent
+    CarouselAdvertisingComponent,
+    EditProductComponent,
+    DesignSettingComponent
     
   ],
   imports: [

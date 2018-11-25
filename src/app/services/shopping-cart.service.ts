@@ -13,7 +13,7 @@ export class ShoppingCartService {
   constructor(private productsService: ProductsService) { }
   p;
   addProductToCart(product,quantity) {
-    if (product["inStock"] == true) {
+    if (product["inStock"] == "קיים במלאי") {
       this.add(product, this.shoppingCartList.find(x => x["_id"] == product["_id"]),quantity);
     }
     if (product["inStock"] == undefined)

@@ -42,7 +42,8 @@ export class CustomersService {
     return false;
   }
   edit(frm) {
-    this.http.post<object[]>("/editCustomers", this.editCustomer).subscribe(
+    var o = { _id: this.editCustomer["_id"], customer: frm };
+    this.http.post<object[]>("/editCustomer", o).subscribe(
       (data: object[]) => this.listCustomers = data
     );
   }

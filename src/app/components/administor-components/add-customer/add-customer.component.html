@@ -1,15 +1,31 @@
+
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-  <div class="form-group">
-    <label>שם פרטי:</label>
-    <input class="form-control" formControlName="firstName" type="text" />
-    <label>שם משפחה</label>
-    <input class="form-control" formControlName="lastName" type="text" />
-    <label>דוא"ל</label>
-    <input class="form-control" formControlName="mail" type="email" />
-    <label>סיסמא</label>
-    <input class="form-control" formControlName="password" type="password" />
-    <label>אימות סיסמא</label>
-    <input class="form-control" formControlName="confirmPassword" type="password" />
-    <input type="submit" class="btn" value="Submit" />
-  </div>
+  <main class="page-content">
+    <div class="container-fluid">
+      <div class="w3-panel w3-card">
+        <br />
+        <div class="col-lg-1"></div>
+        <div class="col-md-8"></div>
+        <div class="form-group col-md-3">
+          <h2 style="color: rgb(33, 9, 103,0.9);">הוספת לקוח </h2>
+        </div>
+        <br /><br />
+        <br /><br />
+        <div class="form-group">
+          <label>שם פרטי:</label>
+          <input class="form-control" formControlName="firstName" type="text" />
+          <label>שם משפחה</label>
+          <input class="form-control" formControlName="lastName" type="text" />
+          <label>דוא"ל</label>
+          <input class="form-control" formControlName="mail" type="email" />
+          <label>סיסמא</label>
+          <input class="form-control" formControlName="password" type="password" />
+          <label>אימות סיסמא</label>
+          <input class="form-control" formControlName="confirmPassword" type="password" />
+          <input type="submit" class="btn" value="Submit" />
+        </div>
+
+      </div>
+    </div>
+  </main>
 </form>

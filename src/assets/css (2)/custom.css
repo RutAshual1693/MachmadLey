@@ -510,21 +510,21 @@ body {
 /*--------------------------page-content-----------------------------*/
 
 .page-wrapper .page-content {
-    display: inline-block;
-    width: 100%;
-    padding-right: 0px;
-    padding-top: 20px;
-    background-color:transparent;
+  display: inline-block;
+  width: 100%;
+  padding-right: 0px;
+  padding-top: 20px;
+  background-color: #F7F7F7;
 }
 
   .page-wrapper .page-content > div {
     padding: 20px 40px;
-    background-color: transparent;
+    background-color: #F7F7F7;
   }
 
 .page-wrapper .page-content {
   overflow-x: hidden;
-  background-color: transparent;
+  background-color: #F7F7F7;
 }
 
 /*----------------  Scroll bar style   --------------- */

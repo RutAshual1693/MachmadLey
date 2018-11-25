@@ -26,6 +26,9 @@ import { Component } from "@angular/core/src/metadata/directives";
 import { DisplayProductsComponent } from "./components/client-components/display-products/display-products.component";
 import { BaseClientPComponent } from "./components/client-components/base-client-p/base-client-p.component";
 import { ProductDetailsComponent } from "./components/client-components/product-details/product-details.component";
+import { EditProductComponent } from "./components/administor-components/edit-product/edit-product.component";
+import { DesignSettingComponent } from "./components/administor-components/design-setting/design-setting.component";
+import { AddProductOptionComponent } from "./components/administor-components/add-product-option/add-product-option.component";
 
 export const routes: Routes = [
   {
@@ -60,12 +63,20 @@ export const routes: Routes = [
     component: AdministorComponent,
     children: [
       {
+        path: "designSetting",
+        component: DesignSettingComponent
+      },
+      {
         path: "productsBase",
         component: ProductsBaseComponent,
         children: [
           {
             path: "add",
             component: AddComponent,
+          },
+          {
+            path: "editProduct2",
+            component: EditProductComponent,
           },
           {
             path: "",
@@ -86,7 +97,7 @@ export const routes: Routes = [
                 component: AddCustomerComponent,
               },
               {
-                path: "editCastomer",
+                path: "editCustomer",
                 component: EditCustomerComponent,
               },
               {
@@ -128,6 +139,10 @@ export const routes: Routes = [
           path: "editProductOption",
           component: EditProductOptionComponent
         },
+          {
+            path: "addProductOption",
+            component: AddProductOptionComponent
+          },
           {
             path: "",
             component:ProductOptionsComponent

@@ -1,0 +1,28 @@
+.myPanel {
+  width: 100%;
+  padding: 10px 17px;
+  display: inline-block;
+  background-color: rgb(255, 251, 251,0.9);
+  border: 1px solid #E6E9ED;
+  -webkit-column-break-inside: avoid;
+  /*-moz-column-break-inside: avoid;
+  column-break-inside: avoid;*/
+  opacity: 1;
+  transition: all .2s ease;
+}
+td important {
+  font-size: 14px;
+  font-family: Tahoma;
+  padding: 20px 20px;
+}
+
+b {
+  font-size: 16px;
+}
+.myActionStyle ul li a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 30px 8px 20px;
+}

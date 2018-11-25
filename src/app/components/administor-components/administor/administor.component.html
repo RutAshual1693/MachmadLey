@@ -7,8 +7,28 @@
 
 
 
-<div class="page-wrapper chiller-theme sidebar-bg bg1 toggled"  style="background-color:
-  " dir="rtl">
+<div class="page-wrapper chiller-theme sidebar-bg bg1 toggled" style="background-color:#F7F7F7" dir="rtl">
+  <nav class="heading"  style="position:fixed;">
+    <ul>
+      <li>
+        <a class="" id="dropdownMenuNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-bell" style="color:black;"></i>
+          <span class="badge badge-pill badge-warning notification" style="color:black;">3</span>
+        </a>
+      </li>
+  <li><a>
+  <i class="glyphicon glyphicon-home"  style="color:black;"></i>
+</a></li>
+  <li>
+    <a class="" routerLink="designSetting">
+      <i class="fa fa-cog"  style="color:black;"></i>
+      <span class="badge-sonar"  style="color:black;"></span>
+    </a>
+  </li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+  <br /><br />
   <a id="show-sidebar" class="btn btn-sm btn-dark" >
     <i class="fas fa-bars"></i>
   </a>
@@ -61,11 +81,10 @@
               <span>ראשי</span>
             </a>
           </li>
-          <li class="sidebar-dropdown" [class.active1]="active=='storeManagment'"(click)="clicked('storeManagment')">
-            <a ><i class="glyphicon glyphicon-wrench"></i>ניהול חנות</a>
+          <li class="sidebar-dropdown" >
+            <a [class.active1]="active=='storeManagment'"(click)="clicked('storeManagment')"><i class="glyphicon glyphicon-wrench"></i>ניהול חנות</a>
             <div class="sidebar-submenu">
-              <ul (click)="clicked()">
-
+              <ul (click)="clicked('')">
                 <li>
                   <a routerLink="productsBase">מוצרים                
                   </a>
@@ -79,8 +98,8 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown" >
-            <a ><i class="glyphicon glyphicon-user" ></i>לקוחות והזמנות</a>
+          <li class="sidebar-dropdown"  >
+            <a [class.active1]="active=='customersAndOrder'"(click)="clicked('customersAndOrder')"><i class="glyphicon glyphicon-user" ></i>לקוחות והזמנות</a>
             <div class="sidebar-submenu">
               <ul (click)="clicked()">
                 <li>
@@ -184,7 +203,7 @@
       <!-- sidebar-menu  -->
     </div>
     <!-- sidebar-content  -->
-    <div class="sidebar-footer">
+    <!--<div class="sidebar-footer">
       <div class="dropdown">
         <a  class="" id="dropdownMenuNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bell"></i>
@@ -309,7 +328,7 @@
           <i class="fa fa-power-off"></i>
         </a>
       </div>
-    </div>
+    </div>-->
   </nav>
   <router-outlet>
 
@@ -320,7 +339,7 @@
 
   <!-- page-content" -->
 </div>
-
+<!--<nav class="navbar navbar-defult"></nav>-->
 
 <!--<style type="text/css">
   .rtl {

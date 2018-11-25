@@ -1,25 +1,43 @@
-<div class="container">
-  <table class="table">
-    <tr>
-      <td><b>name</b> </td>
-      <td><b>option</b></td>
-    </tr>
-    <tr *ngFor="let option of productsService.listProductOptions">
-      <td>{{option.name}}</td>
-      <td><span *ngFor="let value of option.values">{{value}},</span></td>
-      <td style="height:auto">
-        <div style="direction:ltr;" class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-               פעולה
-            <span class="caret"></span>
-          </button>
-          <ul style="direction:ltr;" class="dropdown-menu">
-            <li><a (click)="editOption(option)" routerLink="editProductOption">עריכה</a></li>
-            <li><a  (click)="delete(option)">מחיקה</a></li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
-<app-product-options-base></app-product-options-base>
+
+
+
+<main class="page-content">
+  <div class="container-fluid">
+    <div class="w3-panel w3-card">
+      <br />
+      <div class="col-lg-1"><img src="assets/icons/plus (13).png" routerLink="addProductOption" style="text-align:center;cursor:pointer;" alt="הוסף" title="הוסף אפשרות מוצר" /></div>
+      <div class="col-md-8"></div>
+      <div class="form-group col-md-3">
+        <h2 style="color:#260e6d;">אפשרויות מוצר </h2>
+      </div>
+      <br /><br />
+      <br /><br />
+      <div class="container">
+        <table class="table">
+          <tr>
+            <td><b>name</b> </td>
+            <td><b>option</b></td>
+          </tr>
+          <tr *ngFor="let option of productsService.listProductOptions">
+            <td>{{option.name}}</td>
+            <td><span *ngFor="let value of option.values">{{value}},</span></td>
+            <td style="height:auto">
+              <div style="direction:ltr;" class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                  פעולה
+                  <span class="caret"></span>
+                </button>
+                <ul style="direction:ltr;" class="dropdown-menu">
+                  <li><a (click)="editOption(option)" routerLink="editProductOption">עריכה</a></li>
+                  <li><a (click)="delete(option)">מחיקה</a></li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <app-product-options-base></app-product-options-base>
+    </div>
+  </div>
+  <app-products-base></app-products-base>
+</main>

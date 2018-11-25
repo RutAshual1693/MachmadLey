@@ -10,8 +10,10 @@ export class AdministorComponent implements OnInit {
   constructor() { }
   public show: boolean = true;
   clicked(value) {
-    this.show = false;
+    if (value != '')
     this.active = value;
+    this.show = false;
+
   }
   ngOnInit() {
    

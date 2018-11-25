@@ -23,7 +23,8 @@ export class LinksComponent implements OnInit {
       .filter(x => x["categories"]
         .find(y => (y["_id"]) == category._id) != null && x["typeAnimal"]
           .find(y1 => y1["_id"] == typeId) != null);
-    this.paginationService.setPage(1);;
+    this.paginationService.setPage(1);
+    this.productsService.showHome = false;
   }
   ngOnInit() {
     

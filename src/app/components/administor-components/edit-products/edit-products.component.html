@@ -2,12 +2,12 @@
 
 <main class="page-content">
   <div class="container-fluid">
-    <div class="w3-panel w3-card">
+    <div  class="myPanel">
       <br />
-      <div class="col-lg-1"><img src="assets/icons/plus (11).png" routerLink="add" style="text-align:center;cursor:pointer;" alt="הוסף" title="הוסף מוצר" /></div>
+      <div class="col-lg-1"><img src="assets/icons/plus (13).png" routerLink="add" style="text-align:center;cursor:pointer;" alt="הוסף" title="הוסף מוצר" /></div>
       <div class="col-md-8"></div>
-      <div class="form-group col-md-3">
-        <h2 style="color:#221b7d;">רשימת מוצרים </h2>
+      <div class="form-group col-md-3" style="margin-bottom: 10px;">
+        <h2 style="color:#260e6d;">רשימת מוצרים </h2>
       </div>
       <br /><br />
       <br /><br />
@@ -20,7 +20,7 @@
             <td><b>מחיר</b></td>
             <td><b>זמינות</b></td>
             <td><b>עריכה</b></td>
-            <td><b>עריכה</b></td>
+            <td><b>מחיקה</b></td>
           </tr>
         </thead>
         <tbody>
@@ -28,17 +28,32 @@
             <td>
               <img width="100" src="/assets/pictures/toy/toy1.jpg" />
             </td>
-            <td style="top:50px;">{{product.name}}</td>
-            <td>{{product.model}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.availability}}</td>
+            <td><br /><br />{{product.name}}</td>
+            <td><br /><br />{{product.model}}</td>
+            <td><br /><br />{{product.price}}</td>
+            <td><br /><br />{{product.inStock}}</td>
+     
             <td>
-              <a (click)="edit(pruduct)" routerLink="editProduct"><i><img style="cursor:pointer;top:50px;" alt="ערוך מוצר" title="ערוך" src="assets/icons/pencil.png" /></i></a>
+              <br /><br />
+              <a ><i><img  (click)="productsService.editProductClicked(product)"routerLink="editProduct2"style="cursor:pointer;top:50px;" alt="ערוך מוצר" title="ערוך" src="assets/icons/edit.png" /></i></a>
             </td>
             <td>
-              <a (click)="delete(product)"><i><img src="assets/icons/garbage.png" style="cursor:pointer;top:50px;" alt="מחק מוצר" title="מחק" /></i></a>
+              <br /><br />
+              <a (click)="delete(product)"><i><img src="assets/icons/delete.png" style="cursor:pointer;top:50px;" alt="מחק מוצר" title="מחק" /></i></a>
             </td>
-
+            <!--<td>
+    <br /><br />
+    <div style="direction:ltr;" class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        פעולה
+        <span class="caret"></span>
+      </button>
+      <ul style="direction:ltr;" class="dropdown-menu">
+        <li><a (click)="editCustomerClicked(customer)" routerLink="editCustomer">עריכה</a></li>
+        <li><a (click)="delete(customer)">מחיקה</a></li>
+      </ul>
+    </div>
+  </td>-->
           </tr>
         </tbody>
       </table>

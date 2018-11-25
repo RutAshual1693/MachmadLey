@@ -29,6 +29,5 @@ export class DisplayProductsComponent implements OnInit {
   {
     this.productsService.showProductDetails = product;
     this.productsService.showProductOptions = this.productsService.listProductOptions.filter(x =>product.options.find(y=>y._id==x["_id"])!=null);
-
   }
 }
