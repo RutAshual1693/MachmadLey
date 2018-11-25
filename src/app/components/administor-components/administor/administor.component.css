@@ -1,6 +1,7 @@
 
 body {
   margin-top: 50px;
+  background-color:black;
 }
 
 .glyphicon {
@@ -24,13 +25,65 @@ body {
   .panel-body .table {
     margin-bottom: 0px;
   }
-a:hover {
+.sidebar-menu a:hover {
   background-color: rgba(39, 12, 177,0.3);
 }
-a {
+.sidebar-menu a {
   font-size: 17px;
   font-family: Tahoma;
 }
 .active1 {
   background-color: rgba(39, 12, 177,0.3);
+}
+/*.heading ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 60px;
+  background-color: rgb(33, 9, 103,0.9);
+}*/
+
+.heading li {
+  float: left;
+}
+
+.heading li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+
+
+.heading {
+float: right;
+    background: #EDEDED;
+    border-bottom: 1px solid #D9DEE4;
+    margin-bottom: 10px;
+    width: 100%;
+    height:60px;
+    /*position: relative;*/
+}
+.btn-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 300;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }

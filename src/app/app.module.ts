@@ -60,6 +60,8 @@ import { BaseClientPComponent } from './components/client-components/base-client
 import { RegistrationComponent } from './components/client-components/registration/registration.component';
 import { SignUpComponent } from './components/client-components/sign-up/sign-up.component';
 import { LoginComponent } from './components/client-components/login/login.component';
+import { EditProductComponent } from './components/administor-components/edit-product/edit-product.component';
+import { DesignSettingComponent } from './components/administor-components/design-setting/design-setting.component';
 import { HotCategoriesComponent } from './components/client-components/hot-categories/hot-categories.component';
 import { HotProductsComponent } from './components/client-components/hot-products/hot-products.component';
 import { ContactComponent } from './components/client-components/contact/contact.component';
@@ -105,6 +107,8 @@ import { OurCastomersSayComponent } from './components/client-components/our-cas
     CarouselAdvertisingComponent,
     HotCategoriesComponent,
     HotProductsComponent,
+    EditProductComponent,
+    DesignSettingComponent
     ContactComponent,
     AboutAsComponent,
     OurCastomersSayComponent

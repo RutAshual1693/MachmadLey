@@ -4,12 +4,16 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\administor-components",
     "\\src\\app\\components\\client-components\\hot-products",
-    "\\src\\app\\components\\client-components\\links",
+    "\\src\\app\\components\\administor-components\\add",
+    "\\src\\app\\components\\administor-components\\customers",
     "\\src\\app\\components\\client-components\\our-castomers-say",
     "\\src\\app\\services"
+    "\\src\\app\\components\\administor-components\\edit-customer",
+    "\\src\\app\\components\\administor-components\\edit-products"
   ],
+  "SelectedNode": "\\src\\app\\routes.ts",
   "SelectedNode": "\\src\\app\\components\\client-components\\links\\links.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
-
+import { FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { OnInit } from '@angular/core';
 @Injectable()
-export class ProductsService {
+export class ProductsService implements OnInit {
  public homePage: boolean = true;
   public listProducts:Array<object>;
   public listProductOptions: Array<object>;
   public editProductOption: object;
+  public editProduct: object;
+  public editFormProduct;
   public listProductByCategory: Array<object>;
   public showProductDetails: object = [];
   public showProductOptions: Array< object> = [];
@@ -15,13 +19,42 @@ export class ProductsService {
     this.getProductOptions();
     this.products();
   }
-  
+  showHome = true;
+  ngOnInit() {
+
+    //this.editFormProduct = new FormGroup({
+    //  name: new FormControl(""),
+    //  model: new FormControl(""),
+    //  price: new FormControl(""),
+    //  quantity: new FormControl(""),
+    //  inStock: new FormControl(true),
+    //  minQuantityInOrder: new FormControl(""),
+    //  uniqueNameToLink: new FormControl(""),
+    //  categories: new FormControl(""),
+    //  prodDescription: new FormControl(""),
+    //  company: new FormControl(""),
+    //  typeAnimal: new FormControl(""),
+    //  options: new FormControl(""),
+    //  relatedProducts: new FormControl(""),
+    //  img: new FormControl(""),
+    //});
+
+  }
+  editProductClicked(product) {
+    this.editProduct = product;
+
+  }
   products() {
     this.getListProducts().subscribe(
       (data: Array<object>) => {
         this.listProducts = data;
       }
     )
+  }
+  saveProductEditing(product) {
+    var o = { "_id": this.editProduct["_id"], "product": product };
+    this.http.post<Array<object>>('/saveProductEditing', o).subscribe(
+      (data: object[]) => this.listProducts = data);
   }
   getListProducts(): Observable<Array<object>> {
     return this.http.get<Array<object>>('/listProducts');
@@ -35,6 +68,11 @@ export class ProductsService {
       (data: object[]) => this.listProducts = data
     );
   }
+  addProductOption(productOption) {
+    this.http.post<object[]>("/addProductOption", productOption).subscribe(
+      (data: object[]) => this.listProductOptions = data
+    );
+  }
   deleteOption(option) {
    
     this.http.post<object[]>('/deleteOption', option).subscribe(
@@ -42,15 +80,22 @@ export class ProductsService {
       );
 
   }
-  deleteValue() {
-    var o = { "_id": this.editProductOption["_id"], "values": this.editProductOption["values"] };
-    this.http.post<object[]>('/deleteValue', o).subscribe(
+  deleteCategoryFromProduct(_id, categories) {
+    var o = { "_id": _id, "categories": categories };
+    this.http.post<object[]>('/deleteCategoryFromProduct', o).subscribe(
       (data: object[]) => { this.listProducts = data; }
     );
+
   }
+
   deleteProduct(_id) {
     var a = { _id: _id };
     this.http.post<object[]>('/deleteProduct',a).subscribe(
+      (data: object[]) => { this.listProducts = data; }
+    );
+  }
+  d(productOption) {
+    this.http.post<object[]>('/editProductOptions', productOption).subscribe(
       (data: object[]) => { this.listProducts = data; }
     );
   }
