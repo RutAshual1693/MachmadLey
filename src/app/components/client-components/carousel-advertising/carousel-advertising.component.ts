@@ -10,13 +10,7 @@ export class CarouselAdvertisingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $.noConflict();
-    $(document).ready(function () {
-
-      $('#myCarousel').carousel({
-        interval: 3000,
-      });
-    });
+  
   }
 
 }

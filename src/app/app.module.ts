@@ -60,6 +60,11 @@ import { BaseClientPComponent } from './components/client-components/base-client
 import { RegistrationComponent } from './components/client-components/registration/registration.component';
 import { SignUpComponent } from './components/client-components/sign-up/sign-up.component';
 import { LoginComponent } from './components/client-components/login/login.component';
+import { HotCategoriesComponent } from './components/client-components/hot-categories/hot-categories.component';
+import { HotProductsComponent } from './components/client-components/hot-products/hot-products.component';
+import { ContactComponent } from './components/client-components/contact/contact.component';
+import { AboutAsComponent } from './components/client-components/about-as/about-as.component';
+import { OurCastomersSayComponent } from './components/client-components/our-castomers-say/our-castomers-say.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +102,12 @@ import { LoginComponent } from './components/client-components/login/login.compo
     RegistrationComponent,
     SignUpComponent,
     LoginComponent,
-    CarouselAdvertisingComponent
+    CarouselAdvertisingComponent,
+    HotCategoriesComponent,
+    HotProductsComponent,
+    ContactComponent,
+    AboutAsComponent,
+    OurCastomersSayComponent
     
   ],
   imports: [
