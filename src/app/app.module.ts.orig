@@ -60,13 +60,16 @@ import { BaseClientPComponent } from './components/client-components/base-client
 import { RegistrationComponent } from './components/client-components/registration/registration.component';
 import { SignUpComponent } from './components/client-components/sign-up/sign-up.component';
 import { LoginComponent } from './components/client-components/login/login.component';
-import { EditProductComponent } from './components/administor-components/edit-product/edit-product.component';
-import { DesignSettingComponent } from './components/administor-components/design-setting/design-setting.component';
+<<<<<<< HEAD
 import { HotCategoriesComponent } from './components/client-components/hot-categories/hot-categories.component';
 import { HotProductsComponent } from './components/client-components/hot-products/hot-products.component';
 import { ContactComponent } from './components/client-components/contact/contact.component';
 import { AboutAsComponent } from './components/client-components/about-as/about-as.component';
 import { OurCastomersSayComponent } from './components/client-components/our-castomers-say/our-castomers-say.component';
+=======
+import { EditProductComponent } from './components/administor-components/edit-product/edit-product.component';
+import { DesignSettingComponent } from './components/administor-components/design-setting/design-setting.component';
+>>>>>>> b949c8ba98b620921f72a81f4aa28fefe3699eef
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,13 +108,16 @@ import { OurCastomersSayComponent } from './components/client-components/our-cas
     SignUpComponent,
     LoginComponent,
     CarouselAdvertisingComponent,
+<<<<<<< HEAD
     HotCategoriesComponent,
     HotProductsComponent,
-    EditProductComponent,
-    DesignSettingComponent,
     ContactComponent,
     AboutAsComponent,
     OurCastomersSayComponent
+=======
+    EditProductComponent,
+    DesignSettingComponent
+>>>>>>> b949c8ba98b620921f72a81f4aa28fefe3699eef
     
   ],
   imports: [

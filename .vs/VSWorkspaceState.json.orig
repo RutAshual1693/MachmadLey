@@ -4,18 +4,22 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\administor",
-    "\\src\\app\\components\\administor-components\\categories",
+<<<<<<< HEAD
     "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\list-product",
-    "\\src\\app\\components\\products",
+    "\\src\\app\\components\\client-components\\hot-products",
+    "\\src\\app\\components\\client-components\\links",
+    "\\src\\app\\components\\client-components\\our-castomers-say",
     "\\src\\app\\services"
   ],
-<<<<<<< HEAD
-  "SelectedNode": "\\src\\app\\app.component.html",
+  "SelectedNode": "\\src\\app\\components\\client-components\\links\\links.component.html",
 =======
-  "SelectedNode": "\\src\\app\\components\\administor-components\\administor\\administor.component.ts",
->>>>>>> show list product to client
+    "\\src\\app\\components\\administor-components",
+    "\\src\\app\\components\\administor-components\\add",
+    "\\src\\app\\components\\administor-components\\customers",
+    "\\src\\app\\components\\administor-components\\edit-customer",
+    "\\src\\app\\components\\administor-components\\edit-products"
+  ],
+  "SelectedNode": "\\src\\app\\routes.ts",
+>>>>>>> b949c8ba98b620921f72a81f4aa28fefe3699eef
   "PreviewInSolutionExplorer": false
 }
