@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.listen(5000, function () {
+app.listen(4000, function () {
   console.log('Example app listening on port 5000!');
 });
 var listProducts,listCategories,listProductOptions;

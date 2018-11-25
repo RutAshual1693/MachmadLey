@@ -1,9 +1,24 @@
 
 
+
 <br /><br /><br /><br />
 <br /><br /><br /><br />
 <div class="container responsive">
-  <span *ngFor="let product of paginationService.pagedItems" style="background-color:rgba(252, 252, 252,0.8); margin:10px;margin-top:10px; border:groove;" class="col-lg-3 col-sm-6 col-xs-12">
+  <div *ngFor="let product of paginationService.pagedItems">
+    <div class="card col-md-4">
+      <img (click)="productDetails(product)" routerLink="productDetails" src="assets/pictures/b.jpg" alt="{{product.name}}" title="{{product.name}}" style="width:200px;top:0; cursor:pointer;">
+      <div class="container">
+        <h4 style="font-family:Tahoma;">{{product.name}}</h4>
+        <br />
+        <b>{{product.price|currency:'ILS'}}</b><br />
+        <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(product,1)">
+          <img src="assets\img\icons\cart.png" />
+          <span>הוספה לסל</span>
+        </button>
+      </div>
+    </div>
+</div>
+  <!--<span *ngFor="let product of paginationService.pagedItems" style="background-color:rgba(252, 252, 252,0.8); margin:10px;margin-top:10px; border:groove;" class="col-lg-3 col-sm-6 col-xs-12">
     <a>
       <img width="180"
            alt="{{product.name}}" title="{{product.name}}" style="cursor:pointer;" (click)="productDetails(product)" routerLink="productDetails" src="assets/pictures/b.jpg" />
@@ -15,7 +30,7 @@
       <img src="assets\img\icons\cart.png" />
       <span>הוספה לסל</span>
     </button>
-  </span>
+  </span>-->
 </div>
 
 <app-sopping-cart></app-sopping-cart>

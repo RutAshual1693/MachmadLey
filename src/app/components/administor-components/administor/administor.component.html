@@ -10,7 +10,7 @@
 <div class="page-wrapper chiller-theme sidebar-bg bg1 toggled" style="background-color:#F7F7F7" dir="rtl">
   <nav class="heading"  style="position:fixed;">
     <ul>
-      <li>
+      <!--<li>
         <a class="" id="dropdownMenuNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bell" style="color:black;"></i>
           <span class="badge badge-pill badge-warning notification" style="color:black;">3</span>
@@ -18,14 +18,14 @@
       </li>
   <li><a>
   <i class="glyphicon glyphicon-home"  style="color:black;"></i>
-</a></li>
+</a></li>-->
   <li>
     <a class="" routerLink="designSetting">
-      <i class="fa fa-cog"  style="color:black;"></i>
-      <span class="badge-sonar"  style="color:black;"></span>
+      <i class="fa fa-cog"  style="color:black;width:40px;"></i>
+      <!--<span class="badge-sonar"  style="color:black;"></span>-->
     </a>
-  </li>
-      <li><a href="#about">About</a></li>
+  <!--</li>
+      <li><a href="#about">About</a></li>-->
     </ul>
   </nav>
   <br /><br />
@@ -72,8 +72,8 @@
       <!-- sidebar-search  -->
       <div class="sidebar-menu">
         <ul>
-          <li class="header-menu">
-            <span>General</span>
+          <li class="header-menu" style="color:rgb(8, 31, 56,0.8);">
+            <span>כללי</span>
           </li>
           <li>
             <a routerLink="main" [class.active1]="active=='main'"(click)="clicked('main')">
@@ -117,34 +117,26 @@
           <li class="sidebar-dropdown">
             <a>
               <i class="far fa-gem"></i>
-              <span>Components</span>
+              <span>מבצעים</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a>General</a>
+                  <a>הנחה רגילה</a>
                 </li>
                 <li>
-                  <a>Panels</a>
-                </li>
-                <li>
-                  <a>Tables</a>
-                </li>
-                <li>
-                  <a>Icons</a>
-                </li>
-                <li>
-                  <a>Forms</a>
+                  <a>קנה וקבל</a>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
+          <li>
             <a>
-              <i class="fa fa-chart-line"></i>
-              <span>Charts</span>
+              <i class="fa fa-cog"></i>
+
+              <span>הגדרות חנות</span>
             </a>
-            <div class="sidebar-submenu">
+            <!--<div class="sidebar-submenu">
               <ul>
                 <li>
                   <a>Pie chart</a>
@@ -159,9 +151,9 @@
                   <a>Histogram</a>
                 </li>
               </ul>
-            </div>
+            </div>-->
           </li>
-          <li class="sidebar-dropdown">
+          <!--<li class="sidebar-dropdown">
             <a>
               <i class="fa fa-globe"></i>
               <span>Maps</span>
@@ -197,7 +189,7 @@
               <i class="fa fa-book"></i>
               <span>Documentation</span>
             </a>
-          </li>
+          </li>-->
         </ul>
       </div>
       <!-- sidebar-menu  -->

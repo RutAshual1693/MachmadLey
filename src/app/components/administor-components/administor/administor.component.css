@@ -26,14 +26,14 @@ body {
     margin-bottom: 0px;
   }
 .sidebar-menu a:hover {
-  background-color: rgba(39, 12, 177,0.3);
+  background-color: rgb(8, 31, 56,0.4);
 }
 .sidebar-menu a {
   font-size: 17px;
   font-family: Tahoma;
 }
 .active1 {
-  background-color: rgba(39, 12, 177,0.3);
+  background-color: rgb(8, 31, 56,0.4);
 }
 /*.heading ul {
   list-style-type: none;
@@ -67,7 +67,7 @@ float: right;
     height:60px;
     /*position: relative;*/
 }
-.btn-dark {
+/*.btn-dark {
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;
@@ -86,4 +86,4 @@ float: right;
   line-height: 1.5;
   border-radius: .25rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+}*/
