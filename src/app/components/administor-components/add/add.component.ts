@@ -70,6 +70,7 @@ export class AddComponent implements OnInit {
       options: new FormControl("", Validators.required),
       relatedProducts: new FormControl(""),
       img: new FormControl(""),
+      status: new FormControl("", Validators.required),
     });
   
   }

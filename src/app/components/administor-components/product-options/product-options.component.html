@@ -1,7 +1,7 @@
 
 
 
-<main class="page-content">
+<!--<main class="page-content">
   <div class="container-fluid">
     <div class="w3-panel w3-card">
       <br />
@@ -13,11 +13,34 @@
       <br /><br />
       <br /><br />
       <div class="container">
-        <table class="table">
+       
+      </div>
+      <app-product-options-base></app-product-options-base>
+    </div>
+  </div>
+  <app-products-base></app-products-base>
+</main>-->
+
+
+<main class="page-content">
+  <div class="container-fluid">
+    <div class="myPanel">
+      <br />
+      <div class="col-lg-1"><img src="assets/icons/plus (13).png" routerLink="addProductOption" style="text-align:center;cursor:pointer;" alt="הוסף" title="הוסף אפשרות מוצר" /></div>
+      <div class="col-md-8"></div>
+      <div class="form-group col-md-3">
+        <h2 style="color:rgb(8, 31, 56,0.9);">אפשרויות מוצר </h2>
+      </div>
+      <br /><br />
+      <br /><br />
+      <table class="table table-condensed">
+        <thead>
           <tr>
             <td><b>name</b> </td>
             <td><b>option</b></td>
           </tr>
+        </thead>
+        <tbody>
           <tr *ngFor="let option of productsService.listProductOptions">
             <td>{{option.name}}</td>
             <td><span *ngFor="let value of option.values">{{value}},</span></td>
@@ -34,10 +57,9 @@
               </div>
             </td>
           </tr>
-        </table>
-      </div>
-      <app-product-options-base></app-product-options-base>
+        </tbody>
+      </table>
     </div>
   </div>
-  <app-products-base></app-products-base>
+  <app-product-options-base></app-product-options-base>
 </main>

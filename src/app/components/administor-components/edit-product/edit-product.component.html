@@ -89,9 +89,12 @@
                 </ng-multiselect-dropdown>
               </td>
             </tr>
-
+            <tr>
+              <td><label>סטטוס</label></td>
+              <td> <select type="text" formControlName="status" class="form-control"><option disabled>סטטוס</option><option>פעיל</option><option>כבוי</option></select></td>
+            </tr>
           </table>
-          <input type="submit" style="background-color:#221b7d; color:white;" class="btn btn-info" value="שמור"  />
+          <input type="submit" [disabled]="!form.valid" style="background-color:#221b7d; color:white;" class="btn btn-info" value="שמור"  />
         </div>
 
       </div>

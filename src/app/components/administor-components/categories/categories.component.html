@@ -22,7 +22,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let category of this.categoriesService.listCategories">
-                  <td>{{category.name}}</td>
+                  <td><p>{{category.name}}</p></td>
                   <td>
                     <br /><br />
                     <a><i><img (click)="editCategoryClicked(category)" routerLink="editCategory" style="cursor:pointer;top:50px;" alt="ערוך קטגוריה" title="ערוך" src="assets/icons/edit.png" /></i></a>

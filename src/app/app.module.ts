@@ -67,6 +67,7 @@ import { HotProductsComponent } from './components/client-components/hot-product
 import { ContactComponent } from './components/client-components/contact/contact.component';
 import { AboutAsComponent } from './components/client-components/about-as/about-as.component';
 import { OurCastomersSayComponent } from './components/client-components/our-castomers-say/our-castomers-say.component';
+import { GetTypeAnimalPipe } from './pipes/get-type-animal.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +112,8 @@ import { OurCastomersSayComponent } from './components/client-components/our-cas
     DesignSettingComponent,
     ContactComponent,
     AboutAsComponent,
-    OurCastomersSayComponent
+    OurCastomersSayComponent,
+    GetTypeAnimalPipe
     
   ],
   imports: [

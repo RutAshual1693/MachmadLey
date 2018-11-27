@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../services/products.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup ,Validators} from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { TypesService } from '../../../services/types.service';
 import { CategoriesService } from '../../../services/categories.service';
@@ -20,20 +20,21 @@ export class EditProductComponent implements OnInit {
   ngOnInit()
   {
     this.form = new FormGroup({
-      name: new FormControl(""),
-      model: new FormControl(""),
-      price: new FormControl(""),
-      quantity: new FormControl(""),
-      inStock: new FormControl(true),
-      minQuantityInOrder: new FormControl(""),
-      uniqueNameToLink: new FormControl(""),
-      categories: new FormControl(""),
-      prodDescription: new FormControl(""),
-      company: new FormControl(""),
+      name: new FormControl("", Validators.required),
+      model: new FormControl("", Validators.required),
+      price: new FormControl("", Validators.required),
+      quantity: new FormControl("", Validators.required),
+      inStock: new FormControl("", Validators.required),
+      minQuantityInOrder: new FormControl("", Validators.required),
+      uniqueNameToLink: new FormControl("", Validators.required),
+      categories: new FormControl("", Validators.required),
+      prodDescription: new FormControl("", Validators.required),
+      company: new FormControl("", Validators.required),
       typeAnimal: new FormControl(""),
-      options: new FormControl(""),
+      options: new FormControl("", Validators.required),
       relatedProducts: new FormControl(""),
       //img: new FormControl(""),
+      status: new FormControl("", Validators.required),
     });
     this.form.setValue({
       name: this.productsService.editProduct["name"],
@@ -49,6 +50,7 @@ export class EditProductComponent implements OnInit {
       typeAnimal: this.productsService.editProduct["typeAnimal"],
       options: this.productsService.editProduct["options"],
       relatedProducts: null,
+      status: this.productsService.editProduct["status"]
       //img: this.productsService.editProduct["img"]
     });
   this.dropdownSettings = {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '../../../services/categories.service';
 import { ProductsService } from '../../../services/products.service';
+import { TypesService } from '../../../services/types.service';
 
 @Component({
   selector: 'app-categories',
@@ -9,7 +10,7 @@ import { ProductsService } from '../../../services/products.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor(public categoriesService: CategoriesService, public productsServce: ProductsService)
+  constructor(public categoriesService: CategoriesService, public productsServce: ProductsService, public typesService: TypesService)
   {
     
   }
