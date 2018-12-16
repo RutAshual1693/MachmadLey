@@ -1,3 +1,89 @@
-<p>
-  store-settings works!
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="heading" style="position:fixed;width:100%;">
+    <div class="col-lg-8">
+      <input type="submit" class="btn"  value="שמור" />
+    </div>
+    <div class="col-lg-2"> <p style="color:black; float:right; font-size:20px;">הגדרות חנות </p></div>
+    <div class="col-lg-2"> </div>
+
+  </div>
+
+  <main class="page-content" style="background-color:#f2f7fb;">
+    <div class="container-fluid">
+      <div class="w3-panel w3-card">
+        <br />
+        <label disabled="true" style="font-size:large;color:#343131;">ראשי</label>
+        <br />
+
+        <div class="form-group">
+          <table class="table" style="border:hidden;">
+            <tbody>
+              <tr>
+                <td><span >שם החנות להצגה באתר</span></td>
+                <td><input class="form-control" type="text" formControlName="nameStore" /></td>
+              </tr>
+              <tr>
+                <td>בעל החנות להצגה באתר</td>
+                <td><input class="form-control" type="text" formControlName="nameAdmin" /></td>
+              </tr>
+              <tr>
+                <td>כתובת להצגה באתר</td>
+                <td><input class="form-control" type="text" formControlName="adress" /></td>
+              </tr>
+              <tr>
+                <td>קוד גאוגרפי להצגה באתר</td>
+                <td><input class="form-control" type="text" formControlName="geographicCode" /></td>
+              </tr>
+              <tr>
+                <td>אימייל להצגה באתר</td>
+                <td><input class="form-control" type="text" formControlName="email" /></td>
+              </tr>
+              <tr>
+                <td>טלפון להצגה באתר</td>
+                <td><input class="form-control" type="text" formControlName="numberPhone" /></td>
+              </tr>
+              <tr>
+                <td>פקס להצגה באתר</td>
+                <td><input class="form-control" type="text" formControlName="fax" /></td>
+              </tr>
+              <tr>
+                <td>הצג תוכן שיוצג בעמוד צור קשר</td>
+                <td>
+                  <editor apiKey="oqih4hs82hr8rg1q784e1q052rkzux80alzrvqkcdtth7r1i" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor>
+                </td>
+              </tr>
+              <tr>
+                <td>שעות פתיחה</td>
+                <td>
+                  <editor apiKey="oqih4hs82hr8rg1q784e1q052rkzux80alzrvqkcdtth7r1i" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+      <div class="w3-panel w3-card">
+        <br /><br />
+        <label></label>
+        <div class="form-group">
+          <table class="table" style="border:hidden;">
+            <thead>
+              <tr><td>פרסומות</td> </tr>
+              <tr><td>פרסומות</td> </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</form>

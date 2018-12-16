@@ -19,7 +19,8 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-            <li *ngFor="let category of this.categoriesService.listCategories|getCategoriesByType:type._id"><a (click)="chooseCategory(type._id,category)" routerLink="baseClientP"><b>{{category.name}}</b></a></li>
+            <li *ngFor="let category of this.categoriesService.listCategories|getCategoriesByType:type._id">
+              <a (click)="chooseCategory(type._id,category)" routerLink="baseClientP"><b>{{category.name}}</b></a></li>
             <!--<li><a href="#">Extras</a></li>
       <li><a href="#">Media</a></li>-->
             </ul>
@@ -37,16 +38,18 @@
       </div>
     </div>
   </nav>
-  <app-carousel-advertising></app-carousel-advertising>
-  <app-hot-categories></app-hot-categories>
-  <app-hot-products></app-hot-products>
-  <app-our-castomers-say></app-our-castomers-say>
-  <div id="about">
-    <app-about-as></app-about-as>
+  <div >
+    <app-carousel-advertising></app-carousel-advertising>
+    <app-hot-categories></app-hot-categories>
+    <app-hot-products></app-hot-products>
+    <app-our-castomers-say></app-our-castomers-say>
+    <div id="about">
+      <app-about-as></app-about-as>
+    </div>
+    <div id="contact">
+      <app-contact></app-contact>
+    </div>
+    <app-registration></app-registration>
+    <app-login></app-login>
   </div>
-  <div id="contact">
-    <app-contact></app-contact>
-  </div>
-  <app-registration></app-registration>
-  <app-login></app-login>
 </body>

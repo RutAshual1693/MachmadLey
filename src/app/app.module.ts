@@ -33,7 +33,7 @@ import { CarouselAdvertisingComponent } from './components/client-components/car
 import { ListProductComponent } from './components/client-components/list-product/list-product.component';
 import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { NavComponent } from './components/client-components/nav/nav.component';
@@ -68,6 +68,7 @@ import { ContactComponent } from './components/client-components/contact/contact
 import { AboutAsComponent } from './components/client-components/about-as/about-as.component';
 import { OurCastomersSayComponent } from './components/client-components/our-castomers-say/our-castomers-say.component';
 import { GetTypeAnimalPipe } from './pipes/get-type-animal.pipe';
+import { UploadImgComponent } from './components/administor-components/upload-img/upload-img.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -113,7 +114,8 @@ import { GetTypeAnimalPipe } from './pipes/get-type-animal.pipe';
     ContactComponent,
     AboutAsComponent,
     OurCastomersSayComponent,
-    GetTypeAnimalPipe
+    GetTypeAnimalPipe,
+    UploadImgComponent
     
   ],
   imports: [

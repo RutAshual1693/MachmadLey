@@ -19,6 +19,7 @@ export class ProductsService implements OnInit {
     this.getProductOptions();
     this.products();
   }
+  adminNav = [{ title: "מוצרים" , button : "צור מוצר חדש", routerLink:"add"}]
   showHome = true;
   ngOnInit() {
 

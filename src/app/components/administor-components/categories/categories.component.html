@@ -1,40 +1,52 @@
 
 
+<div class="heading" style="position:fixed;width:100%;">
+  <div class="col-lg-8">
+    <input type="submit" class="btn"  routerLink="addCategory" value="צור קטגוריה חדשה" />
+  </div>
+  <div class="col-lg-2"> <p style="color:black; float:right; font-size:20px;">רשימת קטגוריות </p></div>
+  <div class="col-lg-2"> </div>
 
+</div>
 <main class="page-content">
   <div class="container-fluid">
-    <div class="myPanel">
-      <br />
-      <div class="col-lg-1"><img src="assets/icons/plus (13).png" routerLink="addCategory" style="text-align:center;cursor:pointer;" alt="הוסף" title="הוסף קטגוריה" /></div>
-      <div class="col-md-8"></div>
-      <div class="form-group col-md-3" style="margin-bottom: 10px;">
-        <h2 style="color:rgb(8, 31, 56,0.9);">רשימת קטגוריות </h2>
-      </div>
+    <div class="w3-panel w3-card">
       <br /><br />
       <br /><br />
-            <table class="table table-condensed">
-              <thead>
-                <tr>
-                  <td><b>שם</b></td>
-                  <td><b>עריכה</b></td>
-                  <td><b>מחיקה</b></td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let category of this.categoriesService.listCategories">
-                  <td><p>{{category.name}}</p></td>
-                  <td>
-                    <br /><br />
-                    <a><i><img (click)="editCategoryClicked(category)" routerLink="editCategory" style="cursor:pointer;top:50px;" alt="ערוך קטגוריה" title="ערוך" src="assets/icons/edit.png" /></i></a>
-                  </td>
-                  <td>
-                    <br /><br />
-                    <a (click)="delete(category)"><i><img src="assets/icons/delete.png" style="cursor:pointer;top:50px;" alt="מחק קטגוריה" title="מחק" /></i></a>
-                  </td>
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <td><b>שם</b></td>
+            <td><b>פעולה</b></td>
+            <!--<td><b>עריכה</b></td>
+  <td><b>מחיקה</b></td>-->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of this.categoriesService.listCategories">
+            <td><p>{{category.name}}</p></td>
+            <td class="my">
+              <div style="direction:ltr;" class="dropdown">
+                <button class="btn" type="button" data-toggle="dropdown">
+                  <span class="caret"></span>
+                  פעולה
+                </button>
+                <ul style="direction:ltr;" class="dropdown-menu">
+                  <li><a (click)="editCategoryClicked(category)" routerLink="editCategory">עריכה</a></li>
+                  <li><a (click)="delete(category)">מחיקה</a></li>
+                </ul>
+              </div>
+              <!--<br /><br />
+    <a><i><img (click)="editCategoryClicked(category)" routerLink="editCategory" style="cursor:pointer;top:50px;" alt="ערוך קטגוריה" title="ערוך" src="assets/icons/edit.png" /></i></a>
+  </td>
+  <td>
+    <br /><br />
+    <a (click)="delete(category)"><i><img src="assets/icons/delete.png" style="cursor:pointer;top:50px;" alt="מחק קטגוריה" title="מחק" /></i></a>-->
+            </td>
 
-                </tr>
-              </tbody>
-            </table>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <app-products-base></app-products-base>

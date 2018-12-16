@@ -7,57 +7,46 @@
 
 
 
-<div class="page-wrapper chiller-theme sidebar-bg bg1 toggled" style="background-color:#F7F7F7" dir="rtl">
-  <nav class="heading"  style="position:fixed;">
-    <ul>
-      <!--<li>
-        <a class="" id="dropdownMenuNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-bell" style="color:black;"></i>
-          <span class="badge badge-pill badge-warning notification" style="color:black;">3</span>
-        </a>
-      </li>
-  <li><a>
-  <i class="glyphicon glyphicon-home"  style="color:black;"></i>
-</a></li>-->
-  <li>
-    <a class="" routerLink="designSetting">
-      <i class="fa fa-cog"  style="color:black;width:40px;"></i>
-      <!--<span class="badge-sonar"  style="color:black;"></span>-->
+<div class="page-wrapper chiller-theme sidebar-bg bg1 toggled" style="background-color:#f3f3f3" dir="rtl">
+ 
+
+  <!--<nav class="heading"  style="position:fixed;">
+    <a class="" routerLink="designSetting"style="float:left;">
+      <i class="fa fa-cog" style="color:black;width:40px;"></i>
     </a>
-  <!--</li>
-      <li><a href="#about">About</a></li>-->
+    <button class="btn" style="float:left;">הוסף מוצר</button>
+  </nav>-->
+  <!--<nav class="navbar navbar-inverse" style="background-color:white;border-color:white;">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
     </ul>
-  </nav>
+    <p class="navbar-text">Some text</p>
+  </nav>-->
   <br /><br />
-  <a id="show-sidebar" class="btn btn-sm btn-dark" >
+  <a id="show-sidebar" class="btn btn-sm btn-dark">
     <i class="fas fa-bars"></i>
   </a>
-  <nav id="sidebar" class="sidebar-wrapper" >
+  <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a style="color:white;">pro sidebar</a>
+        <a style="color:white;">החנות שלי</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
       </div>
-      <div class="sidebar-header">
-        <!--<div class="user-pic">
+      <!--<div class="sidebar-header">
+        <div class="user-pic">
           <img class="img-responsive img-rounded" src="./assets/img (2)/user.jpg" alt="User picture">
-        </div>-->
-        <div class="user-info">
-          <span class="user-name">
-            Jhon
-            <strong>Smith</strong>
-          </span>
-          <span class="user-role">Administrator</span>
-          <span class="user-status">
-            <i class="fa fa-circle"></i>
-            <span>Online</span>
-          </span>
         </div>
-      </div>
+        <div class="user-info">
+
+          <span class="user-role">מחמד לי</span>
+
+        </div>
+      </div>-->
       <!-- sidebar-header  -->
-      <div class="sidebar-search">
+      <!--<div class="sidebar-search">
         <div>
           <div class="input-group">
             <input type="text" class="form-control search-menu" placeholder="Search...">
@@ -68,25 +57,33 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
       <!-- sidebar-search  -->
       <div class="sidebar-menu">
         <ul>
-          <li class="header-menu" style="color:rgb(8, 31, 56,0.8);">
+          <!--<li class="header-menu" style="color:rgb(8, 31, 56,0.8);">
             <span>כללי</span>
-          </li>
+          </li>-->
+
           <li>
-            <a routerLink="main" [class.active1]="active=='main'"(click)="clicked('main')">
+            <br />
+
+            <br />
+            <br />  <br />
+            <br />
+            <br />
+            <a routerLink="main" [class.active1]="active=='main'" (click)="clicked('main')">
               <i class="glyphicon glyphicon-home"></i>
               <span>ראשי</span>
             </a>
           </li>
-          <li class="sidebar-dropdown" >
-            <a [class.active1]="active=='storeManagment'"(click)="clicked('storeManagment')"><i class="glyphicon glyphicon-wrench"></i>ניהול חנות</a>
+          <li class="sidebar-dropdown">
+            <a [class.active1]="active=='storeManagment'" (click)="clicked('storeManagment')"><i class="glyphicon glyphicon-wrench"></i>ניהול חנות</a>
             <div class="sidebar-submenu">
               <ul (click)="clicked('')">
                 <li>
-                  <a routerLink="productsBase">מוצרים                
+                  <a routerLink="productsBase">
+                    <span>מוצרים</span>
                   </a>
                 </li>
                 <li>
@@ -98,8 +95,8 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown"  >
-            <a [class.active1]="active=='customersAndOrder'"(click)="clicked('customersAndOrder')"><i class="glyphicon glyphicon-user" ></i>לקוחות והזמנות</a>
+          <li class="sidebar-dropdown">
+            <a [class.active1]="active=='customersAndOrder'" (click)="clicked('customersAndOrder')"><i class="glyphicon glyphicon-user"></i>לקוחות והזמנות</a>
             <div class="sidebar-submenu">
               <ul (click)="clicked()">
                 <li>
@@ -131,7 +128,7 @@
             </div>
           </li>
           <li>
-            <a>
+            <a routerLink="storeSettings">
               <i class="fa fa-cog"></i>
 
               <span>הגדרות חנות</span>
@@ -195,7 +192,7 @@
       <!-- sidebar-menu  -->
     </div>
     <!-- sidebar-content  -->
-    <!--<div class="sidebar-footer">
+  <div class="sidebar-footer">
       <div class="dropdown">
         <a  class="" id="dropdownMenuNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bell"></i>
@@ -305,22 +302,22 @@
         </div>
       </div>
       <div class="dropdown">
-        <a  class="" id="dropdownMenuMessage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-cog"></i>
+        <a  class="">
+          <i class="fa fa-cog" routerLink="designSetting"></i>
           <span class="badge-sonar"></span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
+        <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
           <a class="dropdown-item" >My profile</a>
           <a class="dropdown-item" >Help</a>
           <a class="dropdown-item" >Setting</a>
-        </div>
+        </div>-->
       </div>
       <div>
         <a >
           <i class="fa fa-power-off"></i>
         </a>
       </div>
-    </div>-->
+    </div>
   </nav>
   <router-outlet>
 
@@ -328,11 +325,9 @@
     <app-main *ngIf="show"></app-main>
   </router-outlet>
   <!-- sidebar-wrapper  -->
-
   <!-- page-content" -->
 </div>
 <!--<nav class="navbar navbar-defult"></nav>-->
-
 <!--<style type="text/css">
   .rtl {
     direction: rtl;
@@ -505,3 +500,4 @@
 
     </div>
   </div>-->
+
