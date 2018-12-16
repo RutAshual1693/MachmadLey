@@ -5,12 +5,12 @@
     <h4>Choose a payment plan that works for you</h4>
   </div>
   <div id="slide3" class="row slideanim">
-    <div *ngFor="let item of arr; let i=index"  class="col-lg-4 col-sm-6 col-xs-12">
+    <div *ngFor="let item of arr; let i=index"  class="col-lg-3 col-sm-4 col-xs-6">
       <div class="make-3D-space" >
-        <div class="product-card" id="{{id}}" style="margin:4px 7px 2px 4px; background-color:ghostwhite;">
-          <div id="{{idPF}}" class="product-front"  >
+        <div class="product-card" id="{{id}}" style="margin:4px 7px 2px 4px; background-color:ghostwhite;padding:10px">
+          <div id="{{idPF}}" class="product-front">
             <div class="shadow"></div>
-            <img src="./assets/img/3a4863b474cf6ca618a5a767cb46084a.jpg" width="90%;" style="padding:0px 0px 0px 0px;" alt="" />
+            <img src="./assets/img/3a4863b474cf6ca618a5a767cb46084a.jpg"  style="padding:0px 0px 0px 0px;width:100%;height:100%" alt="" />
             <div class="image_overlay"></div>
             <div class="view_details"  (click)="viewDetails(i)">View details</div>
             <div class="stats">

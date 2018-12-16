@@ -12,7 +12,7 @@ body {
 }*/
 /*#navbar {
   overflow: hidden;
-  background-color: black !important;
+  background-color: black ;
   padding: 5px 10px;
   transition: 0.4s;
   position: fixed;
@@ -62,7 +62,7 @@ body {
 
 /*@media screen and (max-width: 580px) {
   #navbar {
-    padding: 20px 10px !important;
+    padding: 20px 10px ;
   }
 
     #navbar a {
@@ -176,7 +176,7 @@ li {
 
 .modal-header, h4, .close {
   background-color: #333;
-  color: #fff !important;
+  color: #fff ;
   text-align: center;
   font-size: 30px;
 }
@@ -185,7 +185,7 @@ li {
   padding: 40px 50px;
 }
 
-.nav-tabs li a {
+.nav-tabs li .a {
   color: #777;
 }
 
@@ -201,16 +201,16 @@ li {
   margin-bottom: 0;
   background-color: transparent;
   border: 0;
-  font-size: 11px !important;
+  font-size: 11px ;
   letter-spacing: 4px;
   opacity: 0.9;
 }
 
-  .navbar a.active {
+  .navbar .a.active {
     color: white;
   }
 
-  .navbar a::after {
+  .navbar .a::after {
     content: '';
     display: block;
     width: 0;
@@ -219,12 +219,12 @@ li {
     transition: width .3s;
   }
 
-  .navbar a:hover::after {
+  .navbar .a:hover::after {
     width: 110%;
   }
 
 
-  .navbar a.active::after {
+  .navbar .a.active::after {
     content: '';
     display: block;
     width: 110%;
@@ -233,16 +233,16 @@ li {
     transition: width .3s
   }
 
-  .navbar li a, .navbar .navbar-brand {
-    color: #d5d5d5 !important;
+  .navbar li .a, .navbar .navbar-brand {
+    color: #d5d5d5 ;
   }
 
-.navbar-nav li a:hover {
-  color: #fff !important;
+.navbar-nav li .a:hover {
+  color: darkcyan !important ;
 }
 
-.navbar-nav li.active a {
-  color: white !important;
+.navbar-nav li.active .a {
+  color: white ;
   background-color: transparent;
 }
 
@@ -258,12 +258,12 @@ li {
   
 }
 
-.dropdown-menu li a {
-  color: #000 !important;
+.dropdown-menu li .a {
+  color: #000 ;
 }
 
-  .dropdown-menu li a:hover {
-    background-color: transparent !important;
+  .dropdown-menu li .a:hover {
+    background-color: transparent ;
   }
 
 
@@ -278,7 +278,9 @@ textarea {
 
 
 
-
+.addClass{
+  color:red;
+}
 
 
 
@@ -335,4 +337,5 @@ textarea {
     font-size: 150px;
   }
 }*/
+
 

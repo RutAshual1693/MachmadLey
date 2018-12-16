@@ -1,0 +1,68 @@
+<div class="container" style="padding-right:15%;padding-left:15%">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <h1 class="col-md-4">חדש!</h1>
+    <div class="col-md-5"></div>
+  </div>
+  <div id="slide3" class="row slideanim">
+    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let item of arr; let i=index">
+      <article class="card-wrapper">
+        <div class="image-holder">
+        <!--  <div class="glyphicon glyphicon-eye-open "></div>-->
+          <a href="#" class="image-holder__link"></a>
+          <div class="image-liquid image-holder--original" >
+            <img src="./assets/{{item}}" style="width:100%;height:100%"/>
+          </div>
+        </div>
+        <div class="product-description">
+          <!-- title -->
+          <h1 class="product-description__title">
+            <button style="border:0;background-color:transparent;direction:rtl" (click)="shoppingCartService.addProductToCart(product,1)">
+              מיטה לכלב
+            </button>
+          </h1>
+          <!-- category and price -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 product-description__price" style="direction:ltr">
+              € 499
+            </div>
+            <div class="col-xs-12 col-sm-8 product-description__category secondary-text">
+              Men's running shirt
+            </div>
+          </div>
+          <!-- divider -->
+          <hr />
+          <!-- sizes -->
+          <div class="sizes-wrapper">
+            <b>Sizes</b>
+            <br />
+            <span class="secondary-text text-uppercase">
+              <ul class="list-inline">
+                <li>xs,</li>
+                <li>s,</li>
+                <li>sm,</li>
+                <li>m,</li>
+                <li>l,</li>
+                <li>xl,</li>
+                <li>xxl</li>
+              </ul>
+            </span>
+          </div>
+          <!-- colors -->
+          <div class="color-wrapper">
+            <b>Colors</b>
+            <br />
+            <ul class="list-inline color-list">
+              <li class="color-list__item color-list__item--red"></li>
+              <li class="color-list__item color-list__item--blue"></li>
+              <li class="color-list__item color-list__item--green"></li>
+              <li class="color-list__item color-list__item--orange"></li>
+              <li class="color-list__item color-list__item--purple"></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>

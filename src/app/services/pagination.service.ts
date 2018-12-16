@@ -10,6 +10,8 @@ export class PaginationService {
   pager: any = {};
   // paged items
   pagedItems: any[];
+  category: string;
+  baseCategory: string;
   constructor(private productsService: ProductsService) { }
   getPager(totalItems: number, currentPage: number = 1, pageSize: number = 9) {
     // calculate total pages

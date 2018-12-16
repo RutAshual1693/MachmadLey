@@ -10,8 +10,8 @@
 
     <div class="col-lg-6 col-sm-12">
       <!----------------------------------------
-    -----------תמונות--------------------------------
-    ------------------------------------------>
+      -----------תמונות--------------------------------
+      ------------------------------------------>
       <div class="container">
         <div id="myCarousel" class="carousel slide" style="width:400px;" data-ride="carousel">
           <!-- Indicators -->
@@ -51,11 +51,11 @@
       </div>
     </div>
     <!-------------------------------
-  -------------------- פרטי מוצר--------------------
-   ------------------------------>
+    -------------------- פרטי מוצר--------------------
+     ------------------------------>
     <div class="col-lg-6 col-sm-12">
       <h3> {{productsService.showProductDetails.name}}</h3>
-      <div>{{productsService.showProductDetails.prodDescription}}</div>
+      <div [innerHTML]="productsService.showProductDetails.prodDescription"></div>
     </div>
     <ul>
       <li *ngFor="let option of productsService.showProductOptions">

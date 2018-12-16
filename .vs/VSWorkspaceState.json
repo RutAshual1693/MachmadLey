@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\images",
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\add",
-    "\\src\\app\\components\\administor-components\\add-category",
-    "\\src\\app\\components\\administor-components\\categories",
-    "\\src\\app\\components\\administor-components\\edit-category",
-    "\\src\\app\\components\\administor-components\\edit-product",
-    "\\src\\app\\components\\client-components"
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\client-components\\display-products",
+    "\\src\\app\\components\\client-components\\links",
+    "\\src\\app\\services"
   ],
+  "SelectedNode": "\\src\\app\\components\\client-components\\display-products\\display-products.component.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -7,7 +7,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.listen(4000, function () {
+//create a cors middleware
+app.use(function (req, res, next) {
+  //set headers to allow cross origin request.
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+app.listen(5000, function () {
   console.log('Example app listening on port 5000!');
 });
 var listProducts,listCategories,listProductOptions;
@@ -72,6 +80,28 @@ app.post('/addProduct', function (req, res) {
   });
   myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
 });
+var multer = require('multer');
+// set the directory for the uploads to the uploaded to
+var DIR = './images/';
+//define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
+var upload = multer({ dest: './images/' });
+var type = upload.single('photo');
+
+
+app.post('/uploadImage', type, function (req, res, next) {
+  var path = '';
+  var fileName = (new Date().getTime()).toString();
+  upload(req, res, function (err) {
+    if (err) {
+      // An error occurred when uploading
+      console.log(err);
+      return res.status(422).send("an Error occured")
+    }
+    // No error occured.
+    path = req.file.path;
+    return res.send("Upload Completed for " + path);
+  });
+})
 //--קבלת רשימת המוצרים
 function getProducts(req, res) {
   var myPromise = new Promise((resolve, reject) => {

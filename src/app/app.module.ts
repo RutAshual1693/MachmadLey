@@ -36,6 +36,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { FileSelectDirective } from 'ng2-file-upload';
+
 import { NavComponent } from './components/client-components/nav/nav.component';
 import { CustomersComponent } from './components/administor-components/customers/customers.component';
 import { AddCustomerComponent } from './components/administor-components/add-customer/add-customer.component';
@@ -68,6 +70,8 @@ import { ContactComponent } from './components/client-components/contact/contact
 import { AboutAsComponent } from './components/client-components/about-as/about-as.component';
 import { OurCastomersSayComponent } from './components/client-components/our-castomers-say/our-castomers-say.component';
 import { GetTypeAnimalPipe } from './pipes/get-type-animal.pipe';
+import { AddImageComponent } from './components/administor-components/add-image/add-image.component';
+import { HotProductComponent } from './components/client-components/hot-product/hot-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -113,7 +117,10 @@ import { GetTypeAnimalPipe } from './pipes/get-type-animal.pipe';
     ContactComponent,
     AboutAsComponent,
     OurCastomersSayComponent,
-    GetTypeAnimalPipe
+    GetTypeAnimalPipe,
+    AddImageComponent,
+    FileSelectDirective,
+    HotProductComponent
     
   ],
   imports: [
