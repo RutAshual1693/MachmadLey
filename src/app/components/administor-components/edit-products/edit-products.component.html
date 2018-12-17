@@ -1,14 +1,28 @@
 
-
+<div class="heading" style="position:fixed;width:100%;">
+  <div class="col-lg-8">
+    <button routerLink="add" class="btn">הוסף מוצר חדש</button>
+  </div>
+  <div class="col-lg-2"> <p style="color:black; float:right; font-size:20px;">רשימת מוצרים </p></div>
+  <div class="col-lg-2"> </div>
+</div>
+<!--<div class="col-lg-1">-->
+<!--<img src="assets/icons/plus (13).png"  style="text-align:center;cursor:pointer;" alt="הוסף" title="הוסף מוצר" /></div>-->
+<!--<a class="" routerLink="designSetting" style="float:left;">
+  <i class="fa fa-cog" style="color:black;width:60px;"></i>
+</a>
+<div>
+  <a class="btn btn-dark" style="margin:auto; height:15px;" target="_blank">
+    הוסף מוצר
+  </a>
+</div>
+<a href="#news">News</a>
+<a href="#contact">Contact</a>
+<a href="#about">About</a>-->
 <main class="page-content">
   <div class="container-fluid">
-    <div  class="myPanel">
-      <br />
-      <div class="col-lg-1"><img src="assets/icons/plus (13).png" routerLink="add" style="text-align:center;cursor:pointer;" alt="הוסף" title="הוסף מוצר" /></div>
-      <div class="col-md-8"></div>
-      <div class="form-group col-md-3" style="margin-bottom: 10px;">
-        <h2 style="color:rgb(8, 31, 56,0.9);">רשימת מוצרים </h2>
-      </div>
+    <div class="w3-panel w3-card" >
+
       <br /><br />
       <br /><br />
       <table class="table table-condensed">
@@ -19,41 +33,42 @@
             <td><b>מודל</b></td>
             <td><b>מחיר</b></td>
             <td><b>זמינות</b></td>
-            <td><b>עריכה</b></td>
-            <td><b>מחיקה</b></td>
+            <td><b>פעולה</b></td>
+            <!--<td><b>עריכה</b></td>
+            <td><b>מחיקה</b></td>-->
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let product of productsService.listProducts">
             <td>
-              <img width="100" src="/assets/pictures/toy/toy1.jpg" />
+              <img width="100" height="70px;" src="/assets/pictures/toy/toy1.jpg" />
             </td>
             <td><br /><br />{{product.name}}</td>
             <td><br /><br />{{product.model}}</td>
             <td><br /><br />{{product.price}}</td>
             <td><br /><br />{{product.inStock}}</td>
-     
-            <td>
+
+            <!--<td>
               <br /><br />
-              <a ><i><img  (click)="productsService.editProductClicked(product)"routerLink="editProduct2"style="cursor:pointer;top:50px;" alt="ערוך מוצר" title="ערוך" src="assets/icons/edit.png" /></i></a>
+              <a><i><img (click)="productsService.editProductClicked(product)" routerLink="editProduct2" style="cursor:pointer;top:50px;" alt="ערוך מוצר" title="ערוך" src="assets/icons/edit.png" /></i></a>
             </td>
             <td>
               <br /><br />
               <a (click)="delete(product)"><i><img src="assets/icons/delete.png" style="cursor:pointer;top:50px;" alt="מחק מוצר" title="מחק" /></i></a>
+            </td>-->
+            <td class="my">
+              <br /><br />
+              <div style="direction:ltr;" class="dropdown">
+                <button class="btn" type="button" data-toggle="dropdown">
+                  <span class="caret"></span>
+                  פעולה
+                </button>
+                <ul style="direction:ltr;" class="dropdown-menu">
+                  <li><a (click)="productsService.editProductClicked(product)" routerLink="editProduct2" >עריכה</a></li>
+                  <li><a (click)="delete(customer)">מחיקה</a></li>
+                </ul>
+              </div>
             </td>
-            <!--<td>
-    <br /><br />
-    <div style="direction:ltr;" class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-        פעולה
-        <span class="caret"></span>
-      </button>
-      <ul style="direction:ltr;" class="dropdown-menu">
-        <li><a (click)="editCustomerClicked(customer)" routerLink="editCustomer">עריכה</a></li>
-        <li><a (click)="delete(customer)">מחיקה</a></li>
-      </ul>
-    </div>
-  </td>-->
           </tr>
         </tbody>
       </table>

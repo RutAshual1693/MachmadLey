@@ -33,9 +33,11 @@ import { CarouselAdvertisingComponent } from './components/client-components/car
 import { ListProductComponent } from './components/client-components/list-product/list-product.component';
 import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { FileSelectDirective } from 'ng2-file-upload';
+
 import { NavComponent } from './components/client-components/nav/nav.component';
 import { CustomersComponent } from './components/administor-components/customers/customers.component';
 import { AddCustomerComponent } from './components/administor-components/add-customer/add-customer.component';
@@ -60,16 +62,20 @@ import { BaseClientPComponent } from './components/client-components/base-client
 import { RegistrationComponent } from './components/client-components/registration/registration.component';
 import { SignUpComponent } from './components/client-components/sign-up/sign-up.component';
 import { LoginComponent } from './components/client-components/login/login.component';
-<<<<<<< HEAD
+import { EditProductComponent } from './components/administor-components/edit-product/edit-product.component';
+import { DesignSettingComponent } from './components/administor-components/design-setting/design-setting.component';
 import { HotCategoriesComponent } from './components/client-components/hot-categories/hot-categories.component';
 import { HotProductsComponent } from './components/client-components/hot-products/hot-products.component';
 import { ContactComponent } from './components/client-components/contact/contact.component';
 import { AboutAsComponent } from './components/client-components/about-as/about-as.component';
 import { OurCastomersSayComponent } from './components/client-components/our-castomers-say/our-castomers-say.component';
+import { GetTypeAnimalPipe } from './pipes/get-type-animal.pipe';
+<<<<<<< HEAD
+import { AddImageComponent } from './components/administor-components/add-image/add-image.component';
+import { HotProductComponent } from './components/client-components/hot-product/hot-product.component';
 =======
-import { EditProductComponent } from './components/administor-components/edit-product/edit-product.component';
-import { DesignSettingComponent } from './components/administor-components/design-setting/design-setting.component';
->>>>>>> b949c8ba98b620921f72a81f4aa28fefe3699eef
+import { UploadImgComponent } from './components/administor-components/upload-img/upload-img.component';
+>>>>>>> ede737520c069239775ff14c0db4311598cf8c93
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,16 +114,21 @@ import { DesignSettingComponent } from './components/administor-components/desig
     SignUpComponent,
     LoginComponent,
     CarouselAdvertisingComponent,
-<<<<<<< HEAD
     HotCategoriesComponent,
     HotProductsComponent,
+    EditProductComponent,
+    DesignSettingComponent,
     ContactComponent,
     AboutAsComponent,
-    OurCastomersSayComponent
+    OurCastomersSayComponent,
+    GetTypeAnimalPipe,
+<<<<<<< HEAD
+    AddImageComponent,
+    FileSelectDirective,
+    HotProductComponent
 =======
-    EditProductComponent,
-    DesignSettingComponent
->>>>>>> b949c8ba98b620921f72a81f4aa28fefe3699eef
+    UploadImgComponent
+>>>>>>> ede737520c069239775ff14c0db4311598cf8c93
     
   ],
   imports: [

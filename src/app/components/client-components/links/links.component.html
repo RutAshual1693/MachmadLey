@@ -22,6 +22,7 @@
             <li  *ngFor="let category of this.categoriesService.listCategories|getCategoriesByType:type._id"><a style="float:right" (click)="chooseCategory(type._id,category)" routerLink="baseClientP"><b>{{category.name}}</b></a></li>
             <!--<li><a href="#">Extras</a></li>
       <li><a href="#">Media</a></li>-->
+          
             </ul>
           </li>
 

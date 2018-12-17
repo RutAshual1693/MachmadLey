@@ -1,3 +1,40 @@
+
+.myPanel {
+  width: 100%;
+  padding: 10px 17px;
+  display: inline-block;
+  background-color: white;
+  /*border: 1px solid #E6E9ED;*/
+  -webkit-column-break-inside: avoid;
+  /*-moz-column-break-inside: avoid;
+  column-break-inside: avoid;*/
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.heading {
+  border-bottom: 1px solid #f3f3f3;
+  min-height: 56px;
+  position: fixed !important;
+  -webkit-box-shadow: -12px -3px 17px 0px;
+  border-right: 1px solid #f3f3f3;
+  /*z-index: 10;*/
+  width: 100%;
+  background: #f3f3f3;
+  top: 0;
+  height: 56px;
+  text-align: left;
+  padding: 14px 16px 14px 16px;
+}
+  .heading .btn {
+    color: white;
+    background-color: #162e4f;
+  }
+
+.my .btn {
+  color: white;
+  background-color: #162e4f;
+}
 @keyframes swing {
     0% {
         transform: rotate(0deg);
@@ -136,15 +173,18 @@ body {
     }
 }
 
+
 /*----------------show sidebar button----------------*/
 
 #show-sidebar {
-    position: fixed;
-    right: 0;
-    top: 10px;
-    border-radius: 0 4px 4px 0px;
-    width: 35px;
-    transition-delay: .3s;
+  position: relative;
+  z-index: 2;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-radius: 0 4px 4px 0px;
+  width: 35px;
+  transition-delay: .3s;
 }
 
 .page-wrapper.toggled #show-sidebar {
@@ -512,7 +552,7 @@ body {
 .page-wrapper .page-content {
   display: inline-block;
   width: 100%;
-  padding-right: 0px;
+  padding-left: 0px;
   padding-top: 20px;
   background-color: #F7F7F7;
 }
@@ -523,7 +563,7 @@ body {
   }
 
 .page-wrapper .page-content {
-  overflow-x: hidden;
+  overflow-x: scroll;
   background-color: #F7F7F7;
 }
 
@@ -534,5 +574,5 @@ body {
 }
 
 .mCSB_inside>.mCSB_container {
-    margin-left: 0px;
+    margin-right: 0px;
 }

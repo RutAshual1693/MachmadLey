@@ -1,15 +1,4 @@
-.myPanel {
-  width: 100%;
-  padding: 10px 17px;
-  display: inline-block;
-  background-color: rgb(255, 251, 251,0.9);
-  border: 1px solid #E6E9ED;
-  -webkit-column-break-inside: avoid;
-  /*-moz-column-break-inside: avoid;
-  column-break-inside: avoid;*/
-  opacity: 1;
-  transition: all .2s ease;
-}
+
 td important {
   font-size: 14px;
   font-family: Tahoma;
@@ -25,4 +14,18 @@ b {
   text-decoration: none;
   position: relative;
   padding: 8px 30px 8px 20px;
+}
+
+/*.table {
+ left:17px;
+}*/
+
+
+btn {
+  color: white;
+  background-color: #0315a3;
+}
+
+label {
+  color: #484242;
 }

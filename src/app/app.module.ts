@@ -33,7 +33,7 @@ import { CarouselAdvertisingComponent } from './components/client-components/car
 import { ListProductComponent } from './components/client-components/list-product/list-product.component';
 import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-
+//import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FileSelectDirective } from 'ng2-file-upload';
