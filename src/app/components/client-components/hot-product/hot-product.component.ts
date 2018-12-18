@@ -7,14 +7,16 @@ declare var $: any;
   styleUrls: ['./hot-product.component.css']
 })
 export class HotProductComponent implements OnInit {
-arr = ['AKC51 קולר לד M.JPG', 'AKC51 קולר לד M.JPG', 'AKC4600 מיטת אביב מלבנית.JPG', 'AKC6338 מיטה מלבנית משובצת.JPG'];
-
+  arr = ['מזרן AKC810.gif', 'AKC7002 איגלו קטן.JPG', 'מזרן פוך פרוותי2.gif', 'מיטה 6370.gif', 'מיטה ויסקו חימום עצמי חום.jpg','מיטת-זמש-אורטופדית-250x150.jpg'];
+  arr2=[];
   constructor(private shoppingCartService: ShoppingCartService) { }
   id;
   clicked(i: number) {
     this.id = "addToCart" + i;
   }
   ngOnInit() {
+    for (let i = 0; i < this.arr.length; i++)
+      this.arr2[i] = this.arr[i].slice(0, this.arr[i].length - 4);
     $(window).scroll(function () {
       $(".slideanim").each(function () {
         var pos = $("#slide3").offset().top;

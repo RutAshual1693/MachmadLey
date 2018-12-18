@@ -16,9 +16,6 @@ export class AdministorComponent implements OnInit {
 
   }
   ngOnInit() {
-   
-
-   
 
       // Dropdown menu
     $(".sidebar-dropdown > a").click(function () {

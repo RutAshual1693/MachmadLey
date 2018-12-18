@@ -20,7 +20,7 @@
   border-right: 1px solid #f3f3f3;
   /*z-index: 10;*/
   width: 100%;
-  background: #f3f3f3;
+  background-color:white;
   top: 0;
   height: 56px;
   text-align: left;
@@ -169,7 +169,8 @@ body {
 
 @media screen and (min-width: 768px) {
     .page-wrapper.toggled .page-content {
-        padding-right: 300px;
+       
+        padding-right:260px;
     }
 }
 

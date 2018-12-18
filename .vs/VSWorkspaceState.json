@@ -6,11 +6,9 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\display-products",
-    "\\src\\app\\components\\client-components\\links",
-    "\\src\\app\\services"
+    "\\src\\app\\components\\administor-components\\edit-products",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\display-products\\display-products.component.ts",
+  "SelectedNode": "\\src\\app\\components\\administor-components\\edit-products\\edit-products.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -106,7 +106,8 @@
 .sidebar-bg.chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
 .sidebar-bg.chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
 .sidebar-bg.chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0);
+
 }
 
 .sidebar-bg.chiller-theme .sidebar-footer {

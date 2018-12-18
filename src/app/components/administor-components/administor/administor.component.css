@@ -4,6 +4,16 @@
   background-color:black;
 }*/
 
+a:hover{
+  border-radius:10px;
+  width:220px !important;
+  margin-right:10px;
+  background-color:rgba(0, 0, 0, 0.32)
+}
+
+a:active {
+  background-color: #dc0065;
+}
 .glyphicon {
   margin-left: 10px;
 }
