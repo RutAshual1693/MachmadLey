@@ -38,11 +38,11 @@ h4 {
 }
 
 .carousel-indicators li {
-  border-color: black;
+  border-color: white;
 }
 
   .carousel-indicators li.active {
-    background-color: black;
+    background-color: white;
   }
 
 .item h4 {
@@ -88,12 +88,53 @@ h4 {
     -webkit-transform: translateY(70%);
   }
 
+
+
   100% {
     opacity: 1;
     -webkit-transform: translateY(0%);
   }
 }
 
+
+
+.slideanim1 {
+  visibility: hidden;
+}
+
+.slide1 {
+  animation-name: slide1;
+  -webkit-animation-name: slide1;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible;
+}
+
+@keyframes slide1 {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slide1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+
+
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
 @media screen and (max-width: 768px) {
   .col-sm-4 {
     text-align: center;
@@ -110,4 +151,23 @@ h4 {
   .logo {
     font-size: 150px;
   }
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  }
+}
+
+#animate-area {
+  width: 100%;
+  height: 300px;
+  
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 30s linear infinite;
 }

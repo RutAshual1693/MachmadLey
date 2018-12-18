@@ -10,7 +10,14 @@ export class OurCastomersSayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-   
+    //$.noConflict();
+    //$(document).ready(function () {
+
+    //  $('#myCarousel').carousel({
+    //    interval: 1000,
+    //  });
+    //});
+    //$("#myCarousel2").find(".item").css("-webkit-transition", "transform 3s ease-in-out 0s").css("transition", "transform 3s ease-in-out 0s")
   }
 
 }

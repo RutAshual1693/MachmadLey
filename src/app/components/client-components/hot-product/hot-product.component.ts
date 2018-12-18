@@ -19,14 +19,14 @@ export class HotProductComponent implements OnInit {
       this.arr2[i] = this.arr[i].slice(0, this.arr[i].length - 4);
     $(window).scroll(function () {
       $(".slideanim").each(function () {
-        var pos = $("#slide3").offset().top;
+        var pos = $(".slideanim").offset().top;
 
         var winTop = $(window).scrollTop();
         if (pos < winTop + 600) {
-          $("#slide3").addClass("slide");
+          $(".slideanim").addClass("slide");
         }
         else {
-          $("#slide3").removeClass("slide");
+          $(".slideanim").removeClass("slide");
         }
       });
     });

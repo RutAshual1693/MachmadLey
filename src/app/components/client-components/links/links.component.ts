@@ -63,8 +63,14 @@ export class LinksComponent implements OnInit {
       $.noConflict();
       $(document).ready(function () {
 
-        $('.carousel').carousel({
+        $('#myCarousel').carousel({
           interval: 3000,
+        });
+        $('#myCarousel1').carousel({
+          interval: 3000,
+        });
+        $('#myCarousel2').carousel({
+          interval: 1000,
         });
     });
     window.onscroll = function () { scrollFunction() };
