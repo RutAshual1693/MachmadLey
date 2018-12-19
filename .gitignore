@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-
+packege-lock.json
+packege-lock.json.orig
+packege.json.orig
 # compiled output
 /dist
 /tmp
