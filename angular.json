@@ -108,7 +108,7 @@
         }
       }
     },
-    "my-project-e2e": {
+    "my-project": {
       "root": "",
       "projectType": "application",
       "cli": {},

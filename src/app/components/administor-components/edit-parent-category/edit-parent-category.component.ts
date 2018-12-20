@@ -19,7 +19,7 @@ export class EditParentCategoryComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl(""),
     });
-    this.form.setValue({ name: this.typesService.editParentCategory["name"]);
+    this.form.setValue({ name: this.typesService.editParentCategory["name"] });
   }
   onSubmit(frm) {
     //this.categoriesService.edit(frm);

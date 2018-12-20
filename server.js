@@ -101,7 +101,8 @@ app.post('/saveProductEditing', function (req, res) {
 
     }, function (err, res) {
     if (err) throw err;
-    console.log("1 document updated");
+      console.log("1 document updated");
+      resolve(listProducts);
   });
   });
   myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
