@@ -33,6 +33,8 @@ import { EditParentCategoryComponent } from "./components/administor-components/
 import { AddParentCategoryComponent } from "./components/administor-components/add-parent-category/add-parent-category.component";
 import { ParentCategoriesBaseComponent } from "./components/administor-components/parent-categories-base/parent-categories-base.component";
 import { ParentCategoryComponent } from "./components/administor-components/parent-category/parent-category.component";
+import { DiscountBaseComponent } from "./components/administor-components/discount-base/discount-base.component";
+import { DiscountComponent } from "./components/administor-components/discount/discount.component";
 
 export const routes: Routes = [
   {
@@ -133,6 +135,24 @@ export const routes: Routes = [
           {
             path: "",
            component: ParentCategoryComponent
+          }
+        ]
+      },
+      {
+        path: "discountBase",
+        component: DiscountBaseComponent,
+        children: [
+          //{
+          //  path: "addParentCategory",
+          //  component: AddParentCategoryComponent
+          //},
+          //{
+          //  path: "editParentCategory",
+          //  component: EditParentCategoryComponent
+          //},
+          {
+            path: "",
+            component: DiscountComponent
           }
         ]
       },

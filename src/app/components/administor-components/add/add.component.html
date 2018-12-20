@@ -58,7 +58,7 @@
             <tr>
               <td><label>קטגוריה</label></td>
               <td>
-                <ng-multiselect-dropdown placeholder="בחר קטגוריות " class="form-control" formControlName="categories"
+                <ng-multiselect-dropdown placeholder="בחר קטגוריות " formControlName="categories"
                                          [data]="this.categoriesService.listCategories"
                                          [settings]="dropdownSettings">
                 </ng-multiselect-dropdown>
@@ -67,7 +67,7 @@
             <tr>
               <td><label>אפשרויות מוצר</label></td>
               <td>
-                <ng-multiselect-dropdown placeholder="אפשרויות מוצר " class="form-control" formControlName="options"
+                <ng-multiselect-dropdown placeholder="אפשרויות מוצר " formControlName="options"
                                          [data]="this.productsService.listProductOptions"
                                          [settings]="dropdownSettings">
                 </ng-multiselect-dropdown>
@@ -76,7 +76,7 @@
             <tr>
               <td><label>מוצרים קשורים</label></td>
               <td>
-                <ng-multiselect-dropdown placeholder="בחר מוצר" class="form-control" formControlName="relatedProducts"
+                <ng-multiselect-dropdown placeholder="בחר מוצר"formControlName="relatedProducts"
                                          [data]="this.productsService.listProducts"
                                          [settings]="dropdownSettings">
                 </ng-multiselect-dropdown>
@@ -85,7 +85,7 @@
             <tr *ngIf="false">
               <td> <label>סוג חיה</label></td>
               <td>
-                <ng-multiselect-dropdown placeholder="סוג חיה" class="form-control" formControlName="parentCategory"
+                <ng-multiselect-dropdown placeholder="קטגורית אב" formControlName="parentCategory"
                                          [data]="this.typesService.listTypes"
                                          [settings]="dropdownSettings">
                 </ng-multiselect-dropdown>
