@@ -17,6 +17,24 @@ export class DisplayProductsComponent implements OnInit {
     private shoppingCartService: ShoppingCartService
   ) { }
 
+   arrProductOption=[];
+  productOption() {
+    let haveOption = false;
+    let i = 0;
+    for (let pOptinItem in this.productsService.listProductOptions) {
+      for (let pItem in this.productsService.listProductByCategory) {
+        for (let pProductOption in this.productsService.listProductByCategory[pItem]["options"]) {
+          if (this.productsService.listProductOptions[pOptinItem]["_id"] == this.productsService.listProductByCategory[pItem]["options"][pProductOption]["_id"]) {
+            
+            haveOption = true;
+          }
+        }
+      }
+      if (haveOption == true)
+        this.arrProductOption[i++] = this.productsService.listProductOptions[pOptinItem];
+    }
+  }
+
   maxPrice() {
     this.productsService.listProductByCategory = this.listProductByCategoryForSort;
     this.productsService.listProductByCategory = this.productsService.listProductByCategory.sort((a, b) => b['price'] - a['price']);
@@ -45,6 +63,7 @@ export class DisplayProductsComponent implements OnInit {
 
   }
   ngOnInit() {
+    this.productOption();
     this.listProductByCategoryForSort = this.productsService.listProductByCategory.filter(x=>x['_id']!="");
     this.paginationService.setPage(1);
   }
