@@ -3,8 +3,8 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-project": {
-      "root": "",
+    "my-project-e2e": {
+      "root": "e2e",
       "projectType": "application",
       "architect": {
         "build": {

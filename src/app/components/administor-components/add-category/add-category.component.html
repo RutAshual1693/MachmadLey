@@ -2,23 +2,22 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="heading" style="position:fixed;width:100%;">
     <div class="col-lg-8">
-      <input type="submit" class="btn"  value="שמור" />
+      <input type="submit"  class="btn" style="background-color:rgba(0, 0, 0, 0.8)"  value="שמור" />
     </div>
-    <div class="col-lg-2"> <p style="color:black; float:right; font-size:20px;">שמור </p></div>
-    <div class="col-lg-2"> </div>
+
 
   </div>
   <main class="page-content">
     <div class="container-fluid">
-      <div class="w3-panel w3-card">
-        <br />
-        <div class="col-lg-1"></div>
-        <div class="col-md-8"></div>
-        <div class="form-group col-md-3">
-          <h2 style="color:rgb(8, 31, 56,0.9);">הוספת קטגוריה </h2>
+      <div class="w3-panel w3-card" style="background-color:white">
+
+        <div style="margin-top:-20px;">
+          <div style="background-color:#dc0065;width:60px;height:60px;border-radius:10px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:3px 5px 5px rgba(191, 191, 191, 0.77)">
+            <img src="./assets/icons/add.png" style="width:20px;height:20px;" />
+          </div>
+          <h4 style="margin-top:-30px; margin-right:70px; font-family:Guttman-CourMir">הוספת קטגוריה</h4>
+          <br />
         </div>
-        <br /><br />
-        <br /><br />
 
         <div class="form-group">
           <label>שם:</label>
@@ -28,7 +27,6 @@
             <option value="" disabled selected>בחר סוג חיה</option>
             <option value="{{type._id}}" *ngFor="let type of this.typesService.listTypes">{{type.name}}</option>
           </select>
-          <input type="submit" class="btn" value="Submit" />
         </div>
 
       </div>

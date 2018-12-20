@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TypesService {
-
+  public editParentCategory: object=[];
   public listTypes: Array<object>;
   constructor(public http: HttpClient) {
     this.types();

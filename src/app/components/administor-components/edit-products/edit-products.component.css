@@ -1,13 +1,4 @@
-td {
-  /*font-size: 14px;
-  font-family: Tahoma;
-  padding:10px 10px;*/
-  display: table-cell !important;
-  vertical-align: middle !important;
-  /*font-family:Guttman-CourMir;*/
- font-weight:100;
 
-}
 b{
   font-size:16px;
   color:rgb(34, 31, 31);

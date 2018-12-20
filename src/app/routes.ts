@@ -29,6 +29,10 @@ import { ProductDetailsComponent } from "./components/client-components/product-
 import { EditProductComponent } from "./components/administor-components/edit-product/edit-product.component";
 import { DesignSettingComponent } from "./components/administor-components/design-setting/design-setting.component";
 import { AddProductOptionComponent } from "./components/administor-components/add-product-option/add-product-option.component";
+import { EditParentCategoryComponent } from "./components/administor-components/edit-parent-category/edit-parent-category.component";
+import { AddParentCategoryComponent } from "./components/administor-components/add-parent-category/add-parent-category.component";
+import { ParentCategoriesBaseComponent } from "./components/administor-components/parent-categories-base/parent-categories-base.component";
+import { ParentCategoryComponent } from "./components/administor-components/parent-category/parent-category.component";
 
 export const routes: Routes = [
   {
@@ -113,6 +117,24 @@ export const routes: Routes = [
       {
         path: "storeManagement",
         component: StoreManagementComponent,
+      },
+      {
+        path: "parentCategoriesBase",
+        component: ParentCategoriesBaseComponent,
+        children: [
+          {
+            path: "addParentCategory",
+            component: AddParentCategoryComponent
+          },
+          {
+            path: "editParentCategory",
+            component: EditParentCategoryComponent
+          },
+          {
+            path: "",
+           component: ParentCategoryComponent
+          }
+        ]
       },
       {
         path: "categoriesBase",

@@ -6,20 +6,24 @@
     "\\src\\app\\components",
 <<<<<<< HEAD
     "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\hot-products",
-    "\\src\\app\\components\\client-components\\links",
-    "\\src\\app\\components\\client-components\\our-castomers-say",
-    "\\src\\app\\services"
+    "\\src\\app\\components\\client-components\\contact",
+    "\\src\\app\\components\\client-components\\hot-categories",
+    "\\src\\app\\components\\client-components\\hot-product",
+    "\\src\\app\\components\\client-components\\links"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\links\\links.component.html",
+  "SelectedNode": "\\src\\app\\components\\client-components\\hot-categories\\hot-categories.component.html",
 =======
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\add",
-    "\\src\\app\\components\\administor-components\\customers",
-    "\\src\\app\\components\\administor-components\\edit-customer",
-    "\\src\\app\\components\\administor-components\\edit-products"
+    "\\src\\app\\components\\administor-components\\add-category",
+    "\\src\\app\\components\\administor-components\\add-parent-category",
+    "\\src\\app\\components\\administor-components\\edit-category",
+    "\\src\\app\\components\\administor-components\\edit-parent-category",
+    "\\src\\app\\components\\administor-components\\parent-category",
+    "\\src\\app\\services",
+    "\\src\\assets",
+    "\\src\\assets\\icons"
   ],
-  "SelectedNode": "\\src\\app\\routes.ts",
->>>>>>> b949c8ba98b620921f72a81f4aa28fefe3699eef
+  "SelectedNode": "\\src\\assets\\icons\\pencil-edit-button (1).png",
+>>>>>>> 4871e3e2a922050efd286e64673badf333a5ea41
   "PreviewInSolutionExplorer": false
 }

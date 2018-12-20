@@ -1,17 +1,4 @@
 <div class="page-wrapper chiller-theme sidebar-bg bg1 toggled" style="background-color:#dce1e5" dir="rtl">
-   <!--<nav class="heading"  style="position:fixed;">
-    <a class="" routerLink="designSetting"style="float:left;">
-      <i class="fa fa-cog" style="color:black;width:40px;"></i>
-    </a>
-    <button class="btn" style="float:left;">הוסף מוצר</button>
-  </nav>-->
-  <!--<nav class="navbar navbar-inverse" style="background-color:white;border-color:white;">
-    <ul class="nav navbar-nav">
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-    </ul>
-    <p class="navbar-text">Some text</p>
-  </nav>-->
   <br /><br />
   <a id="show-sidebar" class="btn btn-sm btn-dark">
     <i class="fas fa-bars"></i>
@@ -24,39 +11,10 @@
           <i class="fas fa-times"></i>
         </div>
       </div>
-      <!--<div class="sidebar-header">
-        <div class="user-pic">
-          <img class="img-responsive img-rounded" src="./assets/img (2)/user.jpg" alt="User picture">
-        </div>
-        <div class="user-info">
-
-          <span class="user-role">מחמד לי</span>
-
-        </div>
-      </div>-->
-      <!-- sidebar-header  -->
-      <!--<div class="sidebar-search">
-        <div>
-          <div class="input-group">
-            <input type="text" class="form-control search-menu" placeholder="Search...">
-            <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>-->
-      <!-- sidebar-search  -->
       <div class="sidebar-menu">
         <ul>
-          <!--<li class="header-menu" style="color:rgb(8, 31, 56,0.8);">
-            <span>כללי</span>
-          </li>-->
-
           <li>
             <br />
-
             <br />
             <br />  <br />
             <br />
@@ -77,6 +35,9 @@
                 </li>
                 <li>
                   <a routerLink="categoriesBase">קטגוריות</a>
+                </li>
+                <li>
+                  <a routerLink="parentCategoriesBase">קטגוריות אב</a>
                 </li>
                 <li>
                   <a routerLink="productOptionsBase">אפשרויות מוצר</a>
@@ -122,68 +83,15 @@
 
               <span>הגדרות חנות</span>
             </a>
-            <!--<div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a>Pie chart</a>
-                </li>
-                <li>
-                  <a>Line chart</a>
-                </li>
-                <li>
-                  <a>Bar chart</a>
-                </li>
-                <li>
-                  <a>Histogram</a>
-                </li>
-              </ul>
-            </div>-->
           </li>
-          <!--<li class="sidebar-dropdown">
-            <a>
-              <i class="fa fa-globe"></i>
-              <span>Maps</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a>Google maps</a>
-                </li>
-                <li>
-                  <a>Open street map</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="header-menu">
-            <span>Extra</span>
-          </li>
-          <li>
-            <a>
-              <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i class="fa fa-folder"></i>
-              <span>Examples</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i class="fa fa-book"></i>
-              <span>Documentation</span>
-            </a>
-          </li>-->
         </ul>
       </div>
       <!-- sidebar-menu  -->
     </div>
     <!-- sidebar-content  -->
-  <div class="sidebar-footer">
+    <div class="sidebar-footer">
       <div class="dropdown">
-        <a  class="" id="dropdownMenuNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="" id="dropdownMenuNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bell"></i>
           <span class="badge badge-pill badge-warning notification">3</span>
         </a>
@@ -193,7 +101,7 @@
             Notifications
           </div>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" >
+          <a class="dropdown-item">
             <div class="notification-content">
               <div class="icon">
                 <i class="fas fa-check text-success border border-success"></i>
@@ -206,7 +114,7 @@
               </div>
             </div>
           </a>
-          <a class="dropdown-item" >
+          <a class="dropdown-item">
             <div class="notification-content">
               <div class="icon">
                 <i class="fas fa-exclamation text-info border border-info"></i>
@@ -219,7 +127,7 @@
               </div>
             </div>
           </a>
-          <a class="dropdown-item" >
+          <a class="dropdown-item">
             <div class="notification-content">
               <div class="icon">
                 <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
@@ -233,11 +141,11 @@
             </div>
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item text-center" >View all notifications</a>
+          <a class="dropdown-item text-center">View all notifications</a>
         </div>
       </div>
       <div class="dropdown">
-        <a  class="" id="dropdownMenuMessage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="" id="dropdownMenuMessage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-envelope"></i>
           <span class="badge badge-pill badge-success notification">7</span>
         </a>
@@ -247,7 +155,7 @@
             Messages
           </div>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" >
+          <a class="dropdown-item">
             <div class="message-content">
               <div class="pic">
                 <img src="./assets/img (2)/user.jpg" alt="">
@@ -260,7 +168,7 @@
               </div>
             </div>
           </a>
-          <a class="dropdown-item" >
+          <a class="dropdown-item">
             <div class="message-content">
               <div class="pic">
                 <img src="./assets/img (2)/user.jpg" alt="">
@@ -273,7 +181,7 @@
               </div>
             </div>
           </a>
-          <a class="dropdown-item" >
+          <a class="dropdown-item">
             <div class="message-content">
               <div class="pic">
                 <img src="./assets/img (2)/user.jpg" alt="">
@@ -287,206 +195,26 @@
             </div>
           </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item text-center" >View all messages</a>
+          <a class="dropdown-item text-center">View all messages</a>
         </div>
       </div>
       <div class="dropdown">
-        <a  class="">
+        <a class="">
           <i class="fa fa-cog" routerLink="designSetting"></i>
           <span class="badge-sonar"></span>
         </a>
-        <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
-          <a class="dropdown-item" >My profile</a>
-          <a class="dropdown-item" >Help</a>
-          <a class="dropdown-item" >Setting</a>
-        </div>-->
       </div>
       <div>
-        <a >
+        <a>
           <i class="fa fa-power-off"></i>
         </a>
       </div>
     </div>
   </nav>
+  <!-- page-content" -->
   <router-outlet>
-
-
     <app-main *ngIf="show"></app-main>
   </router-outlet>
   <!-- sidebar-wrapper  -->
-  <!-- page-content" -->
+
 </div>
-<!--<nav class="navbar navbar-defult"></nav>-->
-<!--<style type="text/css">
-  .rtl {
-    direction: rtl;
-  }
-
-</style>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-9">
-        <router-outlet></router-outlet>
-      </div>
-      <div class="col-lg-3">
-        <div class="sidebar-menu fixed">
-          <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a href="#main" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home"></span>ראשי</a>
-                </h4>
-                <div id="main" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a href="#storeManagement" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-wrench"></span>ניהול חנות</a>
-                  </h4>
-                </div>
-              </div>
-
-              <div id="storeManagement" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <table class="table">
-                    <tr>
-                      <td class="root-level has-sub">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a routerLink="productsBase">מוצרים</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a routerLink="categoriesBase">קטגוריות</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a routerLink="productOptionsBase">אפשרויות מוצר</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a >תכונות</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a >שיטות משלוח</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a >שרותי הובלה</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a >דפי תוכן</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a >מבצעים</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a >באנרים</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="categories">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <a >סגנון עיצובי לחנות</a>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a href="#customersAndOrders" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-user"></span>לקוחות והזמנות</a>
-                  </h4>
-                </div>
-              </div>
-
-              <div id="customersAndOrders" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <table class="table">
-                    <tr>
-                      <td>
-                        <span class="glyphicon glyphicon-flash text-success"></span>
-                        <a routerLink="customersBase" >לקוחות</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="glyphicon glyphicon-flash text-success"></span>
-                        <a >הזמנות</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="glyphicon glyphicon-flash text-success"></span>
-                        <a >אפשרויות מוצר</a>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a href="#storeSetting" data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-cog"></span>הגדרות חנות</a>
-                  </h4>
-                </div>
-              </div>
-
-              <div id="storeSetting" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <table class="table">
-                    <tr>
-                      <td>
-                        <span class="glyphicon glyphicon-flash text-success"></span>
-                        <a >מוצרים</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="glyphicon glyphicon-flash text-success"></span>
-                        <a >קטגוריות</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="glyphicon glyphicon-flash text-success"></span>
-                        <a >אפשרויות מוצר</a>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>-->
-

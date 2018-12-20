@@ -1,8 +1,24 @@
 <br /><br /><br /><br /><br />
+<<<<<<< HEAD
 
 
 
   <div class="container">
+=======
+<h1 style="position:relative;text-align:center">{{paginationService.category}} ל{{paginationService.baseCategory}}</h1>
+<div style="text-align:center">
+  <a>דף הבית</a><span style="color:gray"> > </span><a>{{paginationService.baseCategory}}</a><span style="color:gray"> / </span><a>{{paginationService.category}}</a>
+</div>
+<br />
+<div style="margin-right:18%;margin-left:18%;border-bottom:0.5px solid #b2b2b2">
+  <input style="margin:5px;width:150px;display:inline-block" type="text" class="form-control" #txtToSearch placeholder="שם מוצר" /><button style="background-color:#d0b623;color:white" (click)="search(txtToSearch.value)" class="glyphicon glyphicon-search btn btn-dark"></button>
+  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="maxPrice()">מחיר עולה</button>
+  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="minPrice()">מחיר יורד</button>
+  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="orders()">הזמנות</button>
+  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="refresh()">רענן</button>
+</div>
+<div class="container" style="padding-right:15%;padding-left:15%;">
+>>>>>>> 4871e3e2a922050efd286e64673badf333a5ea41
   <div class="row">
     <div class="col-md-9"></div>
     <div class="col-md-3" style="font-size:15px;font-weight:bold">
@@ -19,17 +35,12 @@
       <div class="row">
         <div class="col-md-9">
           <label style="font-family:Guttman-CourMir;font-size:30px">{{paginationService.category}} ל{{paginationService.baseCategory}}</label>
-  <input style="margin:5px;width:150px;display:inline-block" type="text" class="form-control" #txtToSearch placeholder="שם מוצר" /><button style="background-color:#d0b623;color:white" (click)="search(txtToSearch.value)" class="glyphicon glyphicon-search btn btn-dark"></button>
-  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="maxPrice()">מחיר עולה</button>
-  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="minPrice()">מחיר יורד</button>
-  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="orders()">הזמנות</button>
-  <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="refresh()">רענן</button>
           <div style="display:inline-block;float:left">
             <input style="margin:5px;width:150px;display:inline-block" type="text" class="form-control" placeholder="שם מוצר" />
             <button style="background-color:#d0b623;color:white" class="glyphicon glyphicon-search btn btn-dark"></button>
-    <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">מחיר עולה</button>
-    <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">מחיר יורד</button>
-    <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">הזמנות</button>
+            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">מחיר עולה</button>
+            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">מחיר יורד</button>
+            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">הזמנות</button>
           </div>
             <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
          

@@ -12,7 +12,8 @@ export class ProductsService implements OnInit {
   public editProductOption: object;
   public editProduct: object;
   public editFormProduct;
-  public listProductByCategory: Array<object>;
+  public listProductByCategory: Array<object>; 
+  public listProductByCategoryForSort: Array<object>;
   public showProductDetails: object = [];
   public showProductOptions: Array< object> = [];
   constructor(public http: HttpClient) {
