@@ -77,6 +77,8 @@ import { ParentCategoriesBaseComponent } from './components/administor-component
 import { AddParentCategoryComponent } from './components/administor-components/add-parent-category/add-parent-category.component';
 import { EditParentCategoryComponent } from './components/administor-components/edit-parent-category/edit-parent-category.component';
 import { FooterComponent } from './components/client-components/footer/footer.component';
+import { DiscountComponent } from './components/administor-components/discount/discount.component';
+import { DiscountBaseComponent } from './components/administor-components/discount-base/discount-base.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -130,7 +132,9 @@ import { FooterComponent } from './components/client-components/footer/footer.co
     ParentCategoriesBaseComponent,
     AddParentCategoryComponent,
     EditParentCategoryComponent,
-    FooterComponent
+    FooterComponent,
+    DiscountComponent,
+    DiscountBaseComponent
     
   ],
   imports: [
