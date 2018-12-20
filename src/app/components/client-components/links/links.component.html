@@ -11,10 +11,10 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar" style="float:left">
         <ul class="nav navbar-nav navbar-right">
-          <li style="float:right"><a (click)="homePageClick()" class="active a" style="cursor:pointer;color:darkcyan !important">דף הבית</a></li>
+          <li style="float:right"><a (click)="homePageClick()" class="active a" style="cursor:pointer;">דף הבית</a></li>
           <li style="float:right" class="dropdown">
         <li style="float:right" class="dropdown" *ngFor="let type of typesService.listTypes">
-            <a style="background-color:transparent;color:white " class="dropdown-toggle a" data-toggle="dropdown" href="#">
+            <a style="background-color:transparent;" class="dropdown-toggle a" data-toggle="dropdown" href="#">
             {{type.name}}
               <span class="caret"></span>
             </a>
@@ -27,13 +27,13 @@
           </li>
 
         <!--<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>-->
-          <li style="float:right"><a class="a" style="color:white" href="#">אודות</a></li>
+          <li style="float:right"><a class="a"  href="#">אודות</a></li>
 
-        <li style="float:right;color:white"><a class="a" style="color:white" href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-user"></span><b>הרשם</b></a></li>
-        <li style="float:right;color:white"><a class="a" style="color:white" href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span><b>התחבר</b></a></li>
+        <li style="float:right;color:white"><a class="a"  href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-user"></span><b>הרשם</b></a></li>
+        <li style="float:right;color:white"><a class="a"  href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span><b>התחבר</b></a></li>
           <!--<li style="float:right"><a href="#contact">צור קשר</a></li>-->
           <li><!--<a href="#"><span class="glyphicon glyphicon-search"></span></a>--></li>
-        <li style="float:right;"><a class="a" style="color:white" href="#contact"> <b>צור קשר</b></a></li>
+        <li style="float:right;"><a class="a"  href="#contact"> <b>צור קשר</b></a></li>
         </ul>
       </div>
     </div>

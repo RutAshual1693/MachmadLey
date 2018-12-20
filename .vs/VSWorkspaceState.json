@@ -5,10 +5,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\edit-products",
-    "\\src\\assets"
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\client-components\\contact",
+    "\\src\\app\\components\\client-components\\hot-categories",
+    "\\src\\app\\components\\client-components\\hot-product",
+    "\\src\\app\\components\\client-components\\links"
   ],
-  "SelectedNode": "\\src\\app\\components\\administor-components\\edit-products\\edit-products.component.html",
+  "SelectedNode": "\\src\\app\\components\\client-components\\hot-categories\\hot-categories.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -43,9 +43,9 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let product of productsService.listProducts">
+          <tr *ngFor="let product of productsService.listProducts;let i=index">
             <td height="50px">
-              <img style="width:50px; height:50px" src="/assets/pictures/toy/toy1.jpg" />
+              <img style="width:50px; height:50px" src="/assets/arr[i]" />
             </td>
             <td>{{product.name}}</td>
             <td>{{product.model}}</td>
@@ -63,12 +63,12 @@
             <td class="my">
 
               <div style="display:inline-block;margin-left:5px">
-                <div style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
+                <div (click)="productsService.editProductClicked(product)" routerLink="editProduct2" style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
                   <img src="./assets/menu.png" style="width:15px;height:15px;" />
                 </div>
               </div>
               <div style="display:inline-block">
-                <div style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
+                <div (click)="delete(product)" style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
                   <img src="./assets/cancel.png" style="width:15px;height:15px;" />
                 </div>
               </div>

@@ -7,6 +7,7 @@ import { ProductsService } from '../../../services/products.service';
 })
 export class EditProductsComponent implements OnInit {
   public showAdd: boolean = true;
+  arr = ["AKC6338 מיטה מלבנית משובצת.JPG", "AKC4600 מיטת אביב מלבנית.JPG","מיטת-זמש-אורטופדית-250x150.jpg"]
   constructor(public productsService: ProductsService) {
   
     }

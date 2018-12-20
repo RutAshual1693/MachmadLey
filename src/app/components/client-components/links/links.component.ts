@@ -67,7 +67,7 @@ export class LinksComponent implements OnInit {
           interval: 3000,
         });
         $('#myCarousel1').carousel({
-          interval: 3000,
+          interval: 6000,
         });
         $('#myCarousel2').carousel({
           interval: 1000,

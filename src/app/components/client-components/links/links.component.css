@@ -163,7 +163,7 @@ li {
 .btn {
   padding: 10px 20px;
   background-color: #333;
-  color: #f1f1f1;
+  color: black;
   border-radius: 0;
   transition: .2s;
 }
@@ -201,13 +201,13 @@ li {
   margin-bottom: 0;
   background-color: transparent;
   border: 0;
-  font-size: 11px ;
+  font-size: 15px ;
   letter-spacing: 4px;
   opacity: 0.9;
 }
 
   .navbar .a.active {
-    color: white;
+    color: darkcyan !important;
   }
 
   .navbar .a::after {
@@ -234,7 +234,7 @@ li {
   }
 
   .navbar li .a, .navbar .navbar-brand {
-    color: #d5d5d5 ;
+    color: black ;
   }
 
 .navbar-nav li .a:hover {
@@ -242,7 +242,7 @@ li {
 }
 
 .navbar-nav li.active .a {
-  color: white ;
+  color: black ;
   background-color: transparent;
 }
 
