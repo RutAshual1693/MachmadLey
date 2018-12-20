@@ -72,6 +72,10 @@ import { OurCastomersSayComponent } from './components/client-components/our-cas
 import { GetTypeAnimalPipe } from './pipes/get-type-animal.pipe';
 import { AddImageComponent } from './components/administor-components/add-image/add-image.component';
 import { HotProductComponent } from './components/client-components/hot-product/hot-product.component';
+import { ParentCategoryComponent } from './components/administor-components/parent-category/parent-category.component';
+import { ParentCategoriesBaseComponent } from './components/administor-components/parent-categories-base/parent-categories-base.component';
+import { AddParentCategoryComponent } from './components/administor-components/add-parent-category/add-parent-category.component';
+import { EditParentCategoryComponent } from './components/administor-components/edit-parent-category/edit-parent-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,7 +124,11 @@ import { HotProductComponent } from './components/client-components/hot-product/
     GetTypeAnimalPipe,
     AddImageComponent,
     FileSelectDirective,
-    HotProductComponent
+    HotProductComponent,
+    ParentCategoryComponent,
+    ParentCategoriesBaseComponent,
+    AddParentCategoryComponent,
+    EditParentCategoryComponent
     
   ],
   imports: [

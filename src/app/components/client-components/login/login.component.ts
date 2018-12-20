@@ -14,10 +14,7 @@ export class LoginComponent implements OnInit {
 
   form;
   ngOnInit() {
-    this.form = new FormGroup({
-      firstName: new FormControl(""),
-      password: new FormControl(""),
-    });
+  
   }
   onSubmit(frm) {
     console.log(frm);

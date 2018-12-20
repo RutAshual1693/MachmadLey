@@ -1,14 +1,19 @@
 {
   "ExpandedNodes": [
     "",
-    "\\images",
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\edit-products",
-    "\\src\\assets"
+    "\\src\\app\\components\\administor-components\\add-category",
+    "\\src\\app\\components\\administor-components\\add-parent-category",
+    "\\src\\app\\components\\administor-components\\edit-category",
+    "\\src\\app\\components\\administor-components\\edit-parent-category",
+    "\\src\\app\\components\\administor-components\\parent-category",
+    "\\src\\app\\services",
+    "\\src\\assets",
+    "\\src\\assets\\icons"
   ],
-  "SelectedNode": "\\src\\app\\components\\administor-components\\edit-products\\edit-products.component.html",
+  "SelectedNode": "\\src\\assets\\icons\\pencil-edit-button (1).png",
   "PreviewInSolutionExplorer": false
 }

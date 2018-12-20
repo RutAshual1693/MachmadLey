@@ -1,39 +1,22 @@
-<!--<main class="page-content">
-  <div class="container-fluid">
-    <div class="w3-panel w3-card">
-      <br />
-      <div class="col-lg-1"></div>
-      <div class="col-md-8"></div>
-      <div class="form-group col-md-3">
-        <h2 style="color: rgb(33, 9, 103,0.9);">הוספת מוצר </h2>
-      </div>
-      <br /><br />
-      <br /><br />
 
-
-
-
-
-    </div>
-  </div>
-</main>-->
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="heading" style="position:fixed;width:100%;">
     <div class="col-lg-8">
-      <input type="submit"  class="btn"  [disabled]="!form.valid"value="שמור" />
+      <input type="submit"   class="btn" style="background-color:rgba(0, 0, 0, 0.8)"  [disabled]="!form.valid"value="שמור" />
     </div>
-    <div class="col-lg-2"> <p style="color:black; float:right; font-size:20px;">יצירת מוצר </p></div>
-    <div class="col-lg-2"> </div>
-
   </div>
-
   <main class="page-content" style="background-color:#f2f7fb;">
     <div class="container-fluid">
-      <div class="w3-panel w3-card">
-      
-        <br /><br />
-        <br /><br />    <div class="form-group">
-          <table class="table" style="border:hidden;">
+      <div class="w3-panel w3-card" style="background-color:white">
+        <div style="margin-top:-20px;">
+          <div style="background-color:#dc0065;width:60px;height:60px;border-radius:10px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:3px 5px 5px rgba(191, 191, 191, 0.77)">
+            <img src="./assets/icons/add.png" style="width:25px;height:25px;" />
+          </div>
+          <h4 style="margin-top:-30px; margin-right:70px; font-family:Guttman-CourMir">הוספת מוצר</h4>
+          <br />
+        </div>
+        <div class="form-group">
+          <table class="table table table-condensed" style="border:hidden;">
             <tr>
               <td><label>שם מוצר</label></td>
               <td> <input type="text" formControlName="name" /></td>
@@ -112,14 +95,10 @@
               <td><label>חברה</label></td>
               <td> <input type="text" formControlName="company" class="form-control" /></td>
             </tr>
-
             <tr>
               <td><label>תמונות</label></td>
               <td>
-
-                                  <app-add-image></app-add-image>
-                <!-- <input type='file' (change)="readURL(this)" />
-                <img id="blah" src="http://placehold.it/180" alt="your image" />-->
+                <app-add-image></app-add-image>
               </td>
             </tr>
             <tr>
