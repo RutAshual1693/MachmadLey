@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\components",
-    "\\src\\app\\components\\client-components",
+    ""
     "\\src\\app\\components\\client-components\\hot-categories"
   ],
   "SelectedNode": "\\src\\app\\components\\client-components\\hot-categories\\hot-categories.component.ts",
