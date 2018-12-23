@@ -5,15 +5,8 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\contact",
-    "\\src\\app\\components\\client-components\\hot-categories",
-    "\\src\\app\\components\\client-components\\hot-product",
-    "\\src\\app\\components\\client-components\\links"
-    "\\src\\app\\components\\administor-components\\parent-category",
-    "\\src\\app\\services",
-    "\\src\\assets",
-    "\\src\\assets\\icons"
+    "\\src\\app\\components\\client-components\\hot-categories"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\hot-categories\\hot-categories.component.html",
+  "SelectedNode": "\\src\\app\\components\\client-components\\hot-categories\\hot-categories.component.ts",
   "PreviewInSolutionExplorer": false
 }

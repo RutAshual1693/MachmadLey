@@ -11,7 +11,7 @@ export class HotCategoriesComponent implements OnInit {
 
   ngOnInit() {
     $(window).scroll(function () {
-      $(".slideanim").each(function () {
+      $("#slide1").each(function () {
         var pos = $("#slide1").offset().top;
 
         var winTop = $(window).scrollTop();

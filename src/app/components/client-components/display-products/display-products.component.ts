@@ -62,6 +62,68 @@ export class DisplayProductsComponent implements OnInit {
     this.paginationService.setPage(1);
 
   }
+  checkClicked(values: Array<string>) {
+    alert("bina");
+    let arrCheck;
+    let checkes = [];
+    let i = 0;
+    let isChecked = false;
+    //שמירת כל ערכי אפשרויות המוצר הקיימות לקטגוריה זו
+    arrCheck = document.getElementsByClassName("check");
+    //checkes בדיקת הערכים שנבחרו ושמירתם במערך  
+    for (let item of arrCheck) {
+      if (item.checked)
+        checkes[i++] = item.value;
+    }
+    i = 0;
+    //arrSortProducts שמירת כל המוצרים במערך 
+    let arrSortProducts = this.productsService.listProductByCategory;
+    //הקצאת מערך לשימוש זמני השומר בכל סיבוב של הלולאה את המוצרים
+    //העומדים בתנאי הסינון של האפשרות מוצר הנוכחית
+    let arrP2;
+    let isProductOptionChecked = false;;
+    //מעבר על מערך אפשרויות מוצר
+    for (let option of this.arrProductOption) {
+      //מעבר על רשימת המוצרים
+      for (let product of arrSortProducts) {
+        //מעבר על אמערך אפשרויות מוצר ברשימת המוצרים
+        for (let productOption of product["options"]) {
+          //מעבר על ערכי אפשרויות המוצר
+          for (let item of productOption["values"]) {
+            //מעבר על האינפוטים שנבחרו
+            for (let value of checkes) {
+              //בדיקה האם אחד מערכי אפשרויות המוצר הוא נבחר והוא מהקטגוריה הנוכחית
+              if (value == option == item) {
+                // סימון המוצר
+                isChecked = true;
+                //סימון האפשרות מוצר 
+                isProductOptionChecked = true;
+              }
+            }
+          }
+        }
+        //אם המוצר מסומן
+        if (isChecked) {
+          //הוספת המוצר לרשימת המוצרים
+          arrP2[i++] = product;
+        }
+        //במעבר למוצר הבא איפוס הסימון
+        isChecked = false;
+      }
+      //אם המשתמש סינן את אחד הערכים מהאפשרות המוצר הנוכחית
+      if (isProductOptionChecked) {
+        //הכנסת המוצרים המסוננים למערך וסינון מחדש...
+        arrSortProducts = arrP2;
+        //איפוס המערך להכנסת המוצרים המסוננים
+        arrP2 = [];
+        //איפוס סימון האפשרות מוצר הנוחית
+        isProductOptionChecked = false;
+      }
+    }
+    //שמירת המוצרים המסוננים לצורך הצגתם
+    this.productsService.listProductByCategory = arrSortProducts;
+    this.paginationService.setPage(1);
+  }
   ngOnInit() {
     this.productOption();
     this.listProductByCategoryForSort = this.productsService.listProductByCategory.filter(x=>x['_id']!="");

@@ -121,8 +121,9 @@
               </div>
               <div id="collapse1" class="panel-collapse collapse in">
                 <div class="panel-body" *ngFor="let i of item.values">
-                  <input type="checkbox" value="צהוב" /><label style="margin-right:5px"> {{i}} </label><br />
-              </div>
+                  <input class="check"  type="checkbox" value="{{i}}"/><label style="margin-right:5px"> {{i}} </label><br />
+                </div>
+                <button (click)="checkClicked(item.values)">אישור</button>
               </div>
             </div>
            
