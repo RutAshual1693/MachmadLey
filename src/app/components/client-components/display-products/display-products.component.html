@@ -1,7 +1,4 @@
 <br /><br /><br /><br /><br />
-
-
-
   <div class="container">
   <div class="row">
     <div class="col-md-9"></div>
@@ -22,22 +19,18 @@
        <div style="display:inline-block;float:left">
             <input style="margin:5px;width:150px;display:inline-block" type="text" class="form-control" placeholder="שם מוצר" />
             <button style="background-color:#d0b623;color:white" class="glyphicon glyphicon-search btn btn-dark"></button>
-    <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="minPrice()">מחיר עולה</button>
-    <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="maxPrice()">מחיר יורד</button>
-    <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">הזמנות</button>
+            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="minPrice()">מחיר עולה</button>
+            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="maxPrice()">מחיר יורד</button>
+            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">הזמנות</button>
           </div>
             <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
-         
         </div>
-
-
-        <div class="col-md-3">
+     <div class="col-md-3">
           <br />
           <b>46 מוצרים</b>
           <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-9">
           <div id="slide3" class="row slideanim">
@@ -45,7 +38,6 @@
               <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let product of paginationService.pagedItems; let i = index">
                 <article class="card-wrapper">
                   <div style="cursor:pointer" class="image-holder" (click)="productDetails(product)" routerLink="productDetails">
-                    <!--  <div class="glyphicon glyphicon-eye-open "></div>-->
                     <div class="image-liquid image-holder--original">
                       <img src="./assets/{{arr[i]}}" />
                     </div>
@@ -53,17 +45,17 @@
                   <div class="product-description">
                     <!-- title -->
                     <h1 class="product-description__title">
-                      <button style="border:0;background-color:transparent;direction:rtl" (click)="shoppingCartService.addProductToCart(product,1)">
-                        {{product.name}}
-                      </button>
+                      <span *ngFor="let item of product.name|nameLength:product.name" style="border:0;background-color:transparent;direction:rtl;color:gray;font-size:15px" (click)="shoppingCartService.addProductToCart(product,1)">
+                        {{item}}<br />
+                        <span *ngIf="product.name|emptyLine:product.name"><br /></span>
+                      </span>
                     </h1>
                     <!-- category and price -->
                     <div class="row">
-                      <div class="col-xs-12 col-sm-4 product-description__price" style="direction:ltr">
-                        {{product.price|currency:'ILS'}}
-                      </div>
-                      <div class="col-xs-12 col-sm-8 product-description__category secondary-text">
-                        Men's running shirt
+                      <div class="col-xs-12 col-sm-4 col-lg-12 product-description__price" style="direction:ltr;float:left">
+                        <span>{{salesService.listSale|originPrice:product}}</span>
+                        <span style="text-decoration: line-through;margin-right:5px;">{{salesService.listSale|deleteOriginPrice:product}}</span>
+                        <span #price style="color:red;">{{salesService.listSale|getSalePrice:product}}</span>
                       </div>
                     </div>
                     <!-- divider -->
@@ -98,17 +90,12 @@
                     </div>
                   </div>
                 </article>
-
               </div>
             </div>
           </div>
-
         </div>
-
         <div class="col-md-3">
-
           <div class="panel-group" id="accordion">
-
             <input type="checkbox" /><label style="margin-right:5px">חדש</label>
             <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
             <div class="panel panel-default" *ngFor="let item of this.arrProductOption">

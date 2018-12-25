@@ -15,7 +15,8 @@ export class ProductsService implements OnInit {
   public listProductByCategory: Array<object>; 
   public listProductByCategoryForSort: Array<object>;
   public showProductDetails: object = [];
-  public showProductOptions: Array< object> = [];
+  public showProductOptions: Array<object> = [];
+  public countLineInName = 0;
   constructor(public http: HttpClient) {
     this.getProductOptions();
     this.products();
@@ -70,6 +71,7 @@ export class ProductsService implements OnInit {
       (data: object[]) => this.listProducts = data
     );
   }
+
   addProductOption(productOption) {
     this.http.post<object[]>("/addProductOption", productOption).subscribe(
       (data: object[]) => this.listProductOptions = data

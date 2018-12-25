@@ -122,13 +122,44 @@ app.post('/deleteCategoryFromProduct', function (req, res) {
 app.post('/addProduct', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
       dbo.collection("products").insertOne(req.body, function (err, res) {
-        if (err) reject(err);
+        if (err) reject(err)
         console.log("1 category inserted");     
         resolve(res);
     });
   });
   myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
 });
+//listSale
+var listSale;
+function getSales(req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    //--שליפת רשימת הלקוחות מהשרת
+    dbo.collection("sales").find().toArray(function (err, result) {
+      if (err) reject(err);
+      listSale = result;
+      console.log(result);
+      resolve(result);
+    });
+  });
+  myPromise.then(fromResolve => res.send(JSON.stringify(fromResolve)), err => console.log(err));
+}
+//----שליחת רשימת הלקוחות ללקוח
+app.get('/listSales', function (req, res) {
+  getSales(req, res);
+});
+
+
+//addSale
+app.post('/addSale', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("sales").insertOne(req.body, function (err, res) {
+      if (err) reject(err);
+      console.log("1 sale inserted");
+      resolve(res);
+    })
+  })
+  myPromise.then(fromResolve => getSales(req, res), err => console.log(err));
+})
 //var multer = require('multer');
 //// set the directory for the uploads to the uploaded to
 //var DIR = './images/';

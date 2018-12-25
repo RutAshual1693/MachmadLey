@@ -41,13 +41,16 @@
   <router-outlet *ngIf="!this.productsService.homePage"></router-outlet>
   <div *ngIf="this.productsService.homePage">
     <app-carousel-advertising></app-carousel-advertising>
-    <app-hot-categories></app-hot-categories>
+    <div style="background-color:white">
+      <app-hot-categories></app-hot-categories>
+
+    </div>
     <app-hot-product></app-hot-product>
     <app-our-castomers-say></app-our-castomers-say>
     <div id="about">
       <!--<app-about-as></app-about-as>-->
     </div>
-    <div id="contact">
+    <div id="contact" style="background-color:white">
       <app-contact></app-contact>
     </div>
   </div>

@@ -79,6 +79,11 @@ import { EditParentCategoryComponent } from './components/administor-components/
 import { FooterComponent } from './components/client-components/footer/footer.component';
 import { DiscountComponent } from './components/administor-components/discount/discount.component';
 import { DiscountBaseComponent } from './components/administor-components/discount-base/discount-base.component';
+import { GetSalePricePipe } from './pipes/get-sale-price.pipe';
+import { NameLengthPipe } from './pipes/name-length.pipe';
+import { DeleteOriginPricePipe } from './pipes/delete-origin-price.pipe';
+import { OriginPricePipe } from './pipes/origin-price.pipe';
+import { EmptyLinePipe } from './pipes/empty-line.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -134,7 +139,12 @@ import { DiscountBaseComponent } from './components/administor-components/discou
     EditParentCategoryComponent,
     FooterComponent,
     DiscountComponent,
-    DiscountBaseComponent
+    DiscountBaseComponent,
+    GetSalePricePipe,
+    NameLengthPipe,
+    DeleteOriginPricePipe,
+    OriginPricePipe,
+    EmptyLinePipe
     
   ],
   imports: [

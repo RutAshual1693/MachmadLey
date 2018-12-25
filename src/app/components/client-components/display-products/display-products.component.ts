@@ -3,6 +3,7 @@ import { ProductsService } from '../../../services/products.service';
 import { PaginationService } from '../../../services/pagination.service';
 import { ShoppingCartService } from '../../../services/shopping-cart.service';
 import { ProductOptionsComponent } from '../../../components/administor-components/product-options/product-options.component';
+import { SalesService } from '../../../services/sales.service';
 
 @Component({
   selector: 'app-display-products',
@@ -12,10 +13,18 @@ import { ProductOptionsComponent } from '../../../components/administor-componen
 export class DisplayProductsComponent implements OnInit {
   arr = ["AKC6338 מיטה מלבנית משובצת.JPG", "AKC4600 מיטת אביב מלבנית.JPG", "AKC1500 מיטה אורטופדית דוגמת מעוין.JPG", "AKC3115 מיטת 80 מרובעת3.JPG", "מיטת-זמש-אורטופדית-250x150.jpg", "AKC3462 מיטה פסים עגולה2.JPG", "מיטת-זמש-אורטופדית-250x150.jpg", "מיטת-זמש-אורטופדית-250x150.jpg"]
   listProductByCategoryForSort;
+  listSales =[];
   constructor(private productsService: ProductsService,
     private paginationService: PaginationService,
-    private shoppingCartService: ShoppingCartService
-  ) { }
+    private shoppingCartService: ShoppingCartService,
+    private salesService: SalesService
+  ) {
+
+    salesService.getListSales().subscribe(
+      (data: Array<object>) => {
+        this.listSales = data;
+      });   
+  }
 
    arrProductOption=[];
   productOption() {
@@ -128,6 +137,7 @@ export class DisplayProductsComponent implements OnInit {
     this.productOption();
     this.listProductByCategoryForSort = this.productsService.listProductByCategory.filter(x=>x['_id']!="");
     this.paginationService.setPage(1);
+
   }
   productDetails(product) {
     this.productsService.showProductDetails = product;

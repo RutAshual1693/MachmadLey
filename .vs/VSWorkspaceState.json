@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
-    "\\src\\app\\components\\client-components\\hot-categories"
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\administor-components",
+    "\\src\\app\\components\\administor-components\\add",
+    "\\src\\app\\components\\administor-components\\edit-products",
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\components\\client-components\\links",
+    "\\src\\app\\pipes"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\hot-categories\\hot-categories.component.ts",
+  "SelectedNode": "\\src\\app\\pipes\\get-sale-price.pipe.ts",
   "PreviewInSolutionExplorer": false
 }
