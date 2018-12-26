@@ -1,16 +1,14 @@
 .btn1 {
-  background-color: darkcyan;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+  background-color: darkcyan !important;
+  color: white !important;
+  padding: 14px 20px !important;
+  margin: 8px 0 !important;
+  width: 100% !important;
 }
 
-  .btn1:hover {
+  /*.btn1:hover {
     opacity: 0.8;
-  }
+  }*/
 
 
 /* Add Zoom Animation */

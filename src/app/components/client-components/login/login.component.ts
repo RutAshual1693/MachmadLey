@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { CustomersService } from '../../../services/customers.service';
-
+declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,11 +12,16 @@ export class LoginComponent implements OnInit {
 
   constructor(private customersService: CustomersService) { }
 
-  form;
+  form1;
   ngOnInit() {
-  
+    this.form1 = new FormGroup({
+      email: new FormControl("", [Validators.email, Validators.required]),
+      password: new FormControl("", Validators.required),
+ });
   }
+
   onSubmit(frm) {
+    $('#frm').validator();
     console.log(frm);
     frm.registrationDate = new Date().toString();
     this.customersService.checkCustomer(frm);

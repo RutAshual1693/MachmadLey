@@ -13,26 +13,28 @@
           <b style="color:white;font-size:20px;">התחברות</b>
         </div>
       </div>
-      <form class="form-horizontal modal-body" style="margin-right: 60px; margin-left:60px;" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <form class="form-horizontal modal-body" style="margin-right: 60px; margin-left:60px;" [formGroup]="form1" (ngSubmit)="onSubmit(form1.value)">
         <div class="form-group">
           <div class="form-group">
             <div class="col-sm-8">
-              <input class="form-control input-sm" id="firstName1" formControlName="firstName" type="text" />
+              <div style="width:100%; height:100%;margin:0px">
+                <input class="form-control input-sm" formControlName="email" type="email" />
+              </div>
             </div>
-            <label class="control-label col-sm-4" for="firstName1">שם פרטי:</label>
+            <label class="control-label col-sm-4" for="firstName1">אימייל:</label>
           </div>
           <div class="form-group">
             <div class="col-sm-8">
               <input class="form-control input-sm" id="password1" formControlName="password" type="password" />
             </div>
             <label class="control-label col-sm-4" for="password1">סיסמא:</label>
-              <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
           </div>
           <div class="col-sm-4"></div>
           <div class="container col-sm-4">
-            <input type="submit" class="btn1" style="background-color:darkcyan;border-color:darkcyan;color:white;" value="התחבר">
+            <input [disabled]="!form1.valid" type="submit" class="btn btn1" style="background-color:darkcyan;border-color:darkcyan;color:white;" value="התחבר">
           </div>
           <div class="col-sm-4"></div>
         </div>

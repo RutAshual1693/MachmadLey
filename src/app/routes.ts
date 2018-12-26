@@ -35,35 +35,41 @@ import { ParentCategoriesBaseComponent } from "./components/administor-component
 import { ParentCategoryComponent } from "./components/administor-components/parent-category/parent-category.component";
 import { DiscountBaseComponent } from "./components/administor-components/discount-base/discount-base.component";
 import { DiscountComponent } from "./components/administor-components/discount/discount.component";
+import { ShoppingCartService } from "./services/shopping-cart.service";
+import { SoppingCartComponent } from "./components/client-components/sopping-cart/sopping-cart.component";
 
 export const routes: Routes = [
   {
     path: "client",
     component: ClientComponent,
     children: [
-      {
-        path: "baseClientP",
-        component: BaseClientPComponent,
-        children: [{
-          path: "",
-          component: DisplayProductsComponent
-        },
+      //{
+      //  path: "home",
+      //  component: HomeComponent,
+      //  children: [
           {
-            path: "productDetails",
-            component: ProductDetailsComponent
+            path: "baseClientP",
+            component: BaseClientPComponent,
+            children: [
+              {
+                path: "",
+                component: DisplayProductsComponent
+              },
+              {
+                path: "productDetails",
+                component: ProductDetailsComponent,
+              }
+            ]
           }
-          
-        ]
-      }]
+        //]    
+      //}
+  ]
   },
-  {
-    path: "home",
-    component: HomeComponent,
-  },
-  {
-    path: "client",
-    component: ClientComponent
-  },
+  
+  //{
+  //  path: "client",
+  //  component: ClientComponent
+  //},
   {
     path: "administor",
     component: AdministorComponent,
@@ -87,7 +93,7 @@ export const routes: Routes = [
           {
             path: "",
             component: EditProductsComponent,
-          }, 
+          },
         ]
       },
       {
@@ -97,21 +103,21 @@ export const routes: Routes = [
       {
         path: "customersBase",
         component: CustomersBaseComponent,
-            children: [
-              {
-                path: "addCustomer",
-                component: AddCustomerComponent,
-              },
-              {
-                path: "editCustomer",
-                component: EditCustomerComponent,
-              },
-              {
-                path: "",
-                component: CustomersComponent,
-              },
-            ]
+        children: [
+          {
+            path: "addCustomer",
+            component: AddCustomerComponent,
           },
+          {
+            path: "editCustomer",
+            component: EditCustomerComponent,
+          },
+          {
+            path: "",
+            component: CustomersComponent,
+          },
+        ]
+      },
       {
         path: "storeSettings",
         component: StoreSettingsComponent,
@@ -134,7 +140,7 @@ export const routes: Routes = [
           },
           {
             path: "",
-           component: ParentCategoryComponent
+            component: ParentCategoryComponent
           }
         ]
       },
@@ -181,19 +187,17 @@ export const routes: Routes = [
           path: "editProductOption",
           component: EditProductOptionComponent
         },
-          {
-            path: "addProductOption",
-            component: AddProductOptionComponent
-          },
-          {
-            path: "",
-            component:ProductOptionsComponent
-          }
+        {
+          path: "addProductOption",
+          component: AddProductOptionComponent
+        },
+        {
+          path: "",
+          component: ProductOptionsComponent
+        }
 
         ]
-      },
+      }
     ]
-  },
-
-
+  }
 ]

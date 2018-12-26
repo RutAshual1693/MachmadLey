@@ -29,9 +29,13 @@ MongoClient.connect(url, function (err, db) {
   if (err) throw err;
   dbo = db.db("machmadleyDB");
 });
+require('./server/routes/client.routes')(app);
 
 var DIR = './uploads/';
 
+  app.get('/listProducts', function (req, res) {
+    getProducts(req, res);
+  });
 //var upload = multer({ dest: DIR });
 
 //app.use(function (req, res, next) {
@@ -75,10 +79,7 @@ app.post('/api', function (req, res) {
 
 
 
-//  //-----שליחת רשימת המוצרים ללקוח
-app.get('/listProducts', function (req, res) {
-  getProducts(req,res);
-});
+
 //---עריכת מוצר---
 app.post('/saveProductEditing', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
@@ -137,7 +138,7 @@ function getSales(req, res) {
     dbo.collection("sales").find().toArray(function (err, result) {
       if (err) reject(err);
       listSale = result;
-      console.log(result);
+      //console.log(result);
       resolve(result);
     });
   });
@@ -189,7 +190,6 @@ function getProducts(req, res) {
       dbo.collection("products").find().toArray(function (err, result) {
         if (err) reject(err);
         listProducts = result;
-        console.log(result);
         resolve(result);
       });
   });
@@ -404,3 +404,8 @@ app.post('/addProductOption', function (req, res) {
   });
   myPromise.then(fromResolve => getProductOptions(req, res), err => console.log(err));
 });
+
+// Token is created using Checkout or Elements!
+// Get the payment token ID submitted by the form:
+
+

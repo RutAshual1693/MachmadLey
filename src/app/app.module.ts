@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ActivatedRoute } from '@angular/router/src/router_state'
 import { RouterModule } from '@angular/router';
 import { routes } from './routes'
+import { NgxStripeModule } from 'ngx-stripe';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,6 +35,8 @@ import { ListProductComponent } from './components/client-components/list-produc
 import { EditProductOptionComponent } from './components/administor-components/edit-product-option/edit-product-option.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 //import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FileSelectDirective } from 'ng2-file-upload';
@@ -84,6 +87,8 @@ import { NameLengthPipe } from './pipes/name-length.pipe';
 import { DeleteOriginPricePipe } from './pipes/delete-origin-price.pipe';
 import { OriginPricePipe } from './pipes/origin-price.pipe';
 import { EmptyLinePipe } from './pipes/empty-line.pipe';
+import { StripeComponent } from './components/client-components/stripe/stripe.component';
+import { PaymentService } from './services/payment.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -144,7 +149,8 @@ import { EmptyLinePipe } from './pipes/empty-line.pipe';
     NameLengthPipe,
     DeleteOriginPricePipe,
     OriginPricePipe,
-    EmptyLinePipe
+    EmptyLinePipe,
+    StripeComponent
     
   ],
   imports: [
@@ -156,9 +162,11 @@ import { EmptyLinePipe } from './pipes/empty-line.pipe';
     NgMultiSelectDropDownModule.forRoot(),
     EditorModule,
     FontAwesomeModule,
-    Angular2FontawesomeModule 
+    Angular2FontawesomeModule,
+    NgxStripeModule.forRoot('pk_test_2Xy7zYp54ZVOaiZYr61XYpTj')
   ],
-  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService, ShoppingCartService],
+  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService, ShoppingCartService, PaymentService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
