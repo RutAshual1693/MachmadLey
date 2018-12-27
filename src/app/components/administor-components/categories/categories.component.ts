@@ -10,38 +10,31 @@ import { TypesService } from '../../../services/types.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor(public categoriesService: CategoriesService, public productsServce: ProductsService, public typesService: TypesService)
-  {
-    
+  constructor(public categoriesService: CategoriesService, public productsServce: ProductsService, public typesService: TypesService) {
+
   }
 
   ngOnInit() {
-  }
+    this.list = [];
+  } list = [];
   delete(category) {
-   //var list;
-   // //this.categoriesService.delete(category);
-   // if (this.productsServce.listProducts.length!=0)
-   // {
-   // for (var i = 0; i < this.productsServce.listProducts.length; i++) {
-   //   var c = this.productsServce.listProducts[i]["categories"];
-   //   if (c.find(x => x._id == category._id) != null) {
-   //     if (c.length > 1) {
-   //       for (var j = 0; j < c.length; j++)
-   //         if (c[j]["_id"] == category._id)
-   //           break;
-   //       c.splice(j, 1);
-   //       this.productsServce.deleteCategoryFromProduct(this.productsServce.listProducts[i]["_id"], c);
-   //     }
-   //     else
-   //       list.push(this.productsServce.listProducts[i]["_id"]);     
-   //   }
-   //   }
-   //   if (list != null) {
-   //   for (var i = 0; i < list.length;i++)
-   //     this.productsServce.deleteProduct(list[i]);
-   // }
-   // }
-   
+
+    for (var i = 0; i < this.productsServce.listProducts.length; i++) {
+      for (var i = 0; i < this.productsServce.listProducts.length; i++) {
+        var c = this.productsServce.listProducts[i]["categories"];
+        if (c.find(x => x._id == category._id) != null) {
+          if (c.length > 1) {
+            for (var j = 0; j < c.length; j++)
+              if (c[j]["_id"] == category._id)
+                break;
+            c.splice(j, 1);
+            this.list.push({ _id: this.productsServce.listProducts["_id"], categories: c });
+          }
+          else this.list.push({ _id: this.productsServce.listProducts["_id"], categories: [] });
+        }
+      }
+    }
+    this.productsServce.editCategoriesOnProduct(this.list)
     this.categoriesService.delete(category);
   }
   editCategoryClicked(category) {

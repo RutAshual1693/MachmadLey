@@ -89,6 +89,8 @@ import { OriginPricePipe } from './pipes/origin-price.pipe';
 import { EmptyLinePipe } from './pipes/empty-line.pipe';
 import { StripeComponent } from './components/client-components/stripe/stripe.component';
 import { PaymentService } from './services/payment.service';
+import { OrdersBaseComponent } from './components/administor-components/orders-base/orders-base.component';
+import { OrdersComponent } from './components/administor-components/orders/orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -150,7 +152,9 @@ import { PaymentService } from './services/payment.service';
     DeleteOriginPricePipe,
     OriginPricePipe,
     EmptyLinePipe,
-    StripeComponent
+    StripeComponent,
+    OrdersBaseComponent,
+    OrdersComponent
     
   ],
   imports: [

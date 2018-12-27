@@ -10,7 +10,7 @@ import { ShoppingCartService } from '../../../services/shopping-cart.service';
 export class ProductDetailsComponent implements OnInit {
 
   constructor(private productsService: ProductsService, private shoppingCartService: ShoppingCartService) { }
-  quantity = 0;
+  quantity = 1;
   ngOnInit() {
     //let p = this.shoppingCartService.shoppingCartList.find(x => x["_id"] == this.productsService.showProductDetails["_id"]);
     //if (p != null)

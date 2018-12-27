@@ -1,4 +1,5 @@
 
+
 <style type="text/css">
   .rtl {
     direction: rtl;
@@ -71,9 +72,8 @@
       <b>כמות:</b>
       <input type="number" style="width: 50px;" [(ngModel)]="quantity">
       <br />
-      <button class="btn" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity)">הוספה לסל</button>
+      <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity)">הוסף לסל</button>
     </div>
   </div>
 </div>
-<app-stripe></app-stripe>
 <app-sopping-cart></app-sopping-cart>

@@ -61,7 +61,7 @@ export class DisplayProductsComponent implements OnInit {
   }
   search(str) {
     this.productsService.listProductByCategory = this.listProductByCategoryForSort;
-    this.productsService.listProductByCategory = this.productsService.listProductByCategory.filter(x => x["name"].indexOf(str) > 0);
+    this.productsService.listProductByCategory = this.productsService.listProductByCategory.filter(x => x["name"].indexOf(str) >=  0);
     this.paginationService.setPage(1);
   }
 

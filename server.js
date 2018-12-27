@@ -79,7 +79,6 @@ app.post('/api', function (req, res) {
 
 
 
-
 //---עריכת מוצר---
 app.post('/saveProductEditing', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
@@ -91,34 +90,85 @@ app.post('/saveProductEditing', function (req, res) {
           price: req.body.product["price"],
           quantity: req.body.product["quantity"],
           inStock: req.body.product["inStock"],
-          minQuantityInOrder: req.body.product["minQuantityInOrder"],
-          uniqueNameToLink: req.body.product["uniqueNameToLink"],
+          //minQuantityInOrder: req.body.product["minQuantityInOrder"],
+          //uniqueNameToLink: req.body.product["uniqueNameToLink"],
           categories: req.body.product["categories"],
           prodDescription: req.body.product["prodDescription"],
           company: req.body.product["company"],
           typeAnimal: req.body.product["typeAnimal"],
           options: req.body.product["options"],
-          relatedProducts: req.body.product["relatedProducts"],}
+          relatedProducts: req.body.product["relatedProducts"],
+        }
 
     }, function (err, res) {
-    if (err) throw err;
+      if (err) throw err;
       console.log("1 document updated");
       resolve(listProducts);
-  });
+    });
   });
   myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
 })
 //----עריכת מוןצר - מחיקת קטגוריה מרשימת הקטגוריות במוצר שנבחר
 
 app.post('/deleteCategoryFromProduct', function (req, res) {
-  var myPromise = new Promise((resolve, reject) => {
-    var myquery = { _id: new mongo.ObjectID(req.body._id) };
-    var newvalues = { $set: { categories: req.body.categories } };
-    dbo.collection("products").updateOne(myquery, newvalues, function (err, res) {
-    });
-  });
-  myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
+  func(0);
+  function func(i) {
+    console.log(i);
+    console.log(req.body[i]);
+    if (req.body[i].categories.length == 0) {
+      dbo.collection("products").updateOne({ _id: new mongo.ObjectID(req.body[i]._id) }, {
+        $set:
+          {
+            status: "כבוי"
+          }
+
+      }, function (err, res2) {
+        if (err) throw err;
+        console.log("1 document updated");
+        if (i < req.body.length - 1)
+          func(i + 1);
+        else
+          getProducts(req, res)
+      })
+    }
+    if (req.body[i].categories.length > 0) {
+      console.log(i + "ggggggg" + req.body[i]);
+      dbo.collection("products").updateOne({ _id: new mongo.ObjectID(req.body[i]._id) }, {
+        $set:
+          {
+            categories: req.body[i].categories
+          }
+
+      }, function (err, res2) {
+        if (err) throw err;
+        console.log("1 document fff");
+        if (i < req.body.length - 1)
+          func(i + 1);
+        else
+          getProducts(req, res)
+      })
+    }
+
+  }
+  //var myPromise = new Promise((resolve, reject) => {
+  //  var myquery = { _id: new mongo.ObjectID(req.body._id) };
+  //  var newvalues = { $set: { categories: req.body.categories } };
+  //  dbo.collection("products").updateOne(myquery, newvalues, function (err, res) {
+  //  });
+  //});
+  //myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
 })
+//----עריכת מוןצר - מחיקת קטגוריה מרשימת הקטגוריות במוצר שנבחר
+
+//app.post('/deleteCategoryFromProduct', function (req, res) {
+//  var myPromise = new Promise((resolve, reject) => {
+//    var myquery = { _id: new mongo.ObjectID(req.body._id) };
+//    var newvalues = { $set: { categories: req.body.categories } };
+//    dbo.collection("products").updateOne(myquery, newvalues, function (err, res) {
+//    });
+//  });
+//  myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
+//})
 //-------הוספת מוצר
 app.post('/addProduct', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {

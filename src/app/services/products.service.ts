@@ -6,22 +6,21 @@ import { FormControl } from '@angular/forms';
 import { OnInit } from '@angular/core';
 @Injectable()
 export class ProductsService implements OnInit {
- public homePage: boolean = true;
-  public listProducts:Array<object>;
+  public homePage: boolean = true;
+  public listProducts: Array<object>;
   public listProductOptions: Array<object>;
   public editProductOption: object;
   public editProduct: object;
   public editFormProduct;
-  public listProductByCategory: Array<object>; 
+  public listProductByCategory: Array<object>;
   public listProductByCategoryForSort: Array<object>;
   public showProductDetails: object = [];
   public showProductOptions: Array<object> = [];
-  public countLineInName = 0;
   constructor(public http: HttpClient) {
     this.getProductOptions();
     this.products();
   }
-  adminNav = [{ title: "מוצרים" , button : "צור מוצר חדש", routerLink:"add"}]
+  adminNav = [{ title: "מוצרים", button: "צור מוצר חדש", routerLink: "add" }]
   showHome = true;
   ngOnInit() {
 
@@ -43,8 +42,19 @@ export class ProductsService implements OnInit {
     //});
 
   }
+  copy(mainObj) {
+    let objCopy = {}; // objCopy will store a copy of the mainObj
+    let key;
+
+    for (key in mainObj) {
+      objCopy[key] = mainObj[key]; // copies each property to the objCopy object
+    }
+    return objCopy;
+  }
+
   editProductClicked(product) {
-    this.editProduct = product;
+    this.products();
+    this.editProduct = this.copy(product);
 
   }
   products() {
@@ -54,6 +64,12 @@ export class ProductsService implements OnInit {
       }
     )
   }
+  editCategoriesOnProduct(list) {
+    this.http.post<object[]>('/deleteCategoryFromProduct', list).subscribe(
+      (data: object[]) => { this.listProducts = data; }
+    );
+
+  }
   saveProductEditing(product) {
     var o = { "_id": this.editProduct["_id"], "product": product };
     this.http.post<Array<object>>('/saveProductEditing', o).subscribe(
@@ -62,26 +78,25 @@ export class ProductsService implements OnInit {
   getListProducts(): Observable<Array<object>> {
     return this.http.get<Array<object>>('/listProducts');
   }
-  getProductOptions(){
-     this.http.get<Array<object>>('/listProductOptions').subscribe(
+  getProductOptions() {
+    this.http.get<Array<object>>('/listProductOptions').subscribe(
       (data: object[]) => this.listProductOptions = data);
   }
   addProduct(product) {
-    this.http.post<object[]>("/addProduct",product).subscribe(
+    this.http.post<object[]>("/addProduct", product).subscribe(
       (data: object[]) => this.listProducts = data
     );
   }
-
   addProductOption(productOption) {
     this.http.post<object[]>("/addProductOption", productOption).subscribe(
       (data: object[]) => this.listProductOptions = data
     );
   }
   deleteOption(option) {
-   
+
     this.http.post<object[]>('/deleteOption', option).subscribe(
       (data: object[]) => { this.listProductOptions = data; }
-      );
+    );
 
   }
   deleteCategoryFromProduct(_id, categories) {
@@ -94,7 +109,7 @@ export class ProductsService implements OnInit {
 
   deleteProduct(_id) {
     var a = { _id: _id };
-    this.http.post<object[]>('/deleteProduct',a).subscribe(
+    this.http.post<object[]>('/deleteProduct', a).subscribe(
       (data: object[]) => { this.listProducts = data; }
     );
   }

@@ -12,35 +12,35 @@ export class ShoppingCartService {
   public shoppingCartList: Array<object> = [];
   constructor(private productsService: ProductsService) { }
   p;
-  addProductToCart(product,quantity) {
-    if (product["inStock"] == "קיים במלאי") {
-      this.add(product, this.shoppingCartList.find(x => x["_id"] == product["_id"]),quantity);
-    }
-    if (product["inStock"] == undefined)
-      this.add(this.productsService.listProducts.find(x => x["_id"] == product._id), product,quantity)
+  addProductToCart(product, quantity) {
+    if (this.shoppingCartList.find(x => x["_id"] == product["_id"]))
+      this.add2(product, quantity);
+    else
+      this.add1(product, quantity);
   }
-  add(product, pIC,quantity) {
-    if (pIC != null) {
-      if (product["quantity"] > pIC["quantity"] + quantity) {
-        this.finalQuantity += quantity;
-        pIC["quantity"] += quantity;
-        this.finalPrice += pIC.price * quantity;
-       
-      }
-    }
-    else {
-      this.shoppingCartList.push({ "id": this.autoId++, "name": product.name, "_id": product._id, "quantity": 1, "price": product.price });
-      this.finalPrice += product.price;
+  add1(product, quantity) {
+    if (((product["quantity"] > quantity) && product["inStock"] == "כמות מוגבלת במלאי") || product["inStock"] == "קיים במלאי") {
+      this.shoppingCartList.push({ "id": this.autoId++, "name": product.name, "_id": product._id, "quantity": quantity, "price": product.price });
+      this.finalPrice = this.finalPrice + product.price * quantity;
       this.finalQuantity += quantity;
+    }
+  }
+  add2(p, quantity) {
+    var product = this.productsService.listProducts.find(x => x["_id"] == p["_id"]);
+    var pIC = this.shoppingCartList.find(x => x["_id"] == p["_id"]);
+    if (((product["quantity"] > pIC["quantity"] + quantity) && product["inStock"] == "כמות מוגבלת במלאי") || product["inStock"] == "קיים במלאי") {
+      this.finalQuantity += quantity;
+      pIC["quantity"] += quantity;
+      this.finalPrice += pIC["price"] * quantity;
     }
   }
   removeProductFromCart(product, index, quantity) {
     this.finalQuantity += quantity;
     product.quantity += quantity;
     this.finalPrice += product.price * quantity;
-  
+
     if (product.quantity == 0)
       this.shoppingCartList.splice(index, 1);
+  }
 
-  }
-  }
+}

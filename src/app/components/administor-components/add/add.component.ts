@@ -13,39 +13,17 @@ declare var $: any;
 export class AddComponent implements OnInit {
   public listCategories: Array<object>;
   dropdownSettings = {};
-  constructor(public categoriesService: CategoriesService, public productsService: ProductsService, public typesService: TypesService)
-  {
+  constructor(public categoriesService: CategoriesService, public productsService: ProductsService, public typesService: TypesService) {
     categoriesService.getListCategories().subscribe(
       (data: Array<object>) => {
         this.listCategories = data;
-      });   }
-  //}  readURL(input) {
-  //    if (input.files && input.files[0]) {
-  //      var reader = new FileReader();
+      });
+  }
 
-  //      reader.onload = function (e) {
-  //        $('#blah')
-  //          .attr('src', e.target["result"]);
-  //      };
 
-  //      reader.readAsDataURL(input.files[0]);
-  //    }
- 
   form;
   ngOnInit() {
-   
-    //$("#input-file-1").fileinput({
-    //  uploadUrl: "./assets/pictures",
-    //  autoOrientImage: true
-    //});
-    //$("#toggleOrient").on('change', function () {
-    //  var val = $(this).prop('checked');
-    //  $("#input-file-1").fileinput('refresh', {
-    //    uploadUrl: "./assets/pictures",
-    //    autoOrientImage: val
-    //  });
-    //  $('#togStatus').html('Fileinput is reset and <samp>autoOrientImage</samp> is set to <em>' + (val ? 'true' : 'false') + '</em>. Retry by selecting images again.');
-    //});
+
     this.dropdownSettings = {
       singleSelection: false,
       idField: '_id',
@@ -59,33 +37,56 @@ export class AddComponent implements OnInit {
       name: new FormControl("", Validators.required),
       model: new FormControl("", Validators.required),
       price: new FormControl("", Validators.required),
-      quantity: new FormControl("", Validators.required),
+      quantity: new FormControl(""),
       inStock: new FormControl("", Validators.required),
-      minQuantityInOrder: new FormControl("", Validators.required),
-      uniqueNameToLink: new FormControl("", Validators.required),
       categories: new FormControl("", Validators.required),
-      prodDescription: new FormControl("", Validators.required), 
-      company: new FormControl("", Validators.required), 
-      typeAnimal: new FormControl("") ,
-      options: new FormControl("", Validators.required),
+      prodDescription: new FormControl("", Validators.required),
+      company: new FormControl("", Validators.required),
+      typeAnimal: new FormControl(""),
+      options: new FormControl(""),
       relatedProducts: new FormControl(""),
       img: new FormControl(""),
       status: new FormControl("", Validators.required),
-    });
-  
-  }
 
+    });
+
+  }
+  listValue;
+  listoptions = [{ _id: "", name: "", values: [] }];
+  choosOPtionClicked(option) {
+    this.listValue = this.productsService.listProductOptions.find(x => x["name"] == option)["values"];
+    this.listoptions[this.listoptions.length - 1].name = option;
+    this.clicked();
+    console.log(this.form);
+  }
+  clicked() {
+    this.listoptions.push({ _id: "", name: "", values: [] });
+  }
   onSubmit(frm) {
-    console.log(frm);
-    frm.typeAnimal = this.typesService.listTypes.filter(x => frm.categories.find(y => this.categoriesService.listCategories.find(i=>i["_id"]==y["_id"])["types"] == x["_id"]) != null);
-    //if (frm.inStock == "קיים במלאי")
-    //  frm.inStock = true;
-    //else
-    //  frm.inStock = false;
-    this.productsService.addProduct(frm);
+    if (this.checkValue()) {
+      frm.options = this.listoptions;
+      console.log(frm);
+      if (frm.inStock == "אזל מהמלאי")
+        frm.status = "כבוי";
+      frm.typeAnimal = this.typesService.listTypes.filter(x => frm.categories.find(y => this.categoriesService.listCategories.find(i => i["_id"] == y["_id"])["types"] == x["_id"]) != null);
+      this.productsService.addProduct(frm);
+    }
+  }
+  checkValue() {
+    for (var i = 0; i < this.listoptions.length - 1; i++) {
+      if (this.listoptions[i].values.length == 0) {
+        alert("יש למלא  לפחות ערך אחד באפשרויות מוצר שבחרת ");
+        return false;
+      }
+    }
+    return true;
+
   }
   saveProducts() {
-    
 
+
+  }
+  deleteOption(i) {
+    this.listoptions.splice(i, 1);
   }
 }

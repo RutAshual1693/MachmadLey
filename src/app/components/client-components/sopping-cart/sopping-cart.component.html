@@ -1,9 +1,9 @@
 <!-- Trigger the modal with a button -->
 <!-- Modal -->
-<div class="modal fade"  id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content animate">
       <div class="modal-header" style="background-color:rgba(8, 25, 73,0.8);height:100px;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <div style="text-align:center;">
@@ -21,10 +21,10 @@
 
             <td class="col-sm-5">
               <button class="btn" (click)="shoppingCartService.addProductToCart(product,1)">+</button>
-              <input type="text"disabled="disabled" style="width: 50px;" value="{{product.quantity}}">
+              <input type="text" disabled="disabled" style="width: 50px;" value="{{product.quantity}}">
               <button class="btn" (click)="shoppingCartService.removeProductFromCart(product,i,-1)">-</button>
             </td>
-            <td class="col-sm-2" >{{product.price*product.quantity|currency:'ILS'}}</td>
+            <td class="col-sm-2">{{product.price*product.quantity|currency:'ILS'}}</td>
 
           </tr>
         </table>
@@ -41,12 +41,12 @@
       </div>
       <div class="modal-footer">
         <div data-dismiss="modal">
-          <button class="btn btn-defult col-sm-2"  style="border-top-color:rgba(8, 25, 73,0.8);color:white; background-color:rgba(8, 25, 73,0.8);"type="button">לקופה</button>
+          <button class="btn btn-defult col-sm-2" style="border-top-color:rgba(8, 25, 73,0.8);color:white; background-color:rgba(8, 25, 73,0.8);" type="button">לקופה</button>
           <a class="col-sm-2" href="#" style="color:rgba(8, 25, 73,0.8);">לצפיה בסל</a>
         </div>
         <div class="col-sm-5"></div>
         <a href="#" class="col-sm-3" data-dismiss="modal" style="color:rgba(8, 25, 73,0.8);">המשך קניה</a>
       </div>
     </div>
-    </div>
   </div>
+</div>

@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="heading" style="position:fixed;width:100%;">
     <div class="col-lg-8">
-      <input type="submit"  class="btn" style="background-color:rgba(0, 0, 0, 0.8)" [disabled]="!form.valid" value="שמור" />
+      <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" [disabled]="!form.valid" value="שמור" />
     </div>
 
 
@@ -39,30 +39,58 @@
               <td><label>כמות במלאי</label></td>
               <td><input type="number" class="form-control" formControlName="quantity" /></td>
             </tr>
-            <tr>
+            <!--<tr>
               <td> <label>כמות מינימאלית להזמנה</label></td>
               <td> <input type="number" class="form-control" formControlName="minQuantityInOrder" /></td>
             </tr>
             <tr>
               <td><label>שם יחודי לקישור</label></td>
               <td><input type="text" formControlName="uniqueNameToLink" class="form-control" /></td>
-            </tr>
+            </tr>-->
             <tr>
               <td><label>קטגוריה</label></td>
               <td>
-                <ng-multiselect-dropdown placeholder="בחר קטגוריות " class="form-control" formControlName="categories"
+                <ng-multiselect-dropdown placeholder="בחר קטגוריות " formControlName="categories"
                                          [data]="this.categoriesService.listCategories"
                                          [settings]="dropdownSettings">
                 </ng-multiselect-dropdown>
               </td>
             </tr>
             <tr>
-              <td><label>אפשרויות מוצר</label></td>
+              <td>אפשרויות מוצר</td>
               <td>
-                <ng-multiselect-dropdown placeholder="אפשרויות מוצר " class="form-control" formControlName="options"
-                                         [data]="this.productsService.listProductOptions"
-                                         [settings]="dropdownSettings">
-                </ng-multiselect-dropdown>
+                <table class="table table table-condensed" style="border:hidden;">
+                  <tr *ngFor="let o of this.productsService.editProduct['options'];let i=index;">
+
+                    <td *ngIf="o.name!=''" class="row">
+                      <span class="col-lg-1"><button class="btn" (click)="deleteOption(i)" style="background-color:#bf0f0f; color:white; padding:4px 10px 4px 10px; font-size:15px; width:auto">-</button></span>
+                      <span class="col-lg-9">
+                        <ng-multiselect-dropdown *ngIf="o.values!=''" placeholder="ערכים" [ngModelOptions]="{standalone: true}" [(ngModel)]="this.productsService.editProduct['options'][i].values"
+                                                 [data]="o.values"
+                                                 [settings]="dropdownSettings">
+                        </ng-multiselect-dropdown>
+                        <ng-multiselect-dropdown *ngIf="o.values==''" placeholder="ערכים" [ngModelOptions]="{standalone: true}" [(ngModel)]="this.productsService.editProduct['options'][i].values"
+                                                 [data]="listValue"
+                                                 [settings]="dropdownSettings">
+                        </ng-multiselect-dropdown>
+                      </span>
+                      <span class="col-lg-2">{{o.name}}:</span>
+
+                    </td>
+                  </tr>
+                  <tr *ngFor="let o of this.productsService.editProduct['options']">
+                    <!--<td></td>-->
+                    <td *ngIf="o.name==''">
+
+                      <span class="col-lg-10">
+                        <select *ngIf="o.name==''" class="form-control" #s (change)="choosOPtionClicked(s.value)">
+                          <option disabled="disabled">לחץ לבחירת אופציה</option>
+                          <option *ngFor="let option of productsService.listProductOptions">{{option.name}}</option>
+                        </select>
+                      </span> <span class="col-lg-2">הוסף אפשרות מוצר</span>
+                    </td>
+                  <tr></tr>
+                </table>
               </td>
             </tr>
             <tr *ngIf="false">
@@ -89,7 +117,7 @@
             <tr>
               <td><label>מוצרים קשורים</label></td>
               <td>
-                <ng-multiselect-dropdown placeholder="בחר מוצר" class="form-control" formControlName="relatedProducts"
+                <ng-multiselect-dropdown placeholder="בחר מוצר" formControlName="relatedProducts"
                                          [data]="this.productsService.listProducts"
                                          [settings]="dropdownSettings">
                 </ng-multiselect-dropdown>
