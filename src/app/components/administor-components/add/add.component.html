@@ -100,7 +100,7 @@
               <td>
                 <table class="table table table-condensed" style="border:hidden;">
                   <tr *ngFor="let o of listoptions;let i=index;">
-
+                    <!--<td>אפשרויות מוצר</td>-->
                     <td *ngIf="o.name!=''" class="row">
                       <span class="col-lg-1"><button class="btn" (click)="deleteOption(i)" style="background-color:#bf0f0f; color:white; padding:4px 10px 4px 10px; font-size:15px; width:auto">-</button></span>
                       <span class="col-lg-9">
@@ -114,14 +114,17 @@
                     </td>
                   </tr>
                   <tr *ngFor="let o of listoptions">
+
+                
                     <td *ngIf="o.name==''">
-                      <select *ngIf="o.name==''" class="form-control" #s (change)="choosOPtionClicked(s.value)">
-                        <option disabled="disabled">בחר אפשרות מוצר</option>
-                        <option *ngFor="let option of productsService.listProductOptions">{{option.name}}</option>
-                      </select>
+                      <span class="col-lg-10">
+                        <select *ngIf="o.name==''" class="form-control" #s (change)="choosOPtionClicked(s.value)">
+                          <option disabled="disabled">בחר אפשרות מוצר</option>
+                          <option *ngFor="let option of productsService.listProductOptions">{{option.name}}</option>
+                        </select>
+                      </span> <span class="col-lg-2">הוסף אפשרות מוצר</span>
                     </td>
                   </tr>
-
                   <tr></tr>
                 </table>
               </td>

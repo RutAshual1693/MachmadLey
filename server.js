@@ -321,7 +321,7 @@ var myPromise = new Promise((resolve, reject) => {
 }
 app.post('/editCategory', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
-    dbo.collection("categories").updateOne({ _id: new mongo.ObjectID(req.body._id) }, { $set: { name: req.body.name } }, function (err, obj) {
+    dbo.collection("categories").updateOne({ _id: new mongo.ObjectID(req.body._id) }, { $set: { name: req.body.category.name, types: req.body.category.types} }, function (err, obj) {
       if (err) reject(err);
       console.log("1 category updated");
       resolve(listProducts);
@@ -459,3 +459,24 @@ app.post('/addProductOption', function (req, res) {
 // Get the payment token ID submitted by the form:
 
 
+app.post('/addParentCategory', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("typeAnimal").insertOne(req.body, function (err, res) {
+      if (err) reject(err);
+      console.log("1 parent category inserted");
+      resolve(res);
+    });
+  });
+  myPromise.then(fromResolve => getTypes(req, res), err => console.log(err));
+});
+app.post('/editParentCategory', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("typeAnimal").updateOne({ _id: new mongo.ObjectID(req.body._id) }, { $set: { name: req.body.name} }, function (err, obj) {
+      if (err) reject(err);
+      console.log("1 parent category updated");
+      resolve(listProducts);
+    });
+  });
+  myPromise.then(fromResolve => getTypes(req, res), err => console.log(err));
+}
+)

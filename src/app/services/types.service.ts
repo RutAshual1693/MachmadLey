@@ -21,4 +21,15 @@ export class TypesService {
   getListTypes(): Observable<Array<object>> {
     return this.http.get<Array<object>>('/listTypes');
   }
+  addParentCategory(category) {
+    this.http.post<object[]>("/addParentCategory", category).subscribe(
+      (data: object[]) => this.listTypes = data
+    );
+  }
+  edit(frm) {
+    var o = { _id: this.editParentCategory["_id"], name: frm.name };
+    this.http.post<object[]>("/editParentCategory", o).subscribe(
+      (data: object[]) => this.listTypes = data
+    );
+  }
 }

@@ -91,6 +91,8 @@ import { StripeComponent } from './components/client-components/stripe/stripe.co
 import { PaymentService } from './services/payment.service';
 import { OrdersBaseComponent } from './components/administor-components/orders-base/orders-base.component';
 import { OrdersComponent } from './components/administor-components/orders/orders.component';
+import { DisplayCartComponent } from './components/client-components/display-cart/display-cart.component';
+import { BaseDetailsComponent } from './components/client-components/base-details/base-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -154,7 +156,9 @@ import { OrdersComponent } from './components/administor-components/orders/order
     EmptyLinePipe,
     StripeComponent,
     OrdersBaseComponent,
-    OrdersComponent
+    OrdersComponent,
+    DisplayCartComponent,
+    BaseDetailsComponent
     
   ],
   imports: [

@@ -37,6 +37,7 @@ import { DiscountBaseComponent } from "./components/administor-components/discou
 import { DiscountComponent } from "./components/administor-components/discount/discount.component";
 import { ShoppingCartService } from "./services/shopping-cart.service";
 import { SoppingCartComponent } from "./components/client-components/sopping-cart/sopping-cart.component";
+import { DisplayCartComponent } from "./components/client-components/display-cart/display-cart.component";
 
 export const routes: Routes = [
   {
@@ -47,157 +48,168 @@ export const routes: Routes = [
       //  path: "home",
       //  component: HomeComponent,
       //  children: [
+      {
+        path: "baseClientP",
+        component: BaseClientPComponent,
+        children: [
           {
-            path: "baseClientP",
-            component: BaseClientPComponent,
+            path: "",
+            component: DisplayProductsComponent
+          },
+          {
+            path: "productDetails",
+            component: ProductDetailsComponent,
             children: [
               {
-                path: "",
-                component: DisplayProductsComponent
+                path: "baseClientP",
+                component: BaseClientPComponent,
+                children: [
+                  {
+                    path: "",
+                    component: DisplayCartComponent
+                  }
+                ]
               },
-              {
-                path: "productDetails",
-                component: ProductDetailsComponent,
-              }
             ]
           }
-        //]    
-      //}
-  ]
-  },
-  
-  //{
-  //  path: "client",
-  //  component: ClientComponent
-  //},
-  {
-    path: "administor",
-    component: AdministorComponent,
-    children: [
-      {
-        path: "designSetting",
-        component: DesignSettingComponent
-      },
-      {
-        path: "productsBase",
-        component: ProductsBaseComponent,
-        children: [
-          {
-            path: "add",
-            component: AddComponent,
-          },
-          {
-            path: "editProduct2",
-            component: EditProductComponent,
-          },
-          {
-            path: "",
-            component: EditProductsComponent,
-          },
-        ]
-      },
-      {
-        path: "main",
-        component: MainComponent,
-      },
-      {
-        path: "customersBase",
-        component: CustomersBaseComponent,
-        children: [
-          {
-            path: "addCustomer",
-            component: AddCustomerComponent,
-          },
-          {
-            path: "editCustomer",
-            component: EditCustomerComponent,
-          },
-          {
-            path: "",
-            component: CustomersComponent,
-          },
-        ]
-      },
-      {
-        path: "storeSettings",
-        component: StoreSettingsComponent,
-      },
-      {
-        path: "storeManagement",
-        component: StoreManagementComponent,
-      },
-      {
-        path: "parentCategoriesBase",
-        component: ParentCategoriesBaseComponent,
-        children: [
-          {
-            path: "addParentCategory",
-            component: AddParentCategoryComponent
-          },
-          {
-            path: "editParentCategory",
-            component: EditParentCategoryComponent
-          },
-          {
-            path: "",
-            component: ParentCategoryComponent
-          }
-        ]
-      },
-      {
-        path: "discountBase",
-        component: DiscountBaseComponent,
-        children: [
-          //{
-          //  path: "addParentCategory",
-          //  component: AddParentCategoryComponent
-          //},
-          //{
-          //  path: "editParentCategory",
-          //  component: EditParentCategoryComponent
-          //},
-          {
-            path: "",
-            component: DiscountComponent
-          }
-        ]
-      },
-      {
-        path: "categoriesBase",
-        component: CategoriesBaseComponent,
-        children: [
-          {
-            path: "addCategory",
-            component: AddCategoryComponent
-          },
-          {
-            path: "editCategory",
-            component: EditCategoryComponent
-          },
-          {
-            path: "",
-            component: CategoriesComponent
-          }
-        ]
-      },
-      {
-        path: "productOptionsBase",
-        component: ProductOptionsBaseComponent,
-        children: [{
-          path: "editProductOption",
-          component: EditProductOptionComponent
-        },
-        {
-          path: "addProductOption",
-          component: AddProductOptionComponent
-        },
-        {
-          path: "",
-          component: ProductOptionsComponent
+          ]    
         }
+        ]
+      },
 
+      //{
+      //  path: "client",
+      //  component: ClientComponent
+      //},
+      {
+        path: "administor",
+        component: AdministorComponent,
+        children: [
+          {
+            path: "designSetting",
+            component: DesignSettingComponent
+          },
+          {
+            path: "productsBase",
+            component: ProductsBaseComponent,
+            children: [
+              {
+                path: "add",
+                component: AddComponent,
+              },
+              {
+                path: "editProduct2",
+                component: EditProductComponent,
+              },
+              {
+                path: "",
+                component: EditProductsComponent,
+              },
+            ]
+          },
+          {
+            path: "main",
+            component: MainComponent,
+          },
+          {
+            path: "customersBase",
+            component: CustomersBaseComponent,
+            children: [
+              {
+                path: "addCustomer",
+                component: AddCustomerComponent,
+              },
+              {
+                path: "editCustomer",
+                component: EditCustomerComponent,
+              },
+              {
+                path: "",
+                component: CustomersComponent,
+              },
+            ]
+          },
+          {
+            path: "storeSettings",
+            component: StoreSettingsComponent,
+          },
+          {
+            path: "storeManagement",
+            component: StoreManagementComponent,
+          },
+          {
+            path: "parentCategoriesBase",
+            component: ParentCategoriesBaseComponent,
+            children: [
+              {
+                path: "addParentCategory",
+                component: AddParentCategoryComponent
+              },
+              {
+                path: "editParentCategory",
+                component: EditParentCategoryComponent
+              },
+              {
+                path: "",
+                component: ParentCategoryComponent
+              }
+            ]
+          },
+          {
+            path: "discountBase",
+            component: DiscountBaseComponent,
+            children: [
+              //{
+              //  path: "addParentCategory",
+              //  component: AddParentCategoryComponent
+              //},
+              //{
+              //  path: "editParentCategory",
+              //  component: EditParentCategoryComponent
+              //},
+              {
+                path: "",
+                component: DiscountComponent
+              }
+            ]
+          },
+          {
+            path: "categoriesBase",
+            component: CategoriesBaseComponent,
+            children: [
+              {
+                path: "addCategory",
+                component: AddCategoryComponent
+              },
+              {
+                path: "editCategory",
+                component: EditCategoryComponent
+              },
+              {
+                path: "",
+                component: CategoriesComponent
+              }
+            ]
+          },
+          {
+            path: "productOptionsBase",
+            component: ProductOptionsBaseComponent,
+            children: [{
+              path: "editProductOption",
+              component: EditProductOptionComponent
+            },
+            {
+              path: "addProductOption",
+              component: AddProductOptionComponent
+            },
+            {
+              path: "",
+              component: ProductOptionsComponent
+            }
+
+            ]
+          }
         ]
       }
     ]
-  }
-]
+

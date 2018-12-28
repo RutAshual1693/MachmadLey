@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\server",
-    "\\server\\controllers",
-    "\\server\\routes",
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
+    "\\src\\app\\components\\administor-components",
+    "\\src\\app\\components\\administor-components\\administor",
+    "\\src\\app\\components\\administor-components\\categories",
     "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\display-products",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\display-products\\display-products.component.ts",
+  "SelectedNode": "\\src\\app\\routes.ts",
   "PreviewInSolutionExplorer": false
 }

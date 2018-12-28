@@ -30,7 +30,7 @@ export class CategoriesService {
     );
   }
   edit(frm) {
-    var o = { _id: this.editCategory["_id"], name: frm.name };
+    var o = { _id: this.editCategory["_id"], category:frm  };
     this.http.post<object[]>("/editCategory", o).subscribe(
       (data: object[]) => this.listCategories = data
     );

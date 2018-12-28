@@ -28,7 +28,7 @@ export class AddParentCategoryComponent implements OnInit {
 
   onSubmit(frm) {
     console.log(frm);
-    //this.typesService.a(frm);
+    this.typesService.addParentCategory(frm);
   }
 }
 
