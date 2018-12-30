@@ -59,8 +59,8 @@
       <div [innerHTML]="productsService.showProductDetails.prodDescription"></div>
     </div>
     <ul>
-      <li *ngFor="let option of this.productsService.showProductDetails.options">
-        <select class="form-control"*ngIf="option.name!=''" style=" width:auto;">
+      <li *ngFor="let option of this.productsService.showProductDetails.options; let i=index;">
+        <select [(ngModel)]="options[i]" class="form-control"*ngIf="option.name!=''" style=" width:auto;">
           <option  value="" disabled selected>   {{option.name}}</option>
           <option *ngFor="let value1 of option.values">
             {{value1}}
@@ -72,7 +72,7 @@
       <b>כמות:</b>
       <input type="number" style="width: 50px;" [(ngModel)]="quantity">
       <br />
-      <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity)">הוסף לסל</button>
+      <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity,options)">הוסף לסל</button>
     </div>
   </div>
 </div>

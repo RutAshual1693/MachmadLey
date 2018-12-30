@@ -8,7 +8,7 @@ import { ShoppingCartService } from '../../../services/shopping-cart.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-
+ public options: Array<object> = new Array<object>();
   constructor(private productsService: ProductsService, private shoppingCartService: ShoppingCartService) { }
   quantity = 1;
   ngOnInit() {

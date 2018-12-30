@@ -17,10 +17,10 @@
             <td class="col-sm-3">
               <img style="width:50px;height:auto;" src="assets/pictures/b.jpg">
             </td>
-            <td class="col-sm-4">{{product.name}}</td>
+            <td class="col-sm-4"><span>{{product.name}}</span><br /><span *ngFor="let option of product.options" style="font-size:xx-small;color:#808080;">{{option}},</span></td>
 
             <td class="col-sm-5">
-              <button class="btn" (click)="shoppingCartService.addProductToCart(product,1)">+</button>
+              <button class="btn" (click)="shoppingCartService.addProductToCart(product,1,product.options)">+</button>
               <input type="text" disabled="disabled" style="width: 50px;" value="{{product.quantity}}">
               <button class="btn" (click)="shoppingCartService.removeProductFromCart(product,i,-1)">-</button>
             </td>

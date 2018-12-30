@@ -426,7 +426,7 @@ app.post('/editCustomer', function (req, res) {
 //*******************************************************************************
 //**************לקוחות**********************************************************
 //******************************************************************************
-var listTypes;
+var listTypes, storeSetting;
 function getTypes(req, res) {
   var myPromise = new Promise((resolve, reject) => {
     //--שליפת רשימת הלקוחות מהשרת
@@ -480,3 +480,37 @@ app.post('/editParentCategory', function (req, res) {
   myPromise.then(fromResolve => getTypes(req, res), err => console.log(err));
 }
 )
+//-------------------------------
+app.get('/getStoreSetting', function (req, res) {
+  getStoreSetting(req, res);
+});
+app.post('/editStoreSetting', function (req, res) { 
+  dbo.collection("storeSetting").updateOne({ _id: new mongo.ObjectID(req.body._id) }, {
+    $set: {
+      nameStore: req.body.nameStore,
+      nameAdmin: req.body.nameAdmin,
+      adress: req.body.adress,
+      email: req.body.email,
+      geographicCode: req.body.geographicCode,
+      numberPhone: req.body.numberPhone,
+      fax: req.body.fax,
+      contact: req.body.contact,
+      openingHours: req.body.openingHours,
+      hotProducts: req.body.hotProducts
+
+    }
+  }, function (err, obj) {
+      if (err) reject(err);
+      console.log("store setting updated");
+    getStoreSetting(req, res);
+    });
+}
+)
+function getStoreSetting(req, res) {
+  dbo.collection("storeSetting").find().toArray(function (err, result) {
+    if (err) reject(err);
+    storeSetting = result;
+    console.log(result);
+    res.send(JSON.stringify(result));
+  });
+}

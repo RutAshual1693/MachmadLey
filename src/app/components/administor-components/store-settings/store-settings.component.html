@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="heading" style="position:fixed;width:100%;">
     <div class="col-lg-8">
-      <input type="submit"  class="btn" style="background-color:rgba(0, 0, 0, 0.8)" value="שמור" />
+      <input type="submit"  [disabled]="!form.valid" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" value="שמור" />
     </div>
   </div>
 
@@ -19,6 +19,16 @@
         <div class="form-group">
           <table class="table" style="border:hidden;">
             <tbody>
+              <tr>
+                <td><span>בחר מוצרים חמים להצגה בדף הבית</span> <span style="margin-right:5px" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="יש לבחור 6 מוצרים אשר יוצגו בדף הבית"></span></td>
+                <td>
+            
+                  <ng-multiselect-dropdown placeholder="בחר מוצר" formControlName="hotProducts"
+                                           [data]="this.productsService.listProducts"
+                                           [settings]="dropdownSettings">
+                  </ng-multiselect-dropdown>
+                </td>
+              </tr>
               <tr>
                 <td><span>שם החנות להצגה באתר</span></td>
                 <td><input class="form-control" type="text" formControlName="nameStore" /></td>
@@ -50,13 +60,13 @@
               <tr>
                 <td>הצג תוכן שיוצג בעמוד צור קשר</td>
                 <td>
-                  <editor apiKey="oqih4hs82hr8rg1q784e1q052rkzux80alzrvqkcdtth7r1i" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor>
+                  <editor formControlName="contact" apiKey="oqih4hs82hr8rg1q784e1q052rkzux80alzrvqkcdtth7r1i" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor>
                 </td>
               </tr>
               <tr>
                 <td>שעות פתיחה</td>
                 <td>
-                  <editor apiKey="oqih4hs82hr8rg1q784e1q052rkzux80alzrvqkcdtth7r1i" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor>
+                  <editor formControlName="openingHours"  apiKey="oqih4hs82hr8rg1q784e1q052rkzux80alzrvqkcdtth7r1i" [init]="{plugins: 'textcolor', toolbar:'forecolor backcolor'}"></editor>
                 </td>
               </tr>
             </tbody>

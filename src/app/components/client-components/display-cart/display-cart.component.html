@@ -30,6 +30,7 @@
             <td>תמונה</td>
             <td>שם המוצר</td>
             <td>דגם</td>
+            <td>אפשרויות מוצר</td>
             <td>פעולה</td>
             <td>כמות</td>
             <td>מחיר ליחידה</td>
@@ -41,8 +42,9 @@
             <td> <img style="width:50px;height:auto;" src="assets/pictures/b.jpg"></td>
             <td>{{product.name}}</td>
             <td>{{product.model}}</td>
+            <td><span *ngFor="let option of product.options">{{option}}, </span></td>
             <td>
-              <button class="btn" (click)="shoppingCartService.addProductToCart(product,1)">+</button>
+              <button class="btn" (click)="shoppingCartService.addProductToCart(product,1,product.options)">+</button>
               <input type="text" disabled="disabled" style="width: 50px;" value="{{product.quantity}}">
               <button class="btn" (click)="shoppingCartService.removeProductFromCart(product,i,-1)">-</button>
             </td>
