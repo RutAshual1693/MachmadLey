@@ -5,12 +5,12 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
+    "\\src\\app\\components\\administor-components\\add",
     "\\src\\app\\components\\administor-components\\edit-product",
     "\\src\\app\\components\\administor-components\\edit-products",
-    "\\src\\app\\components\\administor-components\\store-settings",
     "\\src\\app\\components\\client-components",
-    "\\src\\app\\services"
+    "\\src\\app\\components\\client-components\\display-products"
   ],
-  "SelectedNode": "\\src\\app\\services\\store-setting.service.ts",
+  "SelectedNode": "\\src\\app\\components\\client-components\\display-products\\display-products.component.ts",
   "PreviewInSolutionExplorer": false
 }

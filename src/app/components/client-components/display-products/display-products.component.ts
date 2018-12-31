@@ -13,7 +13,8 @@ import { SalesService } from '../../../services/sales.service';
 export class DisplayProductsComponent implements OnInit {
   arr = ["AKC6338 מיטה מלבנית משובצת.JPG", "AKC4600 מיטת אביב מלבנית.JPG", "AKC1500 מיטה אורטופדית דוגמת מעוין.JPG", "AKC3115 מיטת 80 מרובעת3.JPG", "מיטת-זמש-אורטופדית-250x150.jpg", "AKC3462 מיטה פסים עגולה2.JPG", "מיטת-זמש-אורטופדית-250x150.jpg", "מיטת-זמש-אורטופדית-250x150.jpg"]
   listProductByCategoryForSort;
-  listSales =[];
+  listSales = [];
+  arrProductOption = [];
   constructor(private productsService: ProductsService,
     private paginationService: PaginationService,
     private shoppingCartService: ShoppingCartService,
@@ -23,10 +24,16 @@ export class DisplayProductsComponent implements OnInit {
     salesService.getListSales().subscribe(
       (data: Array<object>) => {
         this.listSales = data;
-      });   
+      });
+    this.productOption();
+  }
+  ngOnInit() {
+
+    this.listProductByCategoryForSort = this.productsService.listProductByCategory.filter(x => x['_id'] != "");
+    this.paginationService.setPage(1);
+
   }
 
-   arrProductOption=[];
   productOption() {
     let haveOption = false;
     let i = 0;
@@ -72,7 +79,6 @@ export class DisplayProductsComponent implements OnInit {
 
   }
   checkClicked(values: Array<string>) {
-    alert("bina");
     let arrCheck;
     let checkes = [];
     let i = 0;
@@ -85,16 +91,20 @@ export class DisplayProductsComponent implements OnInit {
         checkes[i++] = item.value;
     }
     i = 0;
-    //arrSortProducts שמירת כל המוצרים במערך 
+    //arrSortProducts שמירת כל המוצרים במערך
+    this.productsService.listProductByCategory = this.listProductByCategoryForSort;
     let arrSortProducts = this.productsService.listProductByCategory;
     //הקצאת מערך לשימוש זמני השומר בכל סיבוב של הלולאה את המוצרים
     //העומדים בתנאי הסינון של האפשרות מוצר הנוכחית
-    let arrP2;
+    let arrP2 =[];
     let isProductOptionChecked = false;;
     //מעבר על מערך אפשרויות מוצר
     for (let option of this.arrProductOption) {
       //מעבר על רשימת המוצרים
+      i = 0;
       for (let product of arrSortProducts) {
+        //במעבר למוצר הבא איפוס הסימון
+        isChecked = false;
         //מעבר על אמערך אפשרויות מוצר ברשימת המוצרים
         for (let productOption of product["options"]) {
           //מעבר על ערכי אפשרויות המוצר
@@ -102,11 +112,15 @@ export class DisplayProductsComponent implements OnInit {
             //מעבר על האינפוטים שנבחרו
             for (let value of checkes) {
               //בדיקה האם אחד מערכי אפשרויות המוצר הוא נבחר והוא מהקטגוריה הנוכחית
-              if (value == option == item) {
-                // סימון המוצר
-                isChecked = true;
-                //סימון האפשרות מוצר 
-                isProductOptionChecked = true;
+                for (let op of option["values"]) {
+                  if (value == op) {
+                    if (value == item) {
+                    // סימון המוצר
+                      isChecked = true;
+                    }
+                    //סימון האפשרות מוצר 
+                    isProductOptionChecked = true;
+                  }
               }
             }
           }
@@ -116,8 +130,8 @@ export class DisplayProductsComponent implements OnInit {
           //הוספת המוצר לרשימת המוצרים
           arrP2[i++] = product;
         }
-        //במעבר למוצר הבא איפוס הסימון
-        isChecked = false;
+        
+        
       }
       //אם המשתמש סינן את אחד הערכים מהאפשרות המוצר הנוכחית
       if (isProductOptionChecked) {
@@ -133,12 +147,7 @@ export class DisplayProductsComponent implements OnInit {
     this.productsService.listProductByCategory = arrSortProducts;
     this.paginationService.setPage(1);
   }
-  ngOnInit() {
-    this.productOption();
-    this.listProductByCategoryForSort = this.productsService.listProductByCategory.filter(x=>x['_id']!="");
-    this.paginationService.setPage(1);
 
-  }
   productDetails(product) {
     this.productsService.showProductDetails = product;
     this.productsService.showProductOptions = this.productsService.listProductOptions.filter(x => product.options.find(y => y._id == x["_id"]) != null);

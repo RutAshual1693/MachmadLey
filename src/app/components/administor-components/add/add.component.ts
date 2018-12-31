@@ -56,6 +56,7 @@ export class AddComponent implements OnInit {
   choosOPtionClicked(option) {
     this.listValue = this.productsService.listProductOptions.find(x => x["name"] == option)["values"];
     this.listoptions[this.listoptions.length - 1].name = option;
+    this.listoptions[this.listoptions.length - 1]._id = this.productsService.listProductOptions.find(x => x["name"] == option)["_id"];
     this.clicked();
     console.log(this.form);
   }
@@ -64,6 +65,7 @@ export class AddComponent implements OnInit {
   }
   onSubmit(frm) {
     if (this.checkValue()) {
+      this.listoptions.pop();
       frm.options = this.listoptions;
       console.log(frm);
       if (frm.inStock == "אזל מהמלאי")
