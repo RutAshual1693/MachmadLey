@@ -46,7 +46,7 @@ export class RegistrationComponent implements OnInit {
     $(elementId).addClass("form-group has-error has-feedback");
     $(spanId).addClass("glyphicon glyphicon-remove form-control-feedback");
   }
-  check(element,elementId,spanId,inputId) {
+  check(element, elementId, spanId, inputId) {
     if (element.status == "VALID") {
       this.valid(elementId, spanId);
     }
@@ -56,13 +56,14 @@ export class RegistrationComponent implements OnInit {
     }
   }
   onSubmit(frm) {
-   
+
     if (frm.password == frm.confirmPassword) {
-      if (frm.valid) {
-        if (this.customersService.listCustomers.find(x => x["password"] == frm.password && x["firstName"] == frm.firstName) == undefined) {
-          frm.registrationDate = new Date().toString();
-          this.customersService.addCustomer(frm); console.log(frm);
-        }
+      if (this.customersService.listCustomers.find(x => x["mail"] == frm.mail) == undefined) {
+        frm.registrationDate = new Date().toString();
+        this.customersService.addCustomer(frm); console.log(frm);
+      }
+      else {
+        $("#divEmailExist").css("visibility", "visible");
       }
     }
     else

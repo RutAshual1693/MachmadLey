@@ -111,3 +111,78 @@ h4 {
     font-size: 150px;
   }
 }
+.anima {
+  visibility: hidden;
+}
+
+.anima1 {
+  visibility: hidden;
+  margin-left: 5px;
+}
+
+.animate1 {
+  visibility: visible;
+  -webkit-animation: mymove 1s; /* Safari 4.0 - 8.0 */
+  animation: mymove 1s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  0% {
+    visibility: visible;
+    right: 5px;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  0% {
+    right: 5px;
+    opacity: 0;
+  }
+
+  100% {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+.animate2 {
+  position: relative;
+  visibility: visible;
+  -webkit-animation: mymove1 1s; /* Safari 4.0 - 8.0 */
+  animation: mymove1 1s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove1 {
+  from {
+    visibility: visible;
+    left: 5px;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    left: 0px
+  }
+}
+
+/* Standard syntax */
+@keyframes mymove1 {
+  from {
+    left: 5px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}

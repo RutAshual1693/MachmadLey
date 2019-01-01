@@ -70,7 +70,7 @@
     </ul>
     <div class="row">
       <b>כמות:</b>
-      <input type="number" style="width: 50px;" [(ngModel)]="quantity">
+      <input #q type="number" style="width: 50px;" [(ngModel)]="quantity" (change)="checkQuantity(q.value)">
       <br />
       <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity,options)">הוסף לסל</button>
     </div>

@@ -306,3 +306,84 @@ hr {
     -webkit-transform: translateY(0%);
   }
 }
+.moveR {
+  visibility: hidden;
+}
+
+.moveL {
+  visibility: hidden;
+  margin-left: 5px;
+}
+.moveR1 {
+  visibility: hidden;
+}
+
+.moveL1 {
+  visibility: hidden;
+  margin-left: 5px;
+}
+.proMoveR {
+  visibility: visible;
+  -webkit-animation: proMoveRight 1s; /* Safari 4.0 - 8.0 */
+  animation: proMoveRight 1s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes proMoveRight {
+  0% {
+    visibility: visible;
+    right: 5px;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+/* Standard syntax */
+@keyframes proMoveRight {
+  0% {
+    right: 5px;
+    opacity: 0;
+  }
+
+  100% {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+.proMoveL {
+  visibility: visible;
+  -webkit-animation: proMoveLeft 1s; /* Safari 4.0 - 8.0 */
+  animation: proMoveLeft 1s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes proMoveLeft {
+  from {
+    visibility: visible;
+    left: 5px;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    left: 0px
+  }
+}
+
+/* Standard syntax */
+@keyframes proMoveLeft {
+  from {
+    left: 5px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}

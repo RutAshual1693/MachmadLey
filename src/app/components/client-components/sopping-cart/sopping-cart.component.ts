@@ -12,5 +12,7 @@ export class SoppingCartComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+  less(product, i) {
+    this.shoppingCartService.removeProductFromCart(product, i, -1);
+  }
 }
