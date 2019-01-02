@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   form1;
   ngOnInit() {
+  
     this.form1 = new FormGroup({
       email: new FormControl("", [Validators.email, Validators.required]),
       password: new FormControl("", Validators.required),
@@ -21,10 +22,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(frm) {
-    $('#frm').validator();
+    //$('#frm').validator();
     console.log(frm);
-    frm.registrationDate = new Date().toString();
-    this.customersService.checkCustomer(frm);
+    //frm.registrationDate = new Date().toString();
+    var user = this.customersService.listCustomers.find(x => x["mail"] == frm.email && x["password"] == frm.password)
+    if (user != null)
+      sessionStorage.setItem('user', JSON.stringify(user));
+  
   }
 
 }

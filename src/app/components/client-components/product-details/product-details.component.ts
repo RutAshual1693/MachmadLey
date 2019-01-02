@@ -17,9 +17,10 @@ export class ProductDetailsComponent implements OnInit {
     //  this.quantity = p["quantity"];
   }
   checkQuantity(q) {
+    this.quantity = parseInt(q);
     if (q <= 0)
       this.quantity = 1;
     else
-      this.quantity = q;
+      this.quantity = parseInt(q);
   }
 }

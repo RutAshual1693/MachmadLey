@@ -33,14 +33,14 @@ export class CustomersService {
       (data: object[]) => this.listCustomers = data
     );
   }
-  checkCustomer(frm) {
-    if (this.listCustomers.find(x => x["firstName"] == frm.firstName && x["password"] == frm.password) != null) {
-      console.log(true);
-      return true;
-    }
-    console.log(false);
-    return false;
-  }
+  //checkCustomer(frm) {
+  //  if (this.listCustomers.find(x => x["firstName"] == frm.firstName && x["password"] == frm.password) != null) {
+  //    console.log(true);
+  //    return true;
+  //  }
+  //  console.log(false);
+  //  return false;
+  //}
   edit(frm) {
     var o = { _id: this.editCustomer["_id"], customer: frm };
     this.http.post<object[]>("/editCustomer", o).subscribe(

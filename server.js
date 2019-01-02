@@ -514,3 +514,25 @@ function getStoreSetting(req, res) {
     res.send(JSON.stringify(result));
   });
 }
+//---------------------------------------
+//------הזמנות--------------------------
+//---------------------------------------
+app.post('/addOrder', function (req, res) {     
+    dbo.collection("orders").insertOne(req.body, function (err, res2) {
+      if (err) reject(err);
+      console.log("1 order inserted");
+      getOrdersList(req, res);
+  });
+});
+app.get('/getOrdersList', function (req, res) {
+  getOrdersList(req, res);
+});
+var ordersList;
+function getOrdersList(req, res) {
+  dbo.collection("orders").find().toArray(function (err, result) {
+    if (err) reject(err);
+    ordersList = result;
+    console.log(result);
+    res.send(JSON.stringify(result));
+  });
+}

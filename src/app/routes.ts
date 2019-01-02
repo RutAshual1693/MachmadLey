@@ -38,6 +38,7 @@ import { DiscountComponent } from "./components/administor-components/discount/d
 import { ShoppingCartService } from "./services/shopping-cart.service";
 import { SoppingCartComponent } from "./components/client-components/sopping-cart/sopping-cart.component";
 import { DisplayCartComponent } from "./components/client-components/display-cart/display-cart.component";
+import { AnotherDetailOfCustomComponent } from "./components/client-components/another-detail-of-custom/another-detail-of-custom.component";
 
 export const routes: Routes = [
   {
@@ -60,6 +61,10 @@ export const routes: Routes = [
             path: "productDetails",
             component: ProductDetailsComponent,
             children: [
+              {
+                path: "anotherDetails",
+                component: AnotherDetailOfCustomComponent
+              },
               {
                 path: "baseClientP",
                 component: BaseClientPComponent,

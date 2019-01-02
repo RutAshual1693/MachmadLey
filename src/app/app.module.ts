@@ -63,7 +63,6 @@ import { SoppingCartComponent } from './components/client-components/sopping-car
 import { ProductDetailsComponent } from './components/client-components/product-details/product-details.component';
 import { BaseClientPComponent } from './components/client-components/base-client-p/base-client-p.component';
 import { RegistrationComponent } from './components/client-components/registration/registration.component';
-import { SignUpComponent } from './components/client-components/sign-up/sign-up.component';
 import { LoginComponent } from './components/client-components/login/login.component';
 import { EditProductComponent } from './components/administor-components/edit-product/edit-product.component';
 import { DesignSettingComponent } from './components/administor-components/design-setting/design-setting.component';
@@ -93,6 +92,7 @@ import { OrdersBaseComponent } from './components/administor-components/orders-b
 import { OrdersComponent } from './components/administor-components/orders/orders.component';
 import { DisplayCartComponent } from './components/client-components/display-cart/display-cart.component';
 import { BaseDetailsComponent } from './components/client-components/base-details/base-details.component';
+import { AnotherDetailOfCustomComponent } from './components/client-components/another-detail-of-custom/another-detail-of-custom.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -128,7 +128,6 @@ import { BaseDetailsComponent } from './components/client-components/base-detail
     ProductDetailsComponent,
     BaseClientPComponent,
     RegistrationComponent,
-    SignUpComponent,
     LoginComponent,
     CarouselAdvertisingComponent,
     HotCategoriesComponent,
@@ -158,7 +157,8 @@ import { BaseDetailsComponent } from './components/client-components/base-detail
     OrdersBaseComponent,
     OrdersComponent,
     DisplayCartComponent,
-    BaseDetailsComponent
+    BaseDetailsComponent,
+    AnotherDetailOfCustomComponent
     
   ],
   imports: [

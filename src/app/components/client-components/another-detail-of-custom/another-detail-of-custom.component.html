@@ -1,0 +1,42 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+  <main class="page-content">
+    <div class="container-fluid">
+      <div style="background-color:white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <h1 style="position:center; font-family:Guttman-CourMir;right:40%;">סל קניות</h1> <div style="margin-right:10px;display:inline-block">
+                <a>ראשי</a> <span style="color:gray"> > </span><a>פרטי מוצר</a><span style="color:gray"> > </span> <a>סל הקניות</a>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+        <label>שם פרטי</label>
+        <input class="form-control" formControlName="firstName" type="text" />
+        <label>שם משפחה</label>
+        <input class="form-control" formControlName="lastName" type="text" />
+        <label>דוא"ל</label>
+        <input class="form-control" formControlName="mail" type="email" />
+        <label>מספר טלפון</label>
+        <div class="form-group">
+          <input class="form-control" formControlName="numberPhone" type="text" />
+          <div class="form-group" formGroupName="adress">
+            <label>רחוב</label>
+            <input class="form-control" formControlName="street" type="text" />
+            <label>עיר</label>
+            <input class="form-control" formControlName="city" type="text" />
+            <label>מס' בית</label>
+            <input class="form-control" formControlName="numHouse" type="text" />
+            <label>מיקוד</label>
+            <input class="form-control" formControlName="postalCode" type="password" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" value="שמור" [disabled]="!form.valid"/>
+</form>

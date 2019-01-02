@@ -4,15 +4,15 @@
   background-color:black;
 }*/
 
-a:hover{
+/*a:hover{
   border-radius:10px;
   width:220px !important;
   margin-right:10px;
   background-color:rgba(0, 0, 0, 0.32)
-}
+}*/
 
 a:active {
-  background-color: #dc0065;
+  background-color: #343a40;
 }
 .glyphicon {
   margin-left: 10px;
@@ -35,10 +35,10 @@ a:active {
   .panel-body .table {
     margin-bottom: 0px;
   }
-.sidebar-menu a:hover {
+/*.sidebar-menu a:hover {
   color: darkslategray;
   cursor:pointer;
-}
+}*/
 .sidebar-menu a {
   /*font-size: 17px;
   font-family: Tahoma;*/

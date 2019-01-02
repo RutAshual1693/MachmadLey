@@ -4,14 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\administor-components\\add",
-    "\\src\\app\\components\\administor-components\\edit-product",
-    "\\src\\app\\components\\administor-components\\edit-products",
-    "\\src\\app\\components\\client-components",
-    "\\src\\app\\components\\client-components\\product-details",
-    "\\src\\app\\components\\client-components\\sopping-cart",
-    "\\src\\app\\services"
+    "\\src\\app\\components\\client-components"
   ],
-  "SelectedNode": "\\src\\app\\components\\client-components\\product-details\\product-details.component.ts",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

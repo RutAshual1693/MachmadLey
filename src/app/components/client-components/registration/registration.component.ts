@@ -17,10 +17,18 @@ export class RegistrationComponent implements OnInit {
       $('[data-toggle="tooltip"]').tooltip();
     });
     this.form = new FormGroup({
+      registrationDate: new FormControl(""),
       firstName: new FormControl("", Validators.required),
       lastName: new FormControl("", Validators.required),
-      registrationDate: new FormControl(""),
-      mail: new FormControl("", [Validators.required, Validators.email]),
+  mail: new FormControl("", [Validators.required, Validators.email]),
+      numberPhone: new FormControl("", Validators.required),
+      adress: new FormGroup({
+        street: new FormControl("", Validators.required),
+        city: new FormControl("", Validators.required),
+        numHouse: new FormControl("", Validators.required),
+        postalCode: new FormControl("", Validators.required),
+      }),
+     
       password: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(12), Validators.pattern('[a-zA-Z0-9 ]?[a-zA-Z ]+[0-9]+[a-zA-Z0-9 ]?|[a-zA-Z0-9 ]?[0-9]+[a-zA-Z ]+[a-zA-Z0-9 ]?')]),
       confirmPassword: new FormControl("", Validators.required),
     });

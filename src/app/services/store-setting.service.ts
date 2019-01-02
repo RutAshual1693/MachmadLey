@@ -6,12 +6,12 @@ import { Observable } from 'rxjs/Observable';
   providedIn: 'root'
 })
 export class StoreSettingService {
-  storeSetting;
+ public storeSetting;
   constructor(public http: HttpClient) {
-    this.StoreSetting();
+    this.getStoreSetting();
   }
   getStoreSetting() {
-    this.storeSetting().subscribe(
+    this.StoreSetting().subscribe(
       (data: Array<object>) => {
         this.storeSetting = data[0];
       });
