@@ -41,7 +41,7 @@ export class DisplayProductsComponent implements OnInit {
       for (let pItem in this.productsService.listProductByCategory) {
         for (let pProductOption in this.productsService.listProductByCategory[pItem]["options"]) {
           if (this.productsService.listProductOptions[pOptinItem]["_id"] == this.productsService.listProductByCategory[pItem]["options"][pProductOption]["_id"]) {
-            
+
             haveOption = true;
           }
         }
@@ -68,12 +68,11 @@ export class DisplayProductsComponent implements OnInit {
   }
   search(str) {
     this.productsService.listProductByCategory = this.listProductByCategoryForSort;
-    this.productsService.listProductByCategory = this.productsService.listProductByCategory.filter(x => x["name"].indexOf(str) >=  0);
+    this.productsService.listProductByCategory = this.productsService.listProductByCategory.filter(x => x["name"].indexOf(str) >= 0);
     this.paginationService.setPage(1);
   }
 
-  refresh()
-  {
+  refresh() {
     this.productsService.listProductByCategory = this.listProductByCategoryForSort;
     this.paginationService.setPage(1);
 
@@ -96,7 +95,7 @@ export class DisplayProductsComponent implements OnInit {
     let arrSortProducts = this.productsService.listProductByCategory;
     //הקצאת מערך לשימוש זמני השומר בכל סיבוב של הלולאה את המוצרים
     //העומדים בתנאי הסינון של האפשרות מוצר הנוכחית
-    let arrP2 =[];
+    let arrP2 = [];
     let isProductOptionChecked = false;;
     //מעבר על מערך אפשרויות מוצר
     for (let option of this.arrProductOption) {
@@ -112,15 +111,15 @@ export class DisplayProductsComponent implements OnInit {
             //מעבר על האינפוטים שנבחרו
             for (let value of checkes) {
               //בדיקה האם אחד מערכי אפשרויות המוצר הוא נבחר והוא מהקטגוריה הנוכחית
-                for (let op of option["values"]) {
-                  if (value == op) {
-                    if (value == item) {
+              for (let op of option["values"]) {
+                if (value == op) {
+                  if (value == item) {
                     // סימון המוצר
-                      isChecked = true;
-                    }
-                    //סימון האפשרות מוצר 
-                    isProductOptionChecked = true;
+                    isChecked = true;
                   }
+                  //סימון האפשרות מוצר 
+                  isProductOptionChecked = true;
+                }
               }
             }
           }
@@ -130,8 +129,8 @@ export class DisplayProductsComponent implements OnInit {
           //הוספת המוצר לרשימת המוצרים
           arrP2[i++] = product;
         }
-        
-        
+
+
       }
       //אם המשתמש סינן את אחד הערכים מהאפשרות המוצר הנוכחית
       if (isProductOptionChecked) {
@@ -148,8 +147,21 @@ export class DisplayProductsComponent implements OnInit {
     this.paginationService.setPage(1);
   }
 
-  productDetails(product) {
+  viewPrductDetails(product) {
+    console.log(this.productsService.showProductDetails['options']);
     this.productsService.showProductDetails = product;
     this.productsService.showProductOptions = this.productsService.listProductOptions.filter(x => product.options.find(y => y._id == x["_id"]) != null);
+
+  }
+  quantity = 1;
+  checkQuantity(q) {
+    if (this.quantity > 0 || q == 1)
+      this.quantity += q;
+  }
+  check(val) {
+    if (val <= 0)
+      this.quantity = 1;
+    else
+      this.quantity = val;
   }
 }

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrdersService {
-  ordersList;
+  ordersList=[];
   constructor(private http: HttpClient) {
     this.orders();
   }
@@ -16,7 +16,7 @@ export class OrdersService {
       });
   }
   getOrdersList(): Observable<Array<object>> {
-    return this.http.get<Array<object>>('/ordersList');
+    return this.http.get<Array<object>>('/getOrdersList');
   }
   addOrders(order) {
     this.http.post<object[]>("/addOrder", order).subscribe(

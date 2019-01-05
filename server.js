@@ -3,11 +3,38 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path');
 const app = express()
-//var multer = require('multer');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'dist')));
+var nodemailer = require('nodemailer');
+app.listen(5000, function () {
+  console.log('Example app listening on port 5000!');
+});
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'ruti3822@gmail.com',
+    pass: 'ruti70703822'
+  }
+});
+var mailOptions = {
+  from: 'ruti3822@gmail.com',
+  to: 'bina3420@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+//transporter.sendMail(mailOptions, function (error, info) {
+//  if (error) {
+//    console.log(error);
+//  } else {
+//    console.log('Email sent: ' + info.response);
+//  }
+//});
+//var multer = require('multer');
+
 //create a cors middleware
 //app.use(function (req, res, next) {
 //  //set headers to allow cross origin request.
@@ -16,9 +43,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 //  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 //  next();
 //});
-app.listen(5000, function () {
-  console.log('Example app listening on port 5000!');
-});
+
 var listProducts,listCategories,listProductOptions;
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;

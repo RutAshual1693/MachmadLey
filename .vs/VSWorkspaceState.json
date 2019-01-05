@@ -4,8 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\client-components"
+    "\\src\\app\\components\\administor-components",
+    "\\src\\app\\components\\administor-components\\store-settings",
+    "\\src\\app\\components\\client-components",
+    "\\src\\app\\services",
+    "\\src\\assets",
+    "\\src\\assets\\icons"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\assets\\icons\\gear.png",
   "PreviewInSolutionExplorer": false
 }

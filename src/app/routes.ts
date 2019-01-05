@@ -39,6 +39,7 @@ import { ShoppingCartService } from "./services/shopping-cart.service";
 import { SoppingCartComponent } from "./components/client-components/sopping-cart/sopping-cart.component";
 import { DisplayCartComponent } from "./components/client-components/display-cart/display-cart.component";
 import { AnotherDetailOfCustomComponent } from "./components/client-components/another-detail-of-custom/another-detail-of-custom.component";
+import { OrdersComponent } from "./components/administor-components/orders/orders.component";
 
 export const routes: Routes = [
   {
@@ -86,10 +87,16 @@ export const routes: Routes = [
       //  path: "client",
       //  component: ClientComponent
       //},
+  {
+    path: "administor",
+    component: AdministorComponent,
+    children: [
       {
-        path: "administor",
-        component: AdministorComponent,
-        children: [
+        path: "orders",
+        component: OrdersComponent
+
+      },
+
           {
             path: "designSetting",
             component: DesignSettingComponent

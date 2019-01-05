@@ -1,5 +1,5 @@
 <br /><br /><br /><br /><br />
-  <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-md-9"></div>
     <div class="col-md-3" style="font-size:15px;font-weight:bold">
@@ -7,123 +7,194 @@
       <div style="margin-right:10px;display:inline-block">
         <a>דף הבית</a><span style="color:gray"> > </span><a>{{paginationService.baseCategory}}</a><span style="color:gray"> / </span><a>{{paginationService.category}}</a>
       </div>
-      </div>
+    </div>
   </div>
-    <br />
-    <div class="container-fluid">
-      <!--<div class="row">
-        <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
-      </div>-->
-      <div class="row">
-        <div class="col-md-9">
-          <label style="font-family:Guttman-CourMir;font-size:30px">{{paginationService.category}} ל{{paginationService.baseCategory}}</label>
-       <div style="display:inline-block;float:left">
-            <input style="margin:5px;width:150px;display:inline-block" type="text" #str class="form-control" placeholder="שם מוצר" />
-            <button style="background-color:#d0b623;color:white" class="glyphicon glyphicon-search btn btn-dark" (click)="search(str.value)"></button>
-            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="minPrice()">מחיר עולה</button>
-            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="maxPrice()">מחיר יורד</button>
-            <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">הזמנות</button>
-          </div>
-            <!--<div style="width:100%;height:1px;background-color:#bebebe"></div><br />-->
+  <br />
+  <div class="container-fluid">
+    <!--<div class="row">
+      <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
+    </div>-->
+    <div class="row">
+      <div class="col-md-9">
+        <label style="font-family:Guttman-CourMir;font-size:30px">{{paginationService.category}} ל{{paginationService.baseCategory}}</label>
+        <div style="display:inline-block;float:left">
+          <input style="margin:5px;width:150px;display:inline-block" type="text" #str class="form-control" placeholder="שם מוצר" />
+          <button style="background-color:#d0b623;color:white" class="glyphicon glyphicon-search btn btn-dark" (click)="search(str.value)"></button>
+          <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="minPrice()">מחיר עולה</button>
+          <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="maxPrice()">מחיר יורד</button>
+          <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">הזמנות</button>
         </div>
-     <div class="col-md-3">
-          <br />
-          <b>{{productsService.listProductByCategory.length}} מוצרים</b>
-          <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
-        </div>
+        <!--<div style="width:100%;height:1px;background-color:#bebebe"></div><br />-->
       </div>
-      <div class="row">
-        <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
-          <div id="slide3" class="row slideanim">
-            <div>
-              <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let product of paginationService.pagedItems; let i = index">
-                <article class="card-wrapper">
-                  <div style="cursor:pointer" class="image-holder" (click)="productDetails(product)" routerLink="productDetails">
-                    <div class="image-liquid image-holder--original">
-                      <img src="./assets/{{arr[i]}}" />
+      <div class="col-md-3">
+        <br />
+        <b>{{productsService.listProductByCategory.length}} מוצרים</b>
+        <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
+        <div id="slide3" class="row slideanim">
+          <div>
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let product of paginationService.pagedItems; let i = index">
+              <article class="card-wrapper">
+                <div style="cursor:pointer" class="image-holder" data-toggle="modal" data-target="#product_view" (click)="viewPrductDetails(product)">
+                  <div class="image-liquid image-holder--original">
+                    <img src="./assets/{{arr[i]}}" />
+                  </div>
+                </div>
+                <div class="product-description">
+                  <!-- title -->
+                  <h1 class="product-description__title">
+                    <span *ngFor="let item of product.name|nameLength:product.name" style="border:0;background-color:transparent;direction:rtl;color:gray;font-size:15px" (click)="shoppingCartService.addProductToCart(product,1)">
+                      {{item}}<br />
+                      <span *ngIf="product.name|emptyLine:product.name"><br /></span>
+                    </span>
+                  </h1>
+                  <!-- category and price -->
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-lg-12 product-description__price" style="direction:ltr;float:left">
+                      <span>{{salesService.listSale|originPrice:product}}</span>
+                      <span style="text-decoration: line-through;margin-right:5px;">{{salesService.listSale|deleteOriginPrice:product}}</span>
+                      <span #price style="color:red;">{{salesService.listSale|getSalePrice:product}}</span>
                     </div>
                   </div>
-                  <div class="product-description">
-                    <!-- title -->
-                    <h1 class="product-description__title">
-                      <span *ngFor="let item of product.name|nameLength:product.name" style="border:0;background-color:transparent;direction:rtl;color:gray;font-size:15px" (click)="shoppingCartService.addProductToCart(product,1)">
-                        {{item}}<br />
-                        <span *ngIf="product.name|emptyLine:product.name"><br /></span>
-                      </span>
-                    </h1>
-                    <!-- category and price -->
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-4 col-lg-12 product-description__price" style="direction:ltr;float:left">
-                        <span>{{salesService.listSale|originPrice:product}}</span>
-                        <span style="text-decoration: line-through;margin-right:5px;">{{salesService.listSale|deleteOriginPrice:product}}</span>
-                        <span #price style="color:red;">{{salesService.listSale|getSalePrice:product}}</span>
-                      </div>
-                    </div>
-                    <!-- divider -->
-                    <hr />
-                    <!-- sizes -->
-                    <div class="sizes-wrapper">
-                     
-                      <br />
-                      <div class="secondary-text text-uppercase" *ngFor="let option of product.options">
-                        <!--<p style="color:black;">{{option.name}}</p>-->
-                        <ul class="list-inline">
-                          <li *ngFor="let value of option.values">{{value}},</li>
-                          <!--<li>s,</li>
-    <li>sm,</li>
-    <li>m,</li>
-    <li>l,</li>
-    <li>xl,</li>
-    <li>xxl</li>-->
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- colors -->
-                    <!--<div class="color-wrapper">
-                      <b>Colors</b>
-                      <br />
-                      <ul class="list-inline color-list">
-                        <li class="color-list__item color-list__item--red"></li>
-                        <li class="color-list__item color-list__item--blue"></li>
-                        <li class="color-list__item color-list__item--green"></li>
-                        <li class="color-list__item color-list__item--orange"></li>
-                        <li class="color-list__item color-list__item--purple"></li>
+                  <!-- divider -->
+                  <hr />
+                  <!-- sizes -->
+                  <div class="sizes-wrapper">
+
+                    <br />
+                    <div class="secondary-text text-uppercase" *ngFor="let option of product.options">
+                      <!--<p style="color:black;">{{option.name}}</p>-->
+                      <ul class="list-inline">
+                        <li *ngFor="let value of option.values">{{value}},</li>
+                        <!--<li>s,</li>
+                        <li>sm,</li>
+                        <li>m,</li>
+                        <li>l,</li>
+                        <li>xl,</li>
+                        <li>xxl</li>-->
                       </ul>
-                    </div>-->
+                    </div>
                   </div>
-                </article>
-              </div>
+                  <!-- colors -->
+                  <!--<div class="color-wrapper">
+                    <b>Colors</b>
+                    <br />
+                    <ul class="list-inline color-list">
+                      <li class="color-list__item color-list__item--red"></li>
+                      <li class="color-list__item color-list__item--blue"></li>
+                      <li class="color-list__item color-list__item--green"></li>
+                      <li class="color-list__item color-list__item--orange"></li>
+                      <li class="color-list__item color-list__item--purple"></li>
+                    </ul>
+                  </div>-->
+                </div>
+              </article>
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
-          <div class="panel-group" id="accordion">
-            <input type="checkbox" /><label style="margin-right:5px">חדש</label>
-            <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
-            <div class="panel panel-default" *ngFor="let item of this.arrProductOption">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                    {{item.name}}
-                  </a>
-                </h4>
+      </div>
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+        <div class="panel-group" id="accordion">
+          <input type="checkbox" /><label style="margin-right:5px">חדש</label>
+          <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
+          <div class="panel panel-default" *ngFor="let item of this.arrProductOption">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                  {{item.name}}
+                </a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+              <div class="panel-body" *ngFor="let i of item.values">
+                <input (click)="checkClicked(item.values)" class="check" type="checkbox" value="{{i}}" /><label style="margin-right:5px"> {{i}} </label><br />
               </div>
-              <div id="collapse1" class="panel-collapse collapse in">
-                <div class="panel-body" *ngFor="let i of item.values">
-                  <input (click)="checkClicked(item.values)" class="check"  type="checkbox" value="{{i}}"/><label style="margin-right:5px"> {{i}} </label><br />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade product_view" id="product_view">
+  <div class="modal-dialog" style="width:70%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="#" data-dismiss="modal" class="class pull-left"><span class="glyphicon glyphicon-remove"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 product_content">
+            <h1 style="font-family:Calibri;color: #CC0C2F;" class="modal-title">{{productsService.showProductDetails.name}}</h1>
+
+            <h4>דגם:  <span>{{productsService.showProductDetails.model}}</span></h4>
+            <!--<div class="rating">
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              (10 reviews)
+            </div>-->
+
+            <p [innerHTML]="productsService.showProductDetails.prodDescription"></p>
+            <span>{{salesService.listSale|originPrice:productsService.showProductDetails}}</span>
+            <span style="text-decoration: line-through;margin-right:5px;">{{salesService.listSale|deleteOriginPrice:productsService.showProductDetails}}</span>
+            <span #price style="color:red;">{{salesService.listSale|getSalePrice:productsService.showProductDetails}}</span>
+
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let item of productsService.showProductDetails.options">
+                <select class="form-control" name="select"  *ngIf="item.name!=''">
+                  <option value="" disabled="disabled" selected="">{{item.name}}</option>
+                  <option *ngFor="let val of item.values" value="{{val}}">{{val}}</option>
+                </select>
+              </div>
+              <!-- end col -->
+              <!-- end col -->
+              <!-- end col -->
+            </div>
+            <div class="space-ten"></div>
+            <div class="row">
+              <div class="btn-ground col-lg-6">
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>הוסף לסל</button>
+              </div>
+              <div class="col-lg-6">
+                <div class="center">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button style="background-color:black;height:50px;border-color:white" [disabled]="quantity==1" (click)="checkQuantity(-1)" type="button" class="btn btn-danger btn-number">
+                        <span class="glyphicon glyphicon-minus"></span>
+                      </button>
+                    </span>
+                    <input #inp (change)="check(inp.value)" style="text-align:center;background-color:black;color:white;font-weight:bold;height:50px;border-color:white" [(ngModel)]="quantity" type="text" class="form-control input-number">
+                    <span class="input-group-btn">
+                      <button style="background-color:black;height:50px;border-color:white" (click)="checkQuantity(1)" type="button" class="btn btn-success btn-number">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-           
+          </div>
+          <div class="col-md-6 product_img">
+            <img src="http://img.bbystatic.com/BestBuy_US/images/products/5613/5613060_sd.jpg" class="img-responsive">
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
-
-
+</div>
+<app-sopping-cart></app-sopping-cart>
+<app-base-client-p></app-base-client-p>
 <!--<div class="container responsive">
   <div *ngFor="let product of paginationService.pagedItems">
     <div class="card col-md-4">
@@ -153,7 +224,6 @@
   </button>
 </span>-->
 <!--</div>-->
-
 <!---------------------------
 pagination--------------------------------------------------------------------
 ---------------------------->
