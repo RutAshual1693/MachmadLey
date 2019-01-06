@@ -12,20 +12,24 @@ const EXCEL_EXTENSION = '.xlsx';
 })
 
 export class ExcelService {
-   readyToExport = [
-    { id: 1, name: 'a' },
-    { id: 2, name: 'b' },
-    { id: 3, name: 'c' }
-  ];
+ 
   constructor(private ordersService: OrdersService) { }
   clicked() {
-    this.exportAsExcelFile(this.readyToExport, "orders");
+    this.exportAsExcelFile(this.ordersService.ordersList, "orders");
   }
   public exportAsExcelFile(json: any[], excelFileName: string): void {
-    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
-    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'buffer' });
-    this.saveAsExcelFile(excelBuffer, excelFileName);
+    var ws = XLSX.utils.json_to_sheet(json);
+
+    /* add to workbook */
+    var wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "People");
+
+    /* generate an XLSX file */
+    XLSX.writeFile(wb, "sheetjs.xlsx");
+    //const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
+    //const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    //const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'buffer' });
+    //this.saveAsExcelFile(excelBuffer, excelFileName);
   }
 
   private saveAsExcelFile(buffer: any, fileName: string): void {

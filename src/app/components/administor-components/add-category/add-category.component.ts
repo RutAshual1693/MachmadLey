@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms'
+import { FormGroup, FormControl, Validators } from '@angular/forms'
+
 import { CategoriesService } from '../../../services/categories.service';
 import { TypesService } from '../../../services/types.service';
+ 
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -13,8 +15,8 @@ export class AddCategoryComponent implements OnInit {
   form;
   ngOnInit() {
     this.form = new FormGroup({
-      name: new FormControl(""),
-      types: new FormControl("")
+      name: new FormControl("", Validators.required),
+      types: new FormControl("", Validators.required)
     });
     this.dropdownSettings = {
   singleSelection: false,

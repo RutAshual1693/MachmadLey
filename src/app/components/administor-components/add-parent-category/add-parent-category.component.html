@@ -2,7 +2,7 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="heading" style="position:fixed;width:100%;">
     <div class="col-lg-8">
-      <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" value="שמור" />
+      <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" value="שמור" [disabled]="!form.valid" />
     </div>
 
 
