@@ -62,25 +62,30 @@ export const routes: Routes = [
             component: DisplayProductsComponent
           },
           {
-            path: "productDetails",
-            component: ProductDetailsComponent,
-            children: [
-              {
                 path: "anotherDetails",
                 component: AnotherDetailOfCustomComponent
-              },
-              {
-                path: "baseClientP",
-                component: BaseClientPComponent,
-                children: [
-                  {
-                    path: "",
-                    component: DisplayCartComponent
-                  }
-                ]
-              },
-            ]
-          }
+          },
+          {
+            path: "displayCart",
+            component: DisplayCartComponent
+          },
+          //{
+          //  path: "productDetails",
+          //  component: ProductDetailsComponent,
+          //  children: [
+         
+          //    {
+          //      path: "baseClientP",
+          //      component: BaseClientPComponent,
+          //      children: [
+          //        {
+          //          path: "",
+          //          component: DisplayCartComponent
+          //        }
+          //      ]
+          //    },
+          //  ]
+          //}
           ]    
         }
         ]

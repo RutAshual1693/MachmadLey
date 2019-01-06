@@ -11,6 +11,7 @@ import { SalesService } from '../../../services/sales.service';
   styleUrls: ['./display-products.component.css']
 })
 export class DisplayProductsComponent implements OnInit {
+  public options: Array<object> = new Array<object>();
   arr = ["AKC6338 מיטה מלבנית משובצת.JPG", "AKC4600 מיטת אביב מלבנית.JPG", "AKC1500 מיטה אורטופדית דוגמת מעוין.JPG", "AKC3115 מיטת 80 מרובעת3.JPG", "מיטת-זמש-אורטופדית-250x150.jpg", "AKC3462 מיטה פסים עגולה2.JPG", "מיטת-זמש-אורטופדית-250x150.jpg", "מיטת-זמש-אורטופדית-250x150.jpg"]
   listProductByCategoryForSort;
   listSales = [];
