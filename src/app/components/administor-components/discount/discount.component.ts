@@ -57,7 +57,7 @@ this.form = new FormGroup({
   status: new FormControl("", Validators.required),
   scope: new FormControl("", Validators.required),
   countDiscount: new FormControl(""),
-  selectedProducts: new FormControl(""),
+  selectedProducts: new FormControl("", Validators.required),
   selectedCategories: new FormControl(""),
 });
   }
@@ -66,9 +66,9 @@ this.form = new FormGroup({
 
     console.log(frm);
 
-    let x = { "selected": frm.selectedProducts, "kind": frm.kindDiscount, "count": frm.countDiscount ,"status":frm.status};
-    console.log(x);
-    this.salesService.addSale(x);
+    //let x = { "selected": frm.selectedProducts, "kind": frm.kindDiscount, "count": frm.countDiscount ,"status":frm.status};
+    //console.log(x);
+    this.salesService.addSale(frm);
 
 
 

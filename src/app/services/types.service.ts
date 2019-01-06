@@ -25,6 +25,11 @@ export class TypesService {
       (data: object[]) => this.listTypes = data
     );
   }
+  delete(category) {
+    this.http.post<object[]>('/deleteParentCategory', category).subscribe(
+      (data: object[]) => { this.listTypes = data; }
+    );
+  }
   edit(frm) {
     var o = { _id: this.editParentCategory["_id"], name: frm.name };
     this.http.post<object[]>("/editParentCategory", o).subscribe(

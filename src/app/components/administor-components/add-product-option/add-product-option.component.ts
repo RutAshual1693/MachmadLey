@@ -29,7 +29,8 @@ export class AddProductOptionComponent implements OnInit {
         this.productOption["values"].splice(i, 1);
         i--;
       }
-      this.productsService.addProductOption(this.productOption);
+   
     }
+    this.productsService.addProductOption(this.productOption);
   }
 }

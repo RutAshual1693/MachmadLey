@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 export class SalesService {
   public listSale: Array<object>;
   public onSale;
+  editSale = {};
   constructor(public http: HttpClient) {
     this.sales();
   }
@@ -22,6 +23,16 @@ export class SalesService {
   }
   addSale(sale) {
     this.http.post<object>("/addSale", sale).subscribe(
+      (data: object[]) => this.listSale = data
+    )
+  }
+  editSaleF(sale) {
+    this.http.post<object>("/editSale", sale).subscribe(
+      (data: object[]) => this.listSale = data
+    )
+  }
+  deleteSale(sale) {
+    this.http.post<object>("/deleteSale", sale).subscribe(
       (data: object[]) => this.listSale = data
     )
   }

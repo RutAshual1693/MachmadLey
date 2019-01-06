@@ -17,6 +17,7 @@ export class AddComponent implements OnInit {
     categoriesService.getListCategories().subscribe(
       (data: Array<object>) => {
         this.listCategories = data;
+      
       });
   }
 

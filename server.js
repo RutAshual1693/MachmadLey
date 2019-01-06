@@ -236,6 +236,34 @@ app.post('/addSale', function (req, res) {
   })
   myPromise.then(fromResolve => getSales(req, res), err => console.log(err));
 })
+app.post('/editSale', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("sales").updateOne({ _id: new mongo.ObjectID(req.body._id) }, {
+      $set:
+        {
+          nameSale: req.body["nameSale"],
+          kindDiscount: req.body["kindDiscount"],
+          status: req.body["status"],
+          scope: req.body["scope"],
+          countDiscount: req.body["countDiscount"],
+          selectedProducts: req.body["selectedProducts"] 
+        }
+
+    }, function (err, res) {
+      if (err) reject(err);
+      console.log("1 sale updated");
+      resolve(res);
+    })
+  })
+  myPromise.then(fromResolve => getSales(req, res), err => console.log(err));
+})
+app.post('/deleteSale', function (req, res) {
+  dbo.collection("sales").deleteOne({ _id: new mongo.ObjectID(req.body._id) }, function (err, res2) {
+      if (err) reject(err);
+      console.log("1 sale deleted");
+      getSales(req, res)
+    })
+})
 //var multer = require('multer');
 //// set the directory for the uploads to the uploaded to
 //var DIR = './images/';
@@ -494,6 +522,18 @@ app.post('/addParentCategory', function (req, res) {
   });
   myPromise.then(fromResolve => getTypes(req, res), err => console.log(err));
 });
+app.post('/deleteParentCategory', function (req, res) {
+  var myPromise = new Promise((resolve, reject) => {
+    dbo.collection("typeAnimal").deleteOne({ _id: new mongo.ObjectID(req.body._id) }, function (err, obj) {
+      if (err) reject(err);
+      console.log("1 deleteParentCategory deleted");
+      resolve(obj);
+    });
+  });
+  myPromise.then(fromResolve => getTypes(req, res), err => console.log(err));
+}
+)
+
 app.post('/editParentCategory', function (req, res) {
   var myPromise = new Promise((resolve, reject) => {
     dbo.collection("typeAnimal").updateOne({ _id: new mongo.ObjectID(req.body._id) }, { $set: { name: req.body.name} }, function (err, obj) {
@@ -561,3 +601,18 @@ function getOrdersList(req, res) {
     res.send(JSON.stringify(result));
   });
 }
+//---------------------------------------------
+//--------מנהל--------------------------------
+//---------------------------------------------
+var administrator;
+function getAdministrator(req, res) {
+  dbo.collection("loginAdministrator").find().toArray(function (err, result) {
+    if (err) reject(err);
+    administrator = result;
+    console.log(result);
+    res.send(JSON.stringify(result));
+  });
+}
+app.get('/administrator', function (req, res) {
+  getAdministrator(req, res);
+});

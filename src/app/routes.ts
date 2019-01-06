@@ -40,6 +40,9 @@ import { SoppingCartComponent } from "./components/client-components/sopping-car
 import { DisplayCartComponent } from "./components/client-components/display-cart/display-cart.component";
 import { AnotherDetailOfCustomComponent } from "./components/client-components/another-detail-of-custom/another-detail-of-custom.component";
 import { OrdersComponent } from "./components/administor-components/orders/orders.component";
+import { SalesComponent } from "./components/administor-components/sales/sales.component";
+import { SalesBaseComponent } from "./components/administor-components/sales-base/sales-base.component";
+import { EditSaleComponent } from "./components/administor-components/edit-sale/edit-sale.component";
 
 export const routes: Routes = [
   {
@@ -167,24 +170,24 @@ export const routes: Routes = [
               }
             ]
           },
+      {
+        path: "saleBase",
+        component: SalesBaseComponent,
+        children: [
           {
-            path: "discountBase",
-            component: DiscountBaseComponent,
-            children: [
-              //{
-              //  path: "addParentCategory",
-              //  component: AddParentCategoryComponent
-              //},
-              //{
-              //  path: "editParentCategory",
-              //  component: EditParentCategoryComponent
-              //},
-              {
-                path: "",
-                component: DiscountComponent
-              }
-            ]
+            path: "addSale",
+            component: DiscountComponent
           },
+          {
+            path: "editSale",
+            component: EditSaleComponent
+          },
+          {
+            path: "",
+            component: SalesComponent
+          }
+        ]
+      },
           {
             path: "categoriesBase",
             component: CategoriesBaseComponent,

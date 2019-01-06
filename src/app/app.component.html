@@ -1,6 +1,7 @@
 <div *ngIf="display == true">
-  <a (click)="administorClick()" routerLink="administor">מנהל</a>
+  <div style="float:right;color:white"><a class="a" href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span><b>התחבר</b></a></div>
   <a (click)="clientClick()" routerLink="client">לקוח</a>
 </div>
 <!--<app-upload-img></app-upload-img>-->
 <router-outlet></router-outlet>
+<app-login-administrator></app-login-administrator>

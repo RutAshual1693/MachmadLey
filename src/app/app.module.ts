@@ -93,6 +93,11 @@ import { OrdersComponent } from './components/administor-components/orders/order
 import { DisplayCartComponent } from './components/client-components/display-cart/display-cart.component';
 import { BaseDetailsComponent } from './components/client-components/base-details/base-details.component';
 import { AnotherDetailOfCustomComponent } from './components/client-components/another-detail-of-custom/another-detail-of-custom.component';
+import { LoginAdministratorComponent } from './components/administor-components/login-administrator/login-administrator.component';
+import { SalesComponent } from './components/administor-components/sales/sales.component';
+import { SalesBaseComponent } from './components/administor-components/sales-base/sales-base.component';
+import { EditSaleComponent } from './components/administor-components/edit-sale/edit-sale.component';
+import { CategoryAndParentCategoryPipe } from './pipes/category-and-parent-category.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -158,7 +163,12 @@ import { AnotherDetailOfCustomComponent } from './components/client-components/a
     OrdersComponent,
     DisplayCartComponent,
     BaseDetailsComponent,
-    AnotherDetailOfCustomComponent
+    AnotherDetailOfCustomComponent,
+    LoginAdministratorComponent,
+    SalesComponent,
+    SalesBaseComponent,
+    EditSaleComponent,
+    CategoryAndParentCategoryPipe
     
   ],
   imports: [

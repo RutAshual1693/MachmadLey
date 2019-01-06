@@ -15,4 +15,7 @@ export class ParentCategoryComponent implements OnInit {
   editCategoryClicked(category) {
     this.typesService.editParentCategory = category;
   }
+  delete(category) {
+    this.typesService.delete(category);
+  }
 }
