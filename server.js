@@ -21,12 +21,12 @@ var transporter = nodemailer.createTransport({
     rejectUnauthorized: false
   },
   auth: {
-    user: 'ruti3822@gmail.com',
-    pass: 'ruti70703822'
+    user: 'rutashual@gmail.com',
+    pass: '207148263'
   }
 });
 var mailOptions = {
-  from: 'ruti3822@gmail.com',
+  from: 'rutashual@gmail.com',
   to: 'ruti3822@gmail.com',
   subject: 'Sending Email using Node.js',
   text: 'That was easy!'
