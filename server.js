@@ -21,20 +21,20 @@ var transporter = nodemailer.createTransport({
     rejectUnauthorized: false
   },
   auth: {
-    user: 'rutashual@gmail.com',
-    pass: '207148263'
+    user: 'bina3420@gmail.com',
+    pass: 'zehava2075'
   }
 });
 var mailOptions = {
-  from: 'rutashual@gmail.com',
-  to: 'ruti3822@gmail.com',
+  from: 'bina3420@gmail.com',
+  to: 'bina3420@gmail.com',
   subject: 'Sending Email using Node.js',
   text: 'That was easy!'
 };
 
 transporter.sendMail(mailOptions, function (error, info) {
   if (error) {
-    console.log(error);
+    console.log(error+"binushka");
   } else {
     console.log('Email sent: ' + info.response);
   }

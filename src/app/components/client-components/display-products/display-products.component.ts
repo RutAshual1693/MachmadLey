@@ -154,15 +154,15 @@ export class DisplayProductsComponent implements OnInit {
     this.productsService.showProductOptions = this.productsService.listProductOptions.filter(x => product.options.find(y => y._id == x["_id"]) != null);
 
   }
-  quantity = 1;
-  checkQuantity(q) {
-    if (this.quantity > 0 || q == 1)
-      this.quantity += q;
-  }
-  check(val) {
-    if (val <= 0)
-      this.quantity = 1;
-    else
-      this.quantity = val;
-  }
+  //quantity = 1;
+  //checkQuantity(q) {
+  //  if (this.quantity > 0 || q == 1)
+  //    this.quantity += q;
+  //}
+  //check(val) {
+  //  if (val <= 0)
+  //    this.quantity = 1;
+  //  else
+  //    this.quantity = val;
+  //}
 }

@@ -30,6 +30,7 @@
     "express": "^4.16.4",
     "file-saver": "^2.0.0",
     "font-awesome": "^4.7.0",
+    "font-face": "^2.3.1",
     "googleapis": "^27.0.0",
     "jquery": "^3.3.1",
     "mongodb": "^3.1.4",
