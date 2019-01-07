@@ -5,6 +5,9 @@ import { FormControl } from '@angular/forms';
 import { CustomersService } from '../../../services/customers.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
+
 declare var $: any;
 @Component({
   selector: 'app-login-administrator',
@@ -13,7 +16,7 @@ declare var $: any;
 })
 export class LoginAdministratorComponent implements OnInit {
   amdinistratorDetails = {};
-  constructor(private customersService: CustomersService, private http: HttpClient) {
+  constructor(private customersService: CustomersService, private http: HttpClient,private  authService: AuthService,private router:Router) {
     this.administrator();
   }
   administrator() {
@@ -28,7 +31,7 @@ export class LoginAdministratorComponent implements OnInit {
 
   form;
   ngOnInit() {
-
+  //  $("#myModal").modal('show');
     this.form = new FormGroup({
       email: new FormControl("", [Validators.email, Validators.required]),
       password: new FormControl("", Validators.required),
@@ -39,14 +42,16 @@ export class LoginAdministratorComponent implements OnInit {
     //$('#frm').validator();
     console.log(frm);
     //frm.registrationDate = new Date().toString();
-   
-    if (this.administrator["mail"] == frm.email && this.administrator["password"] == frm.password)
-    {
+
+    if (this.amdinistratorDetails["mail"] == frm.email && this.amdinistratorDetails["password"] == frm.password) {
+      this.authService.loggedIn = true;
       sessionStorage.setItem('loginAdministrator', JSON.stringify(frm));
     }
-    else
+    else {
       sessionStorage.setItem('loginAdministrator', JSON.stringify(''));
+      this.authService.loggedIn = false;
 
+   }
   }
 
 }

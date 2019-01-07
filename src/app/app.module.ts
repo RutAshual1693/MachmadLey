@@ -98,6 +98,10 @@ import { SalesComponent } from './components/administor-components/sales/sales.c
 import { SalesBaseComponent } from './components/administor-components/sales-base/sales-base.component';
 import { EditSaleComponent } from './components/administor-components/edit-sale/edit-sale.component';
 import { CategoryAndParentCategoryPipe } from './pipes/category-and-parent-category.pipe';
+
+import { AuthService } from './services/auth.service'
+import { AuthGuard } from './auth.guard';
+import { BaseAdminComponent } from './components/administor-components/base-admin/base-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -168,7 +172,8 @@ import { CategoryAndParentCategoryPipe } from './pipes/category-and-parent-categ
     SalesComponent,
     SalesBaseComponent,
     EditSaleComponent,
-    CategoryAndParentCategoryPipe
+    CategoryAndParentCategoryPipe,
+    BaseAdminComponent
     
   ],
   imports: [
@@ -183,7 +188,7 @@ import { CategoryAndParentCategoryPipe } from './pipes/category-and-parent-categ
     Angular2FontawesomeModule,
     NgxStripeModule.forRoot('pk_test_2Xy7zYp54ZVOaiZYr61XYpTj')
   ],
-  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService, ShoppingCartService, PaymentService,
+  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService, ShoppingCartService, PaymentService, AuthService, AuthGuard
     { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
