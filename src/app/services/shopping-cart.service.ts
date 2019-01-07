@@ -71,12 +71,12 @@ export class ShoppingCartService {
   }
 
   currentlyPrice(product): number{
-    var o = this.salesService.listSale.find(x => x["selected"].find(y => y["_id"] == product._id) != null);
+    var o = this.salesService.listSale.find(x => x["selectedProducts"].find(y => y["_id"] == product._id) != null);
     if (o != null&&o["status"]=="פעיל") {
-      if (o["kind"] == "הנחה באחוזים")
-        return (100 - o["count"]) / 100 * product.price;
-      if (o["kind"] == "הנחה קבועה")
-        return product.price - o["count"];
+      if (o["kindDiscount"] == "הנחה באחוזים")
+        return (100 - o["countDiscount"]) / 100 * product.price;
+      if (o["kindDiscount"] == "הנחה קבועה")
+        return product.price - o["countDiscount"];
     }
     return product.price;
 

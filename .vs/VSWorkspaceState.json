@@ -5,12 +5,10 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\administor-components",
-    "\\src\\app\\components\\administor-components\\store-settings",
     "\\src\\app\\components\\client-components",
-    "\\src\\app\\services",
     "\\src\\assets",
     "\\src\\assets\\icons"
   ],
-  "SelectedNode": "\\src\\assets\\icons\\gear.png",
+  "SelectedNode": "\\src\\app\\auth.guard.ts",
   "PreviewInSolutionExplorer": false
 }
