@@ -45,11 +45,13 @@ export class LoginAdministratorComponent implements OnInit {
 
     if (this.amdinistratorDetails["mail"] == frm.email && this.amdinistratorDetails["password"] == frm.password) {
       this.authService.loggedIn = true;
-      sessionStorage.setItem('loginAdministrator', JSON.stringify(frm));
+      sessionStorage.setItem('loginAdministrator', JSON.stringify('true'));
+      //this.router.navigateByUrl('administor');
     }
     else {
-      sessionStorage.setItem('loginAdministrator', JSON.stringify(''));
+      sessionStorage.setItem('loginAdministrator', JSON.stringify('false'));
       this.authService.loggedIn = false;
+      this.router.navigateByUrl('myOnlineStore');
 
    }
   }

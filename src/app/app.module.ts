@@ -38,6 +38,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
+
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FileSelectDirective } from 'ng2-file-upload';
 
@@ -102,6 +103,7 @@ import { CategoryAndParentCategoryPipe } from './pipes/category-and-parent-categ
 import { AuthService } from './services/auth.service'
 import { AuthGuard } from './auth.guard';
 import { BaseAdminComponent } from './components/administor-components/base-admin/base-admin.component';
+import { GetStringPipe } from './pipes/get-string.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -173,7 +175,8 @@ import { BaseAdminComponent } from './components/administor-components/base-admi
     SalesBaseComponent,
     EditSaleComponent,
     CategoryAndParentCategoryPipe,
-    BaseAdminComponent
+    BaseAdminComponent,
+    GetStringPipe
     
   ],
   imports: [
@@ -188,7 +191,7 @@ import { BaseAdminComponent } from './components/administor-components/base-admi
     Angular2FontawesomeModule,
     NgxStripeModule.forRoot('pk_test_2Xy7zYp54ZVOaiZYr61XYpTj')
   ],
-  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService, ShoppingCartService, PaymentService, AuthService, AuthGuard
+  providers: [ProductsService, CategoriesService, PaginationService, TypesService, CustomersService, ShoppingCartService, PaymentService, AuthService, AuthGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })

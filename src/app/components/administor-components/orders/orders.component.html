@@ -40,7 +40,7 @@
 
 
               <td>
-                <!--<div><span *ngIf="let product of order['products']">{{product.name}},</span></div>-->
+                <div><span *ngFor="let o of order.products">{{o.name}},</span></div>
               </td>
               <td>{{order.finalPrice}} ₪</td>
             </tr>
