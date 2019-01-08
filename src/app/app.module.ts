@@ -38,6 +38,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
+
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FileSelectDirective } from 'ng2-file-upload';
 
@@ -102,6 +103,7 @@ import { CategoryAndParentCategoryPipe } from './pipes/category-and-parent-categ
 import { AuthService } from './services/auth.service'
 import { AuthGuard } from './auth.guard';
 import { BaseAdminComponent } from './components/administor-components/base-admin/base-admin.component';
+import { GetStringPipe } from './pipes/get-string.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -173,7 +175,8 @@ import { BaseAdminComponent } from './components/administor-components/base-admi
     SalesBaseComponent,
     EditSaleComponent,
     CategoryAndParentCategoryPipe,
-    BaseAdminComponent
+    BaseAdminComponent,
+    GetStringPipe
     
   ],
   imports: [

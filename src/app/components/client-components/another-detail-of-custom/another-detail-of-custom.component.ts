@@ -27,8 +27,8 @@ export class AnotherDetailOfCustomComponent implements OnInit
        
       })
     })
-    var user = JSON.parse(sessionStorage.getItem("user"));
-    this.form.setValue({ firstName: user['firstName'], lastName: user['lastName'], mail: user['mail'], numberPhone: user['numberPhone'], adress: { street: user['adress']["street"], city: user['adress']["city"], numHouse: user['adress']["numHouse"], postalCode: user['adress']["postalCode"] } });
+    //var user = JSON.parse(sessionStorage.getItem("user"));
+    //this.form.setValue({ firstName: user['firstName'], lastName: user['lastName'], mail: user['mail'], numberPhone: user['numberPhone'], adress: { street: user['adress']["street"], city: user['adress']["city"], numHouse: user['adress']["numHouse"], postalCode: user['adress']["postalCode"] } });
 }
   onSubmit(frm) {
     var order = { customerDetails: frm, products: JSON.parse(sessionStorage.getItem("cart")), finalPrice: JSON.parse(sessionStorage.getItem("finalPrice")), orderDate: new Date()}

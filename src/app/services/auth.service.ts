@@ -4,11 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor() { }
   loggedIn = false;
-
+  constructor() {
+ // if((sessionStorage.getItem('loginAdministrator'))=="true")
+ //this.loggedIn = true;
+ }
   isAuth() {
+    //if ((sessionStorage.getItem('loginAdministrator')) == "true")
+    //  this.loggedIn = true;
     return this.loggedIn;
   }
 }

@@ -3,7 +3,8 @@ import { CategoriesService } from '../../../services/categories.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { ProductsService } from '../../../services/products.service';
 import { TypesService } from '../../../services/types.service';
-//import { Validators } from '@angular/forms/src/validators';
+import { Router } from '@angular/router';
+
 declare var $: any;
 @Component({
   selector: 'app-add',
@@ -13,7 +14,7 @@ declare var $: any;
 export class AddComponent implements OnInit {
   public listCategories: Array<object>;
   dropdownSettings = {};
-  constructor(public categoriesService: CategoriesService, public productsService: ProductsService, public typesService: TypesService) {
+  constructor(public categoriesService: CategoriesService, public productsService: ProductsService, public typesService: TypesService, private router: Router) {
     categoriesService.getListCategories().subscribe(
       (data: Array<object>) => {
         this.listCategories = data;
@@ -73,6 +74,7 @@ export class AddComponent implements OnInit {
         frm.status = "כבוי";
       frm.typeAnimal = this.typesService.listTypes.filter(x => frm.categories.find(y => this.categoriesService.listCategories.find(i => i["_id"] == y["_id"])["types"] == x["_id"]) != null);
       this.productsService.addProduct(frm);
+      //this.router.navigateByUrl("");
     }
   }
   checkValue() {
