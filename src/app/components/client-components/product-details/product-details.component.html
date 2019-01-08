@@ -18,12 +18,12 @@
                 {{salesService.listSale|deleteOriginPrice:productsService.showProductDetails}}
               </small>
             </h3>
-            <h4 style="color:#00174F;font-family:Calibri" [innerHTML]="productsService.showProductDetails.prodDescription"></h4>
+            <h4 style="color:#00174F;font-family:Calibri" [innerText]="productsService.showProductDetails.prodDescription"></h4>
             <h5 class="font">דגם: <span>{{productsService.showProductDetails.model}}</span></h5>
 
             <div class="row">
-              <div class="col-md-4 col-sm-6 col-xs-12 pull-right" *ngFor="let item of productsService.showProductDetails.options">
-                <select class="form-control" name="select" *ngIf="item.name!=''">
+              <div class="col-md-4 col-sm-6 col-xs-12 pull-right" *ngFor="let item of productsService.showProductDetails.options;let i=index;">
+                <select class="form-control" [(ngModel)]="options[i]" name="select" *ngIf="item.name!=''">
                   <option value="" disabled="disabled" selected="">{{item.name}}</option>
                   <option *ngFor="let val of item.values" value="{{val}}">{{val}}</option>
                 </select>
@@ -35,7 +35,7 @@
             <div>
               <div class="row">
                 <div class="col-lg-8">
-                  <button style="width:80%;" type="button" data-toggle="modal" data-target="#myModal" (click)="addToCart()" class="btn toOrder myBtn">הוספה לסל  <span class="glyphicon glyphicon-shopping-cart"></span></button>
+                  <button style="width:80%;" data type="button" data-dismiss="modal" data-toggle="modal" data-target="#myModal"(click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity,options)" class="btn toOrder myBtn">הוספה לסל  <span class="glyphicon glyphicon-shopping-cart"></span></button>
                 </div>
                 <div class="col-lg-4">
                   <div class="input-group">

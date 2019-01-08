@@ -29,7 +29,7 @@ export class ProductDetailsComponent implements OnInit {
       //this.quantity = parseInt(q);
       this.quantity += q;
   }
-  addToCart() {
-    this.shoppingCartService.addProductToCart(this.productsService.showProductDetails, this.quantity, this.options)
-  }
+  //addToCart() {
+  //  this.shoppingCartService.addProductToCart(this.productsService.showProductDetails, this.quantity, this.options)
+  //}
 }
