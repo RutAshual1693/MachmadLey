@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-administor',
@@ -7,13 +9,19 @@ declare var $: any;
 })
 export class AdministorComponent implements OnInit {
   active = 'main';
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {
+
+  }
   public show: boolean = true;
   clicked(value) {
     if (value != '')
     this.active = value;
     this.show = false;
 
+  }
+  powerOf() {
+    this.authService.loggedIn = false;
+    this.router.navigateByUrl('/');
   }
   ngOnInit() {
 

@@ -22,11 +22,12 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   checkQuantity(q) {
-    this.quantity = parseInt(q);
-    if (q <= 0)
+    //this.quantity = parseInt(q);
+    if (this.quantity <= 0)
       this.quantity = 1;
     else
-      this.quantity = parseInt(q);
+      //this.quantity = parseInt(q);
+      this.quantity += q;
   }
   addToCart() {
     this.shoppingCartService.addProductToCart(this.productsService.showProductDetails, this.quantity, this.options)

@@ -51,15 +51,19 @@ export class DisplayProductsComponent implements OnInit {
         this.arrProductOption[i++] = this.productsService.listProductOptions[pOptinItem];
     }
   }
-
+  //getCurrentlyPrice(p): number {
+  //  for (var i = 0; i < this.salesService.listSale.length; i++) {
+  //    if (p._id == this.salesService.listSale[i]['_id'])
+  //  }
+  //}
   maxPrice() {
     this.productsService.listProductByCategory = this.listProductByCategoryForSort;
-    this.productsService.listProductByCategory = this.productsService.listProductByCategory.sort((a, b) => b['price'] - a['price']);
+    this.productsService.listProductByCategory = this.productsService.listProductByCategory.sort((a, b) => this.shoppingCartService.currentlyPrice(b) - a['price']);
     this.paginationService.setPage(1);
   }
   minPrice() {
     this.productsService.listProductByCategory = this.listProductByCategoryForSort;
-    this.productsService.listProductByCategory = this.productsService.listProductByCategory.sort((a, b) => a['price'] - b['price']);
+    this.productsService.listProductByCategory = this.productsService.listProductByCategory.sort((a, b) => this.shoppingCartService.currentlyPrice(a) - b['price']);
     this.paginationService.setPage(1);
   }
   orders() {

@@ -43,6 +43,9 @@ import { OrdersComponent } from "./components/administor-components/orders/order
 import { SalesComponent } from "./components/administor-components/sales/sales.component";
 import { SalesBaseComponent } from "./components/administor-components/sales-base/sales-base.component";
 import { EditSaleComponent } from "./components/administor-components/edit-sale/edit-sale.component";
+import { AuthGuard } from "../app/auth.guard";
+import { LoginAdministratorComponent } from "./components/administor-components/login-administrator/login-administrator.component";
+import { BaseAdminComponent } from "./components/administor-components/base-admin/base-admin.component";
 
 export const routes: Routes = [
   {
@@ -90,12 +93,16 @@ export const routes: Routes = [
         }
         ]
       },
-
-      //{
-      //  path: "client",
-      //  component: ClientComponent
-      //},
   {
+    path: "myOnlineStore",
+    component: BaseAdminComponent,
+    children: [
+     {
+        path: "",
+        component: LoginAdministratorComponent
+      },    
+  {
+    canActivate: [AuthGuard],
     path: "administor",
     component: AdministorComponent,
     children: [
@@ -230,6 +237,7 @@ export const routes: Routes = [
             ]
           }
         ]
-      }
+      }]
+  },
     ]
 

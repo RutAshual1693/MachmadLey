@@ -1,11 +1,45 @@
-<style type="text/css">
+
+<div class="container" style="">
+  <div class="card card-container">
+    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-signin">
+      <span id="reauth-email" class="reauth-email"></span>
+      <label  for="inputEmail">אימייל:</label>
+
+      <input class="form-control input-sm" id="inputEmail" placeholder="Email address" formControlName="email" type="email" />
+      <!--<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
+      <label   for="inputPassword">סיסמא:</label>
+
+      <input class="form-control input-sm" id="inputPassword" formControlName="password" type="password" />
+      <!--<div id="remember" class="checkbox">
+    <a href="#" class="forgot-password">
+      Forgot the password?
+    </a>
+  </div>-->
+      <div class="wrapper">
+        <span class="group-btn  col-lg-6">
+          <input (click)="onSubmit(form.value)" [disabled]="!form.valid" type="submit" class="form-control input-sm btn" data-dismiss="modal" routerLink="administor" style="background-color:darkcyan;border-color:darkcyan;color:white;width:100%;" value="התחבר">
+        </span>
+        <!--<span class="group-btn col-lg-6">
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
+    </span>-->
+      </div>
+    </form><!-- /form -->
+
+  </div><!-- /card-container -->
+</div><!-- /container -->
+
+<!--<style type="text/css">
   .rtl {
     direction: rtl;
   }
-</style>
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" style="width:500px;">
-    <div class="modal-content animate">
+</style>-->
+<!--<div style="float:right;color:white"><a class="a"   data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span><b>התחבר</b></a></div>-->
+<!--<div style="background-image: url('./assets/background/loginBack.jpg');">
+  <div>
+    <div>
       <div class="modal-header" style="background-color:darkcyan;height:100px;">
         <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
         <div style="text-align:center;">
@@ -28,17 +62,18 @@
               <input class="form-control input-sm" id="password" formControlName="password" type="password" />
             </div>
             <label class="control-label col-sm-4" for="password">סיסמא:</label>
-            <!--<label>
+            <label>
               <input type="checkbox" checked="checked" name="remember"> זכור אותי
-            </label>-->
+            </label>
           </div>
           <div class="col-sm-4"></div>
           <div class="container col-sm-4">
-            <input  (click)="onSubmit(form.value)"[disabled]="!form.valid" type="submit" class="btn btn1"  data-dismiss="modal" routerLink="administor" style="background-color:darkcyan;border-color:darkcyan;color:white;" value="התחבר">
+            <input (click)="onSubmit(form.value)" [disabled]="!form.valid" type="submit" class="btn btn1" data-dismiss="modal" routerLink="administor" style="background-color:darkcyan;border-color:darkcyan;color:white;" value="התחבר">
           </div>
           <div class="col-sm-4"></div>
         </div>
       </form>
     </div>
   </div>
-</div>
+</div>-->
+<!--<router-outlet></router-outlet>-->
