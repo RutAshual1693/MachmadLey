@@ -3,7 +3,7 @@
 
   <div class="heading" style="position:fixed;width:100%;">
     <div class="col-lg-8">
-      <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" [disabled]="!form.valid"  value="שמור" />
+      <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" [disabled]="!((form.valid)&&(p.value==cp.value))"  value="שמור" />
     </div>
 
 
@@ -26,9 +26,9 @@
           <label>דוא"ל</label>
           <input class="form-control" formControlName="mail" type="email" />
           <label>סיסמא</label>
-          <input class="form-control" formControlName="password" type="password" />
+          <input class="form-control" #p formControlName="password" type="password" />
           <label>אימות סיסמא</label>
-          <input class="form-control" formControlName="confirmPassword" type="password" />
+          <input class="form-control" #cp formControlName="confirmPassword" type="password" />
         </div>
       </div>
     </div>

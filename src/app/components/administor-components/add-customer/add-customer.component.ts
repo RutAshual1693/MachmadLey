@@ -3,6 +3,7 @@ import { CustomersService } from './../../../services/customers.service';
 import { FormGroup } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-customer',
@@ -11,7 +12,7 @@ import { Validators } from '@angular/forms';
 })
 export class AddCustomerComponent implements OnInit {
 
-  constructor(public customersService: CustomersService) { }
+  constructor(public customersService: CustomersService, private router: Router) { }
   form;
   ngOnInit() {
     this.form = new FormGroup({
@@ -25,8 +26,9 @@ export class AddCustomerComponent implements OnInit {
   }
   onSubmit(frm) {
     console.log(frm);
-    frm.registrationDate = new Date().toString();
+    frm.registrationDate = new Date();
     this.customersService.addCustomer(frm);
+    this.router.navigateByUrl('myOnlineStore/administor/customersBase');
   }
 
 }

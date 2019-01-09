@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { CategoriesService } from '../../../services/categories.service';
 import { TypesService } from '../../../services/types.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-parent-category',
   templateUrl: './add-parent-category.component.html',
@@ -9,7 +10,7 @@ import { TypesService } from '../../../services/types.service';
 })
 export class AddParentCategoryComponent implements OnInit {
   dropdownSettings = {};
-  constructor(public typesService: TypesService) { }
+  constructor(public typesService: TypesService, private router: Router) { }
   form;
   ngOnInit() {
     this.form = new FormGroup({
@@ -29,6 +30,7 @@ export class AddParentCategoryComponent implements OnInit {
   onSubmit(frm) {
     console.log(frm);
     this.typesService.addParentCategory(frm);
+    this.router.navigateByUrl('myOnlineStore/administor/parentCategoriesBase');
   }
 }
 

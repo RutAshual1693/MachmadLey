@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../services/products.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-product-option',
   templateUrl: './add-product-option.component.html',
@@ -8,7 +8,7 @@ import { ProductsService } from '../../../services/products.service';
 })
 export class AddProductOptionComponent implements OnInit {
   productOption: object = { name: "", values: [] };
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService, private router: Router) { }
   list: Array<number> = [];
   ngOnInit() {
     this.list.push(1);
@@ -32,5 +32,6 @@ export class AddProductOptionComponent implements OnInit {
    
     }
     this.productsService.addProductOption(this.productOption);
+    this.router.navigateByUrl('myOnlineStore/administor/productOptionsBase');
   }
 }
