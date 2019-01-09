@@ -74,7 +74,7 @@ export class AddComponent implements OnInit {
         frm.status = "כבוי";
       frm.typeAnimal = this.typesService.listTypes.filter(x => frm.categories.find(y => this.categoriesService.listCategories.find(i => i["_id"] == y["_id"])["types"] == x["_id"]) != null);
       this.productsService.addProduct(frm);
-      //this.router.navigateByUrl("");
+     this.router.navigateByUrl("administor/productsBase");
     }
   }
   checkValue() {

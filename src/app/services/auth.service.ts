@@ -14,4 +14,12 @@ export class AuthService {
     //  this.loggedIn = true;
     return this.loggedIn;
   }
+  ifDel = false;
+  ifDelete(num) {
+    if (num == 1)
+      this.ifDel = true;
+    else
+      this.ifDel=false
+
+  }
 }

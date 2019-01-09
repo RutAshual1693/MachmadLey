@@ -68,7 +68,7 @@
                 </div>
                 <div style="display:inline-block">
                 <div (click)="delete(product)" style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
-                    <img src="./assets/cancel.png"  (click)="delete(product)" style="width:15px;height:15px;" />
+                    <img src="./assets/cancel.png"    data-toggle="modal" data-target="#myModal" (click)="delete(product)" style="width:15px;height:15px;" />
                   </div>
                 </div>
               </td>
@@ -80,3 +80,4 @@
     <app-products-base></app-products-base>
   </main>
 </div>
+<app-confirm-deletion></app-confirm-deletion>

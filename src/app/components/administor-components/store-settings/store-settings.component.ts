@@ -61,6 +61,10 @@ export class StoreSettingsComponent implements OnInit {
     });
  }
   onSubmit(frm) {
-    this.storeSettingService.editStoreSetting(frm);
+    if (frm.hotProducts.length == 6) {
+      this.storeSettingService.editStoreSetting(frm);
+    }
+    else
+      alert("יש לבחור שישה מוצרים חמים שיוצגו בדף הבית");
   }
 }

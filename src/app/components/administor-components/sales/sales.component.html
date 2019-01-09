@@ -27,7 +27,7 @@
             <td>כמות הנחה</td>
             <!--<th>שם מבצע</th>
             <th>שם מבצע</th>-->
-        
+
           </tr>
         </thead>
         <tbody>
@@ -40,13 +40,13 @@
             <!--<td><p>{{sale.sele}}</p></td>-->
             <td>
               <div style="display:inline-block;margin-left:5px">
-      <div style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
-        <img src="./assets/menu.png" (click)="editSaleClicked(sale)" routerLink="editSale" style="width:15px;height:15px;" />
-      </div>
-    </div>
+                <div style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
+                  <img src="./assets/menu.png" (click)="editSaleClicked(sale)" routerLink="editSale" style="width:15px;height:15px;" />
+                </div>
+              </div>
               <div style="display:inline-block">
                 <div style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
-                  <img src="./assets/cancel.png" (click)="delete(sale)" style="width:15px;height:15px;" />
+                  <img src="./assets/cancel.png"  data-toggle="modal" data-target="#myModal" (click)="delete(sale)" style="width:15px;height:15px;" />
                 </div>
               </div>
             </td>
@@ -57,3 +57,4 @@
   </div>
   <app-sales-base></app-sales-base>
 </main>
+<app-confirm-deletion></app-confirm-deletion>

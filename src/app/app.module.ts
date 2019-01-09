@@ -104,6 +104,7 @@ import { AuthService } from './services/auth.service'
 import { AuthGuard } from './auth.guard';
 import { BaseAdminComponent } from './components/administor-components/base-admin/base-admin.component';
 import { GetStringPipe } from './pipes/get-string.pipe';
+import { ConfirmDeletionComponent } from './components/administor-components/confirm-deletion/confirm-deletion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -176,7 +177,8 @@ import { GetStringPipe } from './pipes/get-string.pipe';
     EditSaleComponent,
     CategoryAndParentCategoryPipe,
     BaseAdminComponent,
-    GetStringPipe
+    GetStringPipe,
+    ConfirmDeletionComponent
     
   ],
   imports: [
