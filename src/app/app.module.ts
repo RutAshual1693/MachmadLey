@@ -105,6 +105,7 @@ import { AuthGuard } from './auth.guard';
 import { BaseAdminComponent } from './components/administor-components/base-admin/base-admin.component';
 import { GetStringPipe } from './pipes/get-string.pipe';
 import { ConfirmDeletionComponent } from './components/administor-components/confirm-deletion/confirm-deletion.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -178,7 +179,8 @@ import { ConfirmDeletionComponent } from './components/administor-components/con
     CategoryAndParentCategoryPipe,
     BaseAdminComponent,
     GetStringPipe,
-    ConfirmDeletionComponent
+    ConfirmDeletionComponent,
+    SafeHtmlPipe
     
   ],
   imports: [

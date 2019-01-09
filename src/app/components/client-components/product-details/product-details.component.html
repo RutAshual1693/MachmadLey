@@ -18,7 +18,7 @@
                 {{salesService.listSale|deleteOriginPrice:productsService.showProductDetails}}
               </small>
             </h3>
-            <h4 style="color:#00174F;font-family:Calibri" [innerText]="productsService.showProductDetails.prodDescription"></h4>
+            <h4 style="color:#00174F;font-family:Calibri" [innerHTML]="productsService.showProductDetails.prodDescription|safeHtml"></h4>
             <h5 class="font">דגם: <span>{{productsService.showProductDetails.model}}</span></h5>
 
             <div class="row">
