@@ -31,7 +31,10 @@ export class StoreSettingsComponent implements OnInit {
       fax: this.storeSettingService.storeSetting.fax,
       contact: this.storeSettingService.storeSetting.contact,
       openingHours: this.storeSettingService.storeSetting.openingHours,
-      hotProducts: this.storeSettingService.storeSetting.hotProducts
+      hotProducts: this.storeSettingService.storeSetting.hotProducts,
+      customerSay: this.storeSettingService.storeSetting.customerSay,
+      about: this.storeSettingService.storeSetting.about,
+      
     })
     this.form.hotProducts = [];  
         });
@@ -57,7 +60,9 @@ export class StoreSettingsComponent implements OnInit {
       fax: new FormControl("", Validators.required),
       contact: new FormControl("", Validators.required),
       openingHours: new FormControl("", Validators.required),
-      hotProducts: new FormControl("", Validators.required)
+      hotProducts: new FormControl("", Validators.required),
+      customerSay: new FormControl("", Validators.required),
+      about: new FormControl("", Validators.required),
     });
  }
   onSubmit(frm) {

@@ -87,10 +87,24 @@
             </tr>
             <tr>
               <td><label>תמונות</label></td>
+               <!--<app-add-image></app-add-image>-->
               <td>
-                <app-add-image></app-add-image>
+                <div  >
+                  <div class="col-md-5"></div>
+                  <div class="col-md-7">
+                    <input style="float:right;  background-color:rgba(191, 191, 191, 0.77)" formControlName="img"  type="file" id="img" (change)="onFileChange($event)" #fileInput
+                           accept="image/*">
+                  </div>
+                </div>
               </td>
             </tr>
+
+            <!--<tr>
+    <td><label>תמונות</label></td>
+    <td>
+      <app-add-image></app-add-image>
+    </td>
+  </tr>-->
             <tr>
               <td><label>סטטוס</label></td>
               <td> <select type="text" formControlName="status" class="form-control"><option disabled>סטטוס</option><option>פעיל</option><option>כבוי</option></select></td>
@@ -115,7 +129,7 @@
                   </tr>
                   <tr *ngFor="let o of listoptions">
 
-                
+
                     <td *ngIf="o.name==''">
                       <span class="col-lg-10">
                         <select *ngIf="o.name==''" class="form-control" #s (change)="choosOPtionClicked(s.value)">

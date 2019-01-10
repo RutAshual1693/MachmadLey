@@ -3,8 +3,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path');
 const app = express()
+const fs = require("fs");
+//const db = require('./db');
+app.use(bodyParser.json({ limit: '500mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '500mb' }));
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -201,16 +205,41 @@ app.post('/deleteCategoryFromProduct', function (req, res) {
 //  myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
 //})
 //-------הוספת מוצר
-app.post('/addProduct', function (req, res) {
-  var myPromise = new Promise((resolve, reject) => {
+//app.post('/addProduct', function (req, res) {
+//  var myPromise = new Promise((resolve, reject) => {
+//      dbo.collection("products").insertOne(req.body, function (err, res) {
+//        if (err) reject(err)
+//        console.log("1 category inserted");     
+//        resolve(res);
+//    });
+//  });
+//  myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
+//});
+app.post('/addProduct', function (req, res, next) {
+  let imgObj = req.body.img;
+  let imgPath = path.join(__dirname, 'images',imgObj.filename); 
+  let bas64Buffer = new Buffer(imgObj.value, "base64");
+  fs.writeFile(imgPath, bas64Buffer, (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send(err);
+    }
+
+    let myPromise = new Promise((resolve, reject) => {
+      delete req.body.img;
+      req.body.imgPath = imgObj.filename;
       dbo.collection("products").insertOne(req.body, function (err, res) {
-        if (err) reject(err)
-        console.log("1 category inserted");     
+        if (err) reject(err);
+        console.log("1 product inserted");
         resolve(res);
+      });
     });
+
+    myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
   });
-  myPromise.then(fromResolve => getProducts(req, res), err => console.log(err));
 });
+
+
 //listSale
 var listSale;
 function getSales(req, res) {
@@ -567,7 +596,9 @@ app.post('/editStoreSetting', function (req, res) {
       fax: req.body.fax,
       contact: req.body.contact,
       openingHours: req.body.openingHours,
-      hotProducts: req.body.hotProducts
+      hotProducts: req.body.hotProducts,
+      customerSay: req.body.customerSay,
+      about: req.body.about,
 
     }
   }, function (err, obj) {

@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <div class="heading" style="position:fixed;width:100%;">
     <div class="col-lg-8">
-      <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" [disabled]="!form.valid" value="שמור" />
+      <input type="submit" class="btn" style="background-color:rgba(0, 0, 0, 0.8)" [disabled]="!(form.valid&&(kind.value=='הנחה באחוזים'&&c.value > 0 &&c.value < 100))" value="שמור" />
     </div>
   </div>
   <main class="page-content" style="background-color:#f2f7fb;">
@@ -54,7 +54,7 @@
               </tr>
               <tr>
                 <td>כמות הנחה</td>
-                <td><input class="form-control" type="text" formControlName="countDiscount" /></td>
+                <td><input #c class="form-control" type="number" formControlName="countDiscount" /></td>
               </tr>
               <!--<tr *ngIf="kind.value=='קבל מוצר חינם'">
                 <td >מוצרים נבחרים מתנה</td>

@@ -47,7 +47,7 @@ export class AddComponent implements OnInit {
       typeAnimal: new FormControl(""),
       options: new FormControl(""),
       relatedProducts: new FormControl(""),
-      img: new FormControl(""),
+      img: new FormControl(),
       status: new FormControl("", Validators.required),
 
     });
@@ -74,7 +74,7 @@ export class AddComponent implements OnInit {
         frm.status = "כבוי";
       frm.typeAnimal = this.typesService.listTypes.filter(x => frm.categories.find(y => this.categoriesService.listCategories.find(i => i["_id"] == y["_id"])["types"] == x["_id"]) != null);
       this.productsService.addProduct(frm);
-     this.router.navigateByUrl("administor/productsBase");
+      this.router.navigateByUrl("myOnlineStore/administor/productsBase");
     }
   }
   checkValue() {
@@ -94,4 +94,19 @@ export class AddComponent implements OnInit {
   deleteOption(i) {
     this.listoptions.splice(i, 1);
   }
+  onFileChange(event) {
+    let reader = new FileReader();
+    if (event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.form.get('img').setValue({
+          filename: file.name,
+          filetype: file.type,
+          value: reader.result.split(',')[1]
+        })
+      };
+    }
+  }
+
 }

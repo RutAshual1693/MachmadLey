@@ -38,14 +38,14 @@
               <td>זמינות</td>
               <td>פעולה</td>
               <!--<td><b>עריכה</b></td><
-              <td><b>מחיקה</b></td>-->
+      <td><b>מחיקה</b></td>-->
             </tr>
           </thead>
-
+       
           <tbody>
-          <tr *ngFor="let product of productsService.listProducts;let i=index">
+            <tr *ngFor="let product of productsService.listProducts;let i=index">
               <td height="50px">
-              <img style="width:50px; height:50px" src="/assets/arr[i]" />
+                <img style="width:50px; height:50px" src="./assets/images/{{product.imgPath}}" />
               </td>
               <td>{{product.name}}</td>
               <td>{{product.model}}</td>
@@ -53,22 +53,22 @@
               <td>{{product.inStock}}</td>
 
               <!--<td>
-                <br /><br />
-                <a><i><img (click)="productsService.editProductClicked(product)" routerLink="editProduct2" style="cursor:pointer;top:50px;" alt="ערוך מוצר" title="ערוך" src="assets/icons/edit.png" /></i></a>
-              </td>
-              <td>
-                <br /><br />
-                <a (click)="delete(product)"><i><img src="assets/icons/delete.png" style="cursor:pointer;top:50px;" alt="מחק מוצר" title="מחק" /></i></a>
-              </td>-->
+        <br /><br />
+        <a><i><img (click)="productsService.editProductClicked(product)" routerLink="editProduct2" style="cursor:pointer;top:50px;" alt="ערוך מוצר" title="ערוך" src="assets/icons/edit.png" /></i></a>
+      </td>
+      <td>
+        <br /><br />
+        <a (click)="delete(product)"><i><img src="assets/icons/delete.png" style="cursor:pointer;top:50px;" alt="מחק מוצר" title="מחק" /></i></a>
+      </td>-->
               <td>
                 <div style="display:inline-block;margin-left:5px">
-                <div (click)="productsService.editProductClicked(product)" routerLink="editProduct2" style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
-                    <img src="./assets/menu.png" (click)="productsService.editProductClicked(product)" routerLink="editProduct2"style="width:15px;height:15px;" />
+                  <div (click)="productsService.editProductClicked(product)" routerLink="editProduct2" style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
+                    <img src="./assets/menu.png" (click)="productsService.editProductClicked(product)" routerLink="editProduct2" style="width:15px;height:15px;" />
                   </div>
                 </div>
                 <div style="display:inline-block">
-                <div (click)="delete(product)" style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
-                    <img src="./assets/cancel.png"    data-toggle="modal" data-target="#myModal" (click)="delete(product)" style="width:15px;height:15px;" />
+                  <div (click)="delete(product)" style="background-color:rgba(0, 0, 0, 0.7);width:30px;height:30px;border-radius:5px; text-align:center;display:table-cell; vertical-align:middle;box-shadow:0 5px 10px rgba(191, 191, 191, 0.77)">
+                    <img src="./assets/cancel.png" data-toggle="modal" data-target="#myModal" (click)="delete(product)" style="width:15px;height:15px;" />
                   </div>
                 </div>
               </td>

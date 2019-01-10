@@ -6,6 +6,7 @@ import { Validators } from '@angular/forms';
 import { CategoriesService } from '../../../services/categories.service';
 import { TypesService } from '../../../services/types.service';
 import { SalesService } from '../../../services/sales.service';
+import { Router } from '@angular/router';
 //import { HttpClient } from '@angular/common/http';
 //import { Observable } from 'rxjs';
 
@@ -18,7 +19,7 @@ export class DiscountComponent implements OnInit {
   dropdownSettings; form; arr1: Array<object>;
   public listCategories: object[] = [];
   listTypes: object[] = [];
-  constructor(private salesService: SalesService, private productsService: ProductsService, private categoriesService: CategoriesService, private typeService: TypesService)
+  constructor(private salesService: SalesService, private productsService: ProductsService, private categoriesService: CategoriesService, private typeService: TypesService, private router: Router)
   {
     this.typeService.getListTypes().subscribe(
       (data1: Array<object>) => {
@@ -65,10 +66,11 @@ this.form = new FormGroup({
   onSubmit(frm) {
 
     console.log(frm);
-
+    //if (frm.selectedProducts.find(x=>x.))
     //let x = { "selected": frm.selectedProducts, "kind": frm.kindDiscount, "count": frm.countDiscount ,"status":frm.status};
     //console.log(x);
     this.salesService.addSale(frm);
+    this.router.navigateByUrl('myOnlineStore/administor/saleBase');
 
 
 
