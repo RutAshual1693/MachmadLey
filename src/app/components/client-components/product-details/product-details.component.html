@@ -1,4 +1,4 @@
-<div class="modal fade product_view" id="product_view" >
+<div class="modal fade product_view" id="product_view">
   <div class="modal-dialog" style="width:70%">
     <div class="modal-content">
       <div class="modal-header" style="border-bottom:0">
@@ -18,7 +18,7 @@
                 {{salesService.listSale|deleteOriginPrice:productsService.showProductDetails}}
               </small>
             </h3>
-            <h4 style="color:#00174F;font-family:Calibri" [innerHTML]="productsService.showProductDetails.prodDescription|safeHtml"></h4>
+            <h4 style="color:#00174F;font-family:Calibri" [innerHtml]="productsService.showProductDetails.prodDescription|safeHtml"></h4>
             <h5 class="font">דגם: <span>{{productsService.showProductDetails.model}}</span></h5>
 
             <div class="row">
@@ -35,7 +35,7 @@
             <div>
               <div class="row">
                 <div class="col-lg-8">
-                  <button style="width:80%;" data type="button" data-dismiss="modal" data-toggle="modal" data-target="#myModal"(click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity,options)" class="btn toOrder myBtn">הוספה לסל  <span class="glyphicon glyphicon-shopping-cart"></span></button>
+                  <button style="width:80%;" data type="button" data-dismiss="modal" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity,options)" class="btn toOrder myBtn">הוספה לסל  <span class="glyphicon glyphicon-shopping-cart"></span></button>
                 </div>
                 <div class="col-lg-4">
                   <div class="input-group">
@@ -64,13 +64,13 @@
               </ol>
               <div class="carousel-inner">
                 <div class="item active">
-                  <img src="assets\pictures\b.jpg" alt="Los Angeles" style="width:100%;">
+                  <img src=".\assets\images\{{productsService.showProductDetails.imgPath}}" alt="Los Angeles" style="width:100%;">
                 </div>
                 <div class="item">
-                  <img src="assets\pictures\b.jpg" alt="Chicago" style="width:100%;">
+                  <img src=".\assets\images\{{productsService.showProductDetails.imgPath}}" alt="Chicago" style="width:100%;">
                 </div>
                 <div class="item">
-                  <img src="assets\pictures\b.jpg" alt="New York" style="width:100%;">
+                  <img src=".\assets\images\{{productsService.showProductDetails.imgPath}}" alt="New York" style="width:100%;">
                 </div>
               </div>
               <a class="left carousel-control" href="#myCarousel5" role="button" data-slide="prev">
@@ -179,7 +179,6 @@
 </div>-->
 <app-sopping-cart></app-sopping-cart>
 <!--<app-base-client-p></app-base-client-p>-->
-
 <!--<br /><br /><br /><br />-->
 <!--<div class="container">
   <div class="row">
@@ -192,29 +191,28 @@
       <div class="col-sm-5"></div>
       <a href="#" class="col-sm-3" data-dismiss="modal" style="color:darkcyan;">המשך קניה</a>
     </div>-->
-
-    <!-------------------------------
-    -------------------- פרטי מוצר--------------------
-     ------------------------------>
-    <!--<div class="col-lg-6 col-sm-12">
-      <h3> {{productsService.showProductDetails.name}}</h3>
-      <div [innerHTML]="productsService.showProductDetails.prodDescription"></div>
-    </div>
-    <ul>
-      <li *ngFor="let option of this.productsService.showProductDetails.options; let i=index;">
-        <select [(ngModel)]="options[i]" class="form-control" *ngIf="option.name!=''" style=" width:auto;">
-          <option value="" disabled selected>   {{option.name}}</option>
-          <option *ngFor="let value1 of option.values">
-            {{value1}}
-          </option>
-        </select><br />
-      </li>
-    </ul>
-    <div class="row">
-      <b>כמות:</b>
-      <input #q type="number" style="width: 50px;" (change)="checkQuantity(q.value)">
-      <br />
-      <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity,options)">הוסף לסל</button>
-    </div>-->
-  <!--</div>
+<!-------------------------------
+-------------------- פרטי מוצר--------------------
+ ------------------------------>
+<!--<div class="col-lg-6 col-sm-12">
+  <h3> {{productsService.showProductDetails.name}}</h3>
+  <div [innerHTML]="productsService.showProductDetails.prodDescription"></div>
+</div>
+<ul>
+  <li *ngFor="let option of this.productsService.showProductDetails.options; let i=index;">
+    <select [(ngModel)]="options[i]" class="form-control" *ngIf="option.name!=''" style=" width:auto;">
+      <option value="" disabled selected>   {{option.name}}</option>
+      <option *ngFor="let value1 of option.values">
+        {{value1}}
+      </option>
+    </select><br />
+  </li>
+</ul>
+<div class="row">
+  <b>כמות:</b>
+  <input #q type="number" style="width: 50px;" (change)="checkQuantity(q.value)">
+  <br />
+  <button type="button" class="btn toOrder" data-toggle="modal" data-target="#myModal" (click)="shoppingCartService.addProductToCart(productsService.showProductDetails,quantity,options)">הוסף לסל</button>
+</div>-->
+<!--</div>
 </div>-->

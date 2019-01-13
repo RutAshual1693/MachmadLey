@@ -1,3 +1,10 @@
+
+.font {
+  color: #00174F;
+  font-family: 'Guttman Hatzvi';
+  font-weight: bold;
+}
+
 h2 {
   font-size: 24px;
   text-transform: uppercase;
@@ -20,6 +27,7 @@ h4 {
   padding: 100px 25px;
   font-family: Montserrat, sans-serif;
 }
+
 .bg-grey {
   background-color: rgba(11, 83, 107, 0.07) !important
 }
@@ -45,6 +53,7 @@ h4 {
     height: 100%;
     margin-bottom: 10px;
   }
+
 .item h4 {
   font-size: 19px;
   line-height: 1.375em;
@@ -111,6 +120,7 @@ h4 {
     font-size: 150px;
   }
 }
+
 .anima {
   visibility: hidden;
 }

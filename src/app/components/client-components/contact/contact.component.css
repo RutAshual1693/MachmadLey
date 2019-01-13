@@ -1,3 +1,9 @@
+.font {
+  color: #00174F;
+  font-family: 'Guttman Hatzvi';
+  font-weight: bold;
+}
+
 .container-fluid {
   padding: 60px 50px;
 }
@@ -5,6 +11,7 @@
 .bg-grey {
   background-color: #f6f6f6;
 }
+
 .slideanim {
   visibility: hidden;
 }

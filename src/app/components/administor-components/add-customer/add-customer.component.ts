@@ -27,8 +27,12 @@ export class AddCustomerComponent implements OnInit {
   onSubmit(frm) {
     console.log(frm);
     frm.registrationDate = new Date();
-    this.customersService.addCustomer(frm);
-    this.router.navigateByUrl('myOnlineStore/administor/customersBase');
+    if (frm.password == frm.confirmPassword) 
+    {
+      this.router.navigateByUrl('myOnlineStore/administor/customersBase');
+      this.customersService.addCustomer(frm);
+    }
+  
   }
 
 }

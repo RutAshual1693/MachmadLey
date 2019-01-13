@@ -4,12 +4,15 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from "ngx-stripe";
 import { PaymentService } from '../../../services/payment.service';
 
+import { NgForm } from '@angular/forms';
+
+declare var stripe: any;
+declare var elements: any;
 @Component({
   selector: 'app-stripe',
   templateUrl: 'stripe.component.html'
 })
 export class StripeComponent implements OnInit {
-
   @ViewChild(StripeCardComponent) card: StripeCardComponent;
 
   cardOptions: ElementOptions = {
@@ -23,9 +26,10 @@ export class StripeComponent implements OnInit {
         fontSize: '18px',
         '::placeholder': {
           color: '#CFD7E0'
-        }
-      }
+        },
+      },
     }
+
   };
 
   elementsOptions: ElementsOptions = {
@@ -40,10 +44,14 @@ export class StripeComponent implements OnInit {
     private paymentService: PaymentService
   ) { }
 
+
+
+
   ngOnInit() {
     this.stripeTest = this.fb.group({
       name: ['', [Validators.required]]
     });
+
   }
 
   buy() {
@@ -52,9 +60,13 @@ export class StripeComponent implements OnInit {
       .createToken(this.card.getCard(), { name })
       .subscribe(result => {
         if (result.token) {
-          let token = 'tok_visa';
+          //let token = 'tok_visa';
           //let token = result.token.id;
-          this.paymentService.charge(token).subscribe(
+          var user = JSON.parse(sessionStorage.getItem("user"));
+          if (!user) {
+
+          }
+          this.paymentService.charge(result.token, user).subscribe(
             data => {
               console.log(data['status']);
             }
@@ -67,3 +79,4 @@ export class StripeComponent implements OnInit {
       });
   }
 }
+

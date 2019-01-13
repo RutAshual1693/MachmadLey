@@ -9,7 +9,7 @@ import { SalesService } from '../../../services/sales.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
- public options: Array<object> = new Array<object>();
+  public options: Array<object> = new Array<object>();
   constructor(private productsService: ProductsService,
     private shoppingCartService: ShoppingCartService,
     private salesService: SalesService

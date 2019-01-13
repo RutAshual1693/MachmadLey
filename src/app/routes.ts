@@ -46,12 +46,21 @@ import { EditSaleComponent } from "./components/administor-components/edit-sale/
 import { AuthGuard } from "../app/auth.guard";
 import { LoginAdministratorComponent } from "./components/administor-components/login-administrator/login-administrator.component";
 import { BaseAdminComponent } from "./components/administor-components/base-admin/base-admin.component";
+import { AboutAsComponent } from "./components/client-components/about-as/about-as.component";
 
 export const routes: Routes = [
   {
     path: "client",
     component: ClientComponent,
     children: [
+      {
+        path: "anotherDetails",
+        component: AnotherDetailOfCustomComponent
+      },
+      {
+        path: "aboutAs",
+        component: AboutAsComponent
+      },
       //{
       //  path: "home",
       //  component: HomeComponent,

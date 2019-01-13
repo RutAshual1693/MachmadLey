@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
+import { StoreSettingService } from '../../../services/store-setting.service';
+
 @Component({
   selector: 'app-about-as',
   templateUrl: './about-as.component.html',
@@ -7,22 +8,24 @@ declare var $: any;
 })
 export class AboutAsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storeSettingService: StoreSettingService) { }
+  ngOnInit(){
 
-  ngOnInit() {
-    $(window).scroll(function () {
-      $(".slideanim").each(function () {
-        var pos = $(".slide2").offset().top;
+}
+  //ngOnInit() {
+  //  $(window).scroll(function () {
+  //    $(".slideanim").each(function () {
+  //      var pos = $(".slide2").offset().top;
 
-        var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(".slide2").addClass("slide");
-        }
-        else {
-          $(".slide2").removeClass("slide");
-        }
-      });
-    });
-  }
+  //      var winTop = $(window).scrollTop();
+  //      if (pos < winTop + 600) {
+  //        $(".slide2").addClass("slide");
+  //      }
+  //      else {
+  //        $(".slide2").removeClass("slide");
+  //      }
+  //    });
+  //  });
+  //}
 
 }

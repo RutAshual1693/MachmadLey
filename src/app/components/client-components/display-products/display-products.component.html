@@ -1,11 +1,10 @@
-<br /><br /><br /><br /><br />
+<div style="width:100%;height:70px;background-color:#00174F"></div><br />
 <div class="container">
   <div class="row">
     <div class="col-md-9"></div>
     <div class="col-md-3" style="font-size:15px;font-weight:bold">
-      <button class="btn btn-dark">חזרה</button>
       <div style="margin-right:10px;display:inline-block">
-        <a>דף הבית</a><span style="color:gray"> > </span><a>{{paginationService.baseCategory}}</a><span style="color:gray"> / </span><a>{{paginationService.category}}</a>
+        <label style="color:#bebebe">דף הבית</label><span style="color:gray"> > </span><label style="color:#bebebe">{{paginationService.baseCategory}}</label><span style="color:gray"> / </span><label style="color:#bebebe">{{paginationService.category}}</label>
       </div>
     </div>
   </div>
@@ -13,13 +12,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-9">
-        <label style="font-family:Guttman-CourMir;font-size:30px">{{paginationService.category}} ל{{paginationService.baseCategory}}</label>
+        <label style="font-size:30px" class="font">{{paginationService.category}} ל{{paginationService.baseCategory}}</label>
         <div style="display:inline-block;float:left">
           <input style="margin:5px;width:150px;display:inline-block" type="text" #str class="form-control" placeholder="שם מוצר" />
-          <button style="background-color:#d0b623;color:white" class="glyphicon glyphicon-search btn btn-dark" (click)="search(str.value)"></button>
-          <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="minPrice()">מחיר מהנמוך לגבוה</button>
-          <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="maxPrice()">מחיר מהגבוה לנמוך</button>
-          <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white">הזמנות</button>
+          <button style="background-color:darkcyan;color:white" class="glyphicon glyphicon-search btn btn-dark" (click)="search(str.value)"></button>
+          <button class="btn btn-dark" style="margin:5px;background-color:#b93333;color:white" (click)="minPrice()">מחיר מהנמוך לגבוה</button>
+          <button class="btn btn-dark" style="margin:5px;background-color:#aa9347;color:white" (click)="maxPrice()">מחיר מהגבוה לנמוך</button>
+          <button class="btn btn-dark" style="margin:5px;background-color:#548f62;color:white" (click)="refresh()">רענן</button>
         </div>
       </div>
       <div class="col-md-3">
@@ -42,7 +41,7 @@
                 <div class="product-description">
                   <!-- title -->
                   <h1 class="product-description__title">
-                    <span *ngFor="let item of product.name|nameLength:product.name" style="border:0;background-color:transparent;direction:rtl;color:gray;font-size:15px" (click)="shoppingCartService.addProductToCart(product,1)">
+                    <span *ngFor="let item of product.name|nameLength:product.name" style="border:0;background-color:transparent;direction:rtl;color:gray;font-size:15px">
                       {{item}}<br />
                       <span *ngIf="product.name|emptyLine:product.name"><br /></span>
                     </span>
@@ -72,19 +71,19 @@
       </div>
       <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
         <div class="panel-group" id="accordion">
-          <input type="checkbox" /><label style="margin-right:5px">חדש</label>
+          <input type="checkbox" /><label style="margin-right:5px" class="font">חדש</label>
           <div style="width:100%;height:1px;background-color:#bebebe"></div><br />
           <div class="panel panel-default" *ngFor="let item of this.arrProductOption">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <label class="font" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                   {{item.name}}
-                </a>
+                </label>
               </h4>
             </div>
             <div id="collapse1" class="panel-collapse collapse in">
               <div class="panel-body" *ngFor="let i of item.values">
-                <input (click)="checkClicked(item.values)" class="check" type="checkbox" value="{{i}}" /><label style="margin-right:5px"> {{i}} </label><br />
+                <input (click)="checkClicked(item.values)" class="check font" type="checkbox" value="{{i}}" /><label style="margin-right:5px"> {{i}} </label><br />
               </div>
             </div>
           </div>

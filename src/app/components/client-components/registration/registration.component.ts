@@ -20,15 +20,15 @@ export class RegistrationComponent implements OnInit {
       registrationDate: new FormControl(""),
       firstName: new FormControl("", Validators.required),
       lastName: new FormControl("", Validators.required),
-  mail: new FormControl("", [Validators.required, Validators.email]),
-      numberPhone: new FormControl("", Validators.required),
+      mail: new FormControl("", [Validators.required, Validators.email]),
+      numberPhone: new FormControl("", [Validators.required, Validators.pattern("[0-9]+"), Validators.minLength(9), Validators.maxLength(10)]),
       adress: new FormGroup({
         street: new FormControl("", Validators.required),
         city: new FormControl("", Validators.required),
-        numHouse: new FormControl("", Validators.required),
-        postalCode: new FormControl("", Validators.required),
+        numHouse: new FormControl("", [Validators.required, Validators.pattern("[0-9]+")]),
+        postalCode: new FormControl("", [Validators.required, Validators.pattern("[0-9]+")]),
       }),
-     
+
       password: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(12), Validators.pattern('[a-zA-Z0-9 ]?[a-zA-Z ]+[0-9]+[a-zA-Z0-9 ]?|[a-zA-Z0-9 ]?[0-9]+[a-zA-Z ]+[a-zA-Z0-9 ]?')]),
       confirmPassword: new FormControl("", Validators.required),
     });

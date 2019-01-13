@@ -16,32 +16,35 @@ var nodemailer = require('nodemailer');
 app.listen(5000, function () {
   console.log('Example app listening on port 5000!');
 });
-var transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  requireTLS: false,
-  tls: {
-    rejectUnauthorized: false
-  },
-  auth: {
-    user: 'bina3420@gmail.com',
-    pass: 'zehava2075'
-  }
-});
-var mailOptions = {
-  from: 'bina3420@gmail.com',
-  to: 'bina3420@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
+app.post('/sendEmail', function (req, res) {
+  var transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    requireTLS: false,
+    tls: {
+      rejectUnauthorized: false
+    },
+    auth: {
+      user: 'bina3420@gmail.com',
+      pass: 'zehava2075'
+    }
+  });
+  var mailOptions = {
+    from: 'bina3420@gmail.com',
+    to: 'bina3420@gmail.com',
+    subject: req.body.name + " מעונין ליצור איתך קשר",
+    text: req.body.comment + '\n' + req.body.name + '\n' + req.body.email
+  };
 
-transporter.sendMail(mailOptions, function (error, info) {
-  if (error) {
-    console.log(error+"binushka");
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error + "binushka");
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  res.send(JSON.stringify({ "ds": "ds" }));
 });
 //var multer = require('multer');
 

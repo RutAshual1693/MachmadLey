@@ -15,18 +15,17 @@ export class LinksComponent implements OnInit {
   constructor(private typesService: TypesService,
     private categoriesService: CategoriesService,
     private productsService: ProductsService,
-    private paginationService: PaginationService)
-  {
+    private paginationService: PaginationService) {
   }
   homePageClick() {
     this.productsService.homePage = true;
-    document.getElementById("navbar").style.border = "0";
+    //document.getElementById("navbar").style.border = "0";
   }
   chooseCategory(typeId, category) {
-    this.paginationService.baseCategory =this.typesService.listTypes.find(x => x["_id"] == typeId)["name"];
+    this.paginationService.baseCategory = this.typesService.listTypes.find(x => x["_id"] == typeId)["name"];
     this.paginationService.category = this.categoriesService.listCategories.find(y => y["_id"] == category._id)["name"];
-    document.getElementById("navbar").style.borderBottomColor = "darkcyan";
-    document.getElementById("navbar").style.borderBottom = "solid";
+    //document.getElementById("navbar").style.borderBottomColor = "darkcyan";
+    //document.getElementById("navbar").style.borderBottom = "solid";
     this.productsService.homePage = false;
     this.productsService.listProductByCategory = this.productsService.listProducts
       .filter(x => x["categories"]
@@ -60,36 +59,36 @@ export class LinksComponent implements OnInit {
       });
 
     });
-      $.noConflict();
-      $(document).ready(function () {
+    $.noConflict();
+    $(document).ready(function () {
 
-        $('#myCarousel').carousel({
-          interval: 3000,
-        });
-        $('#myCarousel1').carousel({
-          interval: 6000,
-        });
-        $('#myCarousel2').carousel({
-          interval: 1000,
-        });
+      $('#myCarousel').carousel({
+        interval: 3000,
+      });
+      $('#myCarousel1').carousel({
+        interval: 6000,
+      });
+      $('#myCarousel2').carousel({
+        interval: 1000,
+      });
     });
     window.onscroll = function () { scrollFunction() };
-    
+
     function scrollFunction() {
 
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-          document.getElementById("navbar").style.padding = "0px 10px";
-          document.getElementById("logo").style.fontSize = "25px";
-          document.getElementById("navbar").style.backgroundColor = "rgba(0,0,0,0.46)";
-        } else {
-          document.getElementById("navbar").style.padding = "5px 10px";
-          document.getElementById("logo").style.fontSize = "35px";
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("navbar").style.padding = "0px 10px";
+        document.getElementById("logo").style.fontSize = "25px";
+        document.getElementById("navbar").style.backgroundColor = "rgba(0,0,0,0.46)";
+      } else {
+        document.getElementById("navbar").style.padding = "5px 10px";
+        document.getElementById("logo").style.fontSize = "35px";
 
-            document.getElementById("navbar").style.backgroundColor = "transparent";
-  }
+        document.getElementById("navbar").style.backgroundColor = "transparent";
       }
-
     }
+
+  }
 
 }
 

@@ -83,7 +83,7 @@ li {
 }
 */
 #logo {
-  color:darkcyan;
+  color: darkcyan;
   font-size: 35px;
   font-weight: bold;
   transition: 0.4s;
@@ -179,7 +179,7 @@ li {
 
 .modal-header, h4, .close {
   background-color: #333;
-  color: #fff ;
+  color: #fff;
   text-align: center;
   font-size: 30px;
 }
@@ -204,7 +204,7 @@ li {
   margin-bottom: 0;
   background-color: transparent;
   border: 0;
-  font-size: 15px ;
+  font-size: 15px;
   letter-spacing: 4px;
   opacity: 0.9;
 }
@@ -237,36 +237,37 @@ li {
   }
 
   .navbar li .a, .navbar .navbar-brand {
-    color: black ;
+    color: white;
   }
 
 .navbar-nav li .a:hover {
-  color: darkcyan !important ;
+  color: darkcyan !important;
 }
 
 .navbar-nav li.active .a {
-  color: black ;
+  color: white;
   background-color: transparent;
 }
 
 .navbar-default .navbar-toggle {
   border-color: transparent;
 }
-.dropdown-toggle{
-  background-color:transparent;
+
+.dropdown-toggle {
+  background-color: transparent;
 }
+
 .open .dropdown-toggle {
   color: #fff;
-  background-color: transparent ;
-  
+  background-color: transparent;
 }
 
 .dropdown-menu li .a {
-  color: #000 ;
+  color: #000;
 }
 
   .dropdown-menu li .a:hover {
-    background-color: transparent ;
+    background-color: transparent;
   }
 
 
@@ -281,8 +282,8 @@ textarea {
 
 
 
-.addClass{
-  color:red;
+.addClass {
+  color: red;
 }
 
 
@@ -329,7 +330,7 @@ textarea {
     margin: 25px 0;
   }*/
 
-  /*.btn-lg {
+/*.btn-lg {
     width: 100%;
     margin-bottom: 35px;
   }

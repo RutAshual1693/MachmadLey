@@ -6,7 +6,7 @@
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" style="width:500px;">
     <div class="modal-content animate">
-      <div class="modal-header" style="background-color:darkcyan;height:100px;">
+      <div class="modal-header" style="background-color:#00174F;height:100px;">
         <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
         <div style="text-align:center;">
           <br />
@@ -18,10 +18,10 @@
           <div class="form-group">
             <div class="col-sm-8">
               <div style="width:100%; height:100%;margin:0px">
-                <input class="form-control input-sm" formControlName="email" type="email" />
+                <input id="email1" class="form-control input-sm" formControlName="email" type="email" />
               </div>
             </div>
-            <label class="control-label col-sm-4" for="firstName1">אימייל:</label>
+            <label class="control-label col-sm-4" for="email1">אימייל:</label>
           </div>
           <div class="form-group">
             <div class="col-sm-8">
@@ -34,7 +34,7 @@
           </div>
           <div class="col-sm-4"></div>
           <div class="container col-sm-4">
-            <input [disabled]="!form1.valid" type="submit" class="btn btn1" style="background-color:darkcyan;border-color:darkcyan;color:white;" value="התחבר">
+            <input [disabled]="!form1.valid" type="submit" class="btn btn1" style="background-color:#00174F !important;border-color:#00174F;color:white;" value="התחבר">
           </div>
           <div class="col-sm-4"></div>
         </div>
@@ -43,8 +43,7 @@
   </div>
 </div>
 
-<!--<button onclick="document.getElementById('loginModal').style.display='block'" style="width:auto;">Login</button>-->-->
-
+<!--<button onclick="document.getElementById('loginModal').style.display='block'" style="width:auto;">Login</button>-->
 <!--<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
 
   <form class="modal-content animate" action="/action_page.php">
