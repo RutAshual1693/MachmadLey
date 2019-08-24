@@ -1,10 +1,9 @@
 <br /><br /><br /><br /><br />
-<<<<<<< HEAD
 
 
 
   <div class="container">
-=======
+
 <h1 style="position:relative;text-align:center">{{paginationService.category}} ל{{paginationService.baseCategory}}</h1>
 <div style="text-align:center">
   <a>דף הבית</a><span style="color:gray"> > </span><a>{{paginationService.baseCategory}}</a><span style="color:gray"> / </span><a>{{paginationService.category}}</a>
@@ -18,7 +17,6 @@
   <button class="btn btn-dark" style="margin:5px;background-color:#333;color:white" (click)="refresh()">רענן</button>
 </div>
 <div class="container" style="padding-right:15%;padding-left:15%;">
->>>>>>> 4871e3e2a922050efd286e64673badf333a5ea41
   <div class="row">
     <div class="col-md-9"></div>
     <div class="col-md-3" style="font-size:15px;font-weight:bold">
