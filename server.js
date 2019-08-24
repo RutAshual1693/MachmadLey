@@ -1,8 +1,8 @@
 'use strict';
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
-const app = express()
+const app = express();
 const fs = require("fs");
 //const db = require('./db');
 app.use(bodyParser.json({ limit: '500mb' }));
@@ -26,13 +26,13 @@ app.post('/sendEmail', function (req, res) {
       rejectUnauthorized: false
     },
     auth: {
-      user: 'bina3420@gmail.com',
-      pass: 'zehava2075'
+      user: 'ruti3822@gmail.com',
+      pass: 'ruti0548523822'
     }
   });
   var mailOptions = {
-    from: 'bina3420@gmail.com',
-    to: 'bina3420@gmail.com',
+    from: 'ruti3822@gmail.com',
+    to: 'ruti3822@gmail.com',
     subject: req.body.name + " מעונין ליצור איתך קשר",
     text: req.body.comment + '\n' + req.body.name + '\n' + req.body.email
   };
