@@ -34,7 +34,7 @@
     "font-face": "^2.3.1",
     "fs": "0.0.2",
     "googleapis": "^27.0.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "mongodb": "^3.1.4",
     "multer": "^1.4.1",
     "ng-multiselect-dropdown": "^0.2.1",
