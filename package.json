@@ -47,7 +47,7 @@
     "rxjs-compat": "^6.3.2",
     "schematics": "^0.2.0",
     "stripe": "^6.20.0",
-    "xlsx": "^0.14.1",
+    "xlsx": "^0.17.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
